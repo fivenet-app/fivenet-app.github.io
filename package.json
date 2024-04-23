@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "COMMIT_REF=$(git describe --tags --exclude='fivenet-*') nuxt build",
-    "dev": "COMMIT_REF=$(git describe --tags --exclude='fivenet-*') nuxt dev",
-    "generate": "COMMIT_REF=$(git describe --tags --exclude='fivenet-*') nuxt generate",
-    "preview": "COMMIT_REF=$(git describe --tags --exclude='fivenet-*') nuxt preview",
-    "postinstall": "COMMIT_REF=$(git describe --tags --exclude='fivenet-*') nuxt prepare",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck"
   },
@@ -23,12 +23,12 @@
     "nuxt-og-image": "^2.2.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.3.8",
+    "@nuxt/eslint-config": "^0.3.9",
     "@nuxthq/studio": "^1.0.13",
     "@nuxtjs/i18n": "^8.3.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@pinia/nuxt": "^0.5.1",
-    "eslint": "^9.1.0",
+    "eslint": "^9.1.1",
     "vue-i18n-routing": "^1.2.0",
     "vue-tsc": "^2.0.14"
   }

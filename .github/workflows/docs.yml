@@ -18,13 +18,14 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      - uses: actions/checkout@v4
+      - name: Checkout fivenet repository
+        uses: actions/checkout@v4
         with:
           repository: galexrt/fivenet
           fetch-depth: 0
           path: fivenet
 
-      - name: Get pnpm store directory
+      - name: Set latest version for docs
         shell: bash
         run: |
           echo "COMMIT_REF=$(git -C ./fivenet describe --tags --exclude='fivenet-*')" >> $GITHUB_ENV

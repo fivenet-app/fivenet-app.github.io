@@ -1,0 +1,1 @@
+import{_ as n}from"./DLuBa2jq.js";import{d as o,U as t}from"./BeMaRAMV.js";const p=o({props:{use:{type:Function,default:void 0},unwrap:{type:[Boolean,String],default:!1}},render(e){return t(n,e)}});export{p as default};

@@ -79,6 +79,10 @@
                 "nuxt3_ui": {
                     "title": "Nuxt 3 + Nuxt UI Pro",
                     "description": "Powered by Nuxt 3 und Nuxt UI Pro, für optimale Leistung."
+                },
+                "open_source": {
+                    "title": "Open Source",
+                    "description": "FiveNet's Code ist lizensiert unter der Apache 2.0 Lizenz."
                 }
             }
         }

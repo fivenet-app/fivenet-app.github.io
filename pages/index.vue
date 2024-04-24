@@ -78,6 +78,12 @@ const features = {
             icon: 'i-simple-icons-nuxtdotjs',
             to: 'https://nuxt.com',
         },
+        {
+            title: t('docs.features.items.open_source.title'),
+            description: t('docs.features.items.open_source.description'),
+            icon: 'i-simple-icons-git',
+            to: 'https://github.com/galexrt/fivenet',
+        },
     ],
 };
 </script>

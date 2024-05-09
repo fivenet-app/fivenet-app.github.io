@@ -64,6 +64,10 @@
                     "title": "Jobs",
                     "description": "Infos about your job and employee management (e.g., conduct register, timeclock)."
                 },
+                "calendar": {
+                    "title": "Calendar",
+                    "description": "A calendar for each individual and factions, with a RSVP functionality."
+                },
                 "livemap": {
                     "title": "Livemap",
                     "description": "Live position of dispatches and your colleagues."

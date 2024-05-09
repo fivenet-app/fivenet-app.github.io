@@ -56,6 +56,12 @@ const features = {
             to: '/user-guides/jobs',
         },
         {
+            title: t('docs.features.items.calendar.title'),
+            description: t('docs.features.items.calendar.description'),
+            icon: 'i-mdi-calendar-outline',
+            to: '/user-guides/calendar',
+        },
+        {
             title: t('docs.features.items.livemap.title'),
             description: t('docs.features.items.livemap.description'),
             icon: 'i-mdi-map-outline',

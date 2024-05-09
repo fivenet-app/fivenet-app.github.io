@@ -64,6 +64,10 @@
                     "title": "Mitarbeiterübersicht",
                     "description": "Infos über deinen Job und Mitarbeitermanagement (e.g., Führungsregister, Stempeluhr)."
                 },
+                "calendar": {
+                    "title": "Kalender",
+                    "description": "Ein Kalender für jede Person und Fraktion, mit einer RSVP-Funktion."
+                },
                 "livemap": {
                     "title": "Livemap",
                     "description": "Live-Positionen von Einsätzen und Kollegen."

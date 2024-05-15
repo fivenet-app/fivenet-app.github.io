@@ -25,7 +25,7 @@ export default defineAppConfig({
     },
     toc: {
         bottom: {
-            edit: 'https://github.com/galexrt/fivenet/edit/main/content',
+            edit: 'https://github.com/fivenet-app/fivenet/edit/main/content',
         },
     },
     links: {

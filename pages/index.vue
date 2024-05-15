@@ -88,7 +88,7 @@ const features = {
             title: t('docs.features.items.open_source.title'),
             description: t('docs.features.items.open_source.description'),
             icon: 'i-simple-icons-git',
-            to: 'https://github.com/galexrt/fivenet',
+            to: 'https://github.com/fivenet-app/fivenet',
         },
     ],
 };
@@ -101,7 +101,7 @@ const features = {
                 <template #headline>
                     <UButton
                         color="gray"
-                        :to="`https://github.com/galexrt/fivenet/releases/tag/${appVersion}`"
+                        :to="`https://github.com/fivenet-app/fivenet/releases/tag/${appVersion}`"
                         :external="true"
                         :label="$t('pages.index.whats_new_in', { version: appVersion })"
                         trailing-icon="i-mdi-arrow-right"

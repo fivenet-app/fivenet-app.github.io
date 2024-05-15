@@ -21,7 +21,7 @@ jobs:
       - name: Checkout fivenet repository
         uses: actions/checkout@v4
         with:
-          repository: galexrt/fivenet
+          repository: fivenet-app/fivenet
           fetch-depth: 0
           path: fivenet
 

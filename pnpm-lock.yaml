@@ -38,8 +38,8 @@ devDependencies:
     specifier: ^0.3.12
     version: 0.3.12(eslint@9.2.0)(typescript@5.4.5)
   '@nuxthq/studio':
-    specifier: ^1.0.15
-    version: 1.0.15(rollup@4.16.1)
+    specifier: ^1.1.0
+    version: 1.1.0(rollup@4.16.1)
   '@nuxtjs/i18n':
     specifier: ^8.3.1
     version: 8.3.1(rollup@4.16.1)(vue@3.4.23)
@@ -1521,7 +1521,7 @@ packages:
       knitwork: 1.1.0
       mlly: 1.6.1
       pathe: 1.1.2
-      pkg-types: 1.1.0
+      pkg-types: 1.1.1
       scule: 1.3.0
       semver: 7.6.0
       ufo: 1.5.3
@@ -1726,15 +1726,15 @@ packages:
       - vue-tsc
     dev: false
 
-  /@nuxthq/studio@1.0.15(rollup@4.16.1):
-    resolution: {integrity: sha512-FdlSpNk+mCZrA1a3SiZIEm7JFx2pLUtAJfwPfGkllF6vTpCB6Jm1zTnRPw/i3dd20AZ5Ch/P9TOzE61km39NTA==}
+  /@nuxthq/studio@1.1.0(rollup@4.16.1):
+    resolution: {integrity: sha512-3Q2GW3jwAfRhwfhNAn8GMqDhaVkXsP/wOC4g6yqb6WD+RKvas9vMrr5TPhbzB3lclMb+mcNo68LU6hjyTfP3Ww==}
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.16.1)
       defu: 6.1.4
       git-url-parse: 14.0.0
-      nuxt-component-meta: 0.6.3(rollup@4.16.1)
+      nuxt-component-meta: 0.6.4(rollup@4.16.1)
       parse-git-config: 3.0.0
-      pkg-types: 1.1.0
+      pkg-types: 1.1.1
       socket.io-client: 4.7.5
       ufo: 1.5.3
       untyped: 1.4.2
@@ -7381,7 +7381,15 @@ packages:
     dependencies:
       acorn: 8.11.3
       pathe: 1.1.2
-      pkg-types: 1.1.0
+      pkg-types: 1.1.1
+      ufo: 1.5.3
+
+  /mlly@1.7.0:
+    resolution: {integrity: sha512-U9SDaXGEREBYQgfejV97coK0UL1r+qnF2SyO9A3qcI8MzKnsIFKHNVEkrDyNncQTKQQumsasmeq84eNMdBfsNQ==}
+    dependencies:
+      acorn: 8.11.3
+      pathe: 1.1.2
+      pkg-types: 1.1.1
       ufo: 1.5.3
 
   /mri@1.2.0:
@@ -7741,8 +7749,8 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /nuxt-component-meta@0.6.3(rollup@4.16.1):
-    resolution: {integrity: sha512-GdqnSMC1vqabry7WSj3GWA2LZ1gBiWeS2lj943c9TjkL9SN/rABEFXVZA6RO4sOTKF1qV947UGi27PdRd7u+tA==}
+  /nuxt-component-meta@0.6.4(rollup@4.16.1):
+    resolution: {integrity: sha512-5KRxI2y4fzCG9HaDdaiiTZDBjBATje+iVXJc7oG4A9NUrlQxgTSzovjqWF2rjg/hJlv63h5AAy/bUgAHK3pypw==}
     hasBin: true
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.16.1)
@@ -8389,6 +8397,13 @@ packages:
     dependencies:
       confbox: 0.1.7
       mlly: 1.6.1
+      pathe: 1.1.2
+
+  /pkg-types@1.1.1:
+    resolution: {integrity: sha512-ko14TjmDuQJ14zsotODv7dBlwxKhUKQEhuhmbqo1uCi9BB0Z2alo/wAXg6q1dTR5TyuqYyWhjtfe/Tsh+X28jQ==}
+    dependencies:
+      confbox: 0.1.7
+      mlly: 1.7.0
       pathe: 1.1.2
 
   /playwright-core@1.43.1:

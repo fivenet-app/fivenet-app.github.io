@@ -48,6 +48,11 @@ export default defineNuxtConfig({
         '@fontsource/dm-sans/800.css',
         '@fontsource/dm-sans/900.css',
     ],
+    vue: {
+        compilerOptions: {
+            comments: false,
+        },
+    },
     vite: {
         define: {
             __APP_VERSION__: `"${appVersion}"`,

@@ -20,7 +20,9 @@ title: "Qualifications"
     * Test Questions: Questions for the qualification tests.
     * User Test Answers: Answered questions "waiting for approval" by a "trainer".
 
-## Qualification Access Levels
+### Access Levels
+
+Similarily structured to documents access levels.
 
 * Blocked.
 * View.
@@ -28,3 +30,32 @@ title: "Qualifications"
 * Take.
 * Grade.
 * Edit.
+
+## Exams
+
+3 modes for a qualification with an exam:
+
+* Disabled.
+* Request needed.
+* Enabled.
+
+### Flow - Request needed
+
+<mermaid>
+sequenceDiagram
+    User->>+Qualification: Send Request
+    Approver-->Qualification: Approve Request
+    User-->Exam: Take exam
+    User->>Exam: Submit exam response
+    Approver->>Exam: Create Result
+</mermaid>
+
+### Flow - Enabled
+
+<mermaid>
+sequenceDiagram
+    User-->Exam: Take exam
+    User->>Exam: Submit exam response
+    Approver->>Exam: Create Result
+
+</mermaid>

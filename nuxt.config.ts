@@ -14,6 +14,7 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@nuxthq/studio',
         'nuxt-og-image',
+        "@nuxtjs/fontaine"
     ],
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)

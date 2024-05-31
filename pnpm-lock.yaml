@@ -46,8 +46,8 @@ importers:
         specifier: ^0.3.13
         version: 0.3.13(eslint@9.3.0)(typescript@5.4.5)
       '@nuxthq/studio':
-        specifier: ^1.1.1
-        version: 1.1.1(rollup@4.16.1)
+        specifier: ^1.1.2
+        version: 1.1.2(rollup@4.16.1)
       '@nuxtjs/i18n':
         specifier: ^8.3.1
         version: 8.3.1(rollup@4.16.1)(vue@3.4.23(typescript@5.4.5))
@@ -803,8 +803,8 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
-  '@nuxthq/studio@1.1.1':
-    resolution: {integrity: sha512-tAXsHn6mMxkSDQ1lh/xWEuJQ0Ex4b5dzbEv1/oQXYJaRYMY62mfA3zQIe5o8qIolZbmiW3sgPf7NvOkAcs/u9w==}
+  '@nuxthq/studio@1.1.2':
+    resolution: {integrity: sha512-YVEiIuU+5cLZ0qdLsRAYuFE395XoYf87UTR5xwxxpw9++uhlyLiQyO7JIXTTWIOdEiMHt8frrrLJBBPd5tHAeQ==}
 
   '@nuxtjs/color-mode@3.4.0':
     resolution: {integrity: sha512-rS51nG3zW8ksOwNubIP3BPQ+vBL0r2M6td1kkB/VaR1e1uVtNfWlBPfZjb604bgNCE2AeRNqaI0CrxkfnQ6h6Q==}
@@ -7209,7 +7209,7 @@ snapshots:
       - vti
       - vue-tsc
 
-  '@nuxthq/studio@1.1.1(rollup@4.16.1)':
+  '@nuxthq/studio@1.1.2(rollup@4.16.1)':
     dependencies:
       '@nuxt/kit': 3.11.2(rollup@4.16.1)
       defu: 6.1.4

@@ -53,6 +53,27 @@ export default defineNuxtSchema({
               description: 'Icon for hash anchors.',
               icon: 'i-ph-hash',
               default: 'i-heroicons-hashtag-20-solid'
+            }),
+            menu: field({
+              type: 'icon',
+              title: 'Menu',
+              description: 'Icon for menus.',
+              icon: 'i-ph-hamburger',
+              default: 'i-mdi-menu'
+            }),
+            close: field({
+              type: 'icon',
+              title: 'Close',
+              description: 'Icon for close.',
+              icon: 'i-ph-x',
+              default: 'i-mdi-window-close'
+            }),
+            check: field({
+              type: 'icon',
+              title: 'Check',
+              description: 'Icon for check.',
+              icon: 'i-ph-check',
+              default: 'i-mdi-check-circle'
             })
           }
         }),

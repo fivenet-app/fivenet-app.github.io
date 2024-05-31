@@ -61,6 +61,7 @@ jobs:
         env:
           NUXT_PUBLIC_SITE_URL: "https://fivenet.app/"
           NUXT_UI_PRO_LICENSE: "${{ secrets.NUXT_UI_PRO_LICENSE }}"
+          NUXT_PUBLIC_STUDIO_TOKENS: "${{ secrets.NUXT_PUBLIC_STUDIO_TOKENS }}"
         run: |
           pnpm generate
 

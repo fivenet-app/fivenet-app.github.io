@@ -2,43 +2,52 @@
 title: Templates
 ---
 
-**Note**: A template must render out to valid HTML.
+Templates can be used to make creating documents easier.
 
-Golang templating is used. In addition to base [Golang html/template functions](https://pkg.go.dev/html/template) [`sprig` template functions](https://masterminds.github.io/sprig/) are available for convience.
+::callout{icon="i-mdi-info-slab-circle"}
+Golang HTML templating is used.
+In addition to the base [Golang html/template functions](https://pkg.go.dev/html/template), the [`sprig` template functions](https://masterminds.github.io/sprig/) are available for convience.
+::
+
+Points to watch out when creating a template:
 
 - The whole template needs to be wrapped in `<p>` and `</p>`.
 - Use `<br>` for new lines.
 
+::callout{icon="i-mdi-warning-circle" color="amber"}
+A template must render out to valid HTML.
+::
+
 ## Available Variables
 
 - `.Documents` - List of documents that are in the user's clipboard.
-  * `.Id`
-  * `.CreatedAt`
-  * `.Title`
-  * `.State`
-  * `.CreatorId`
-  * `.Creator` - See [User Info Structure](#user-info-structure).
-  * `.Closed` - Boolean.
-  * `.CategoryId`
-  * `.Category`* `.Name`
-    * `.Description`
+  - `.Id`
+  - `.CreatedAt`
+  - `.Title`
+  - `.State`
+  - `.CreatorId`
+  - `.Creator` - See [User Info Structure](#user-info-structure).
+  - `.Closed` - Boolean.
+  - `.CategoryId`
+  - `.Category`- `.Name`
+    - `.Description`
 - `.Users` - List of citizens/ users that are in the user's clipboard.
-  * See [User Info Structure](#user-info-structure).
+  - See [User Info Structure](#user-info-structure).
 - `.Vehicles` - List of vehicles that are in the user's clipboard.
-  * `Plate`
-  * `Model`
-  * `Type`
-  * `Owner` - See [User Info Structure](#user-info-structure).
+  - `Plate`
+  - `Model`
+  - `Type`
+  - `Owner` - See [User Info Structure](#user-info-structure).
 - `.ActiveChar` - Author/Submitting user's info.
-  * See [User Info Structure](#user-info-structure).
+  - See [User Info Structure](#user-info-structure).
 
 ### User Info Structure
 
 - `.UserId`
 - `.Identifier`
-- `.Job`\* - Preferrably use `jobLabel`.
+- `.Job`\- - Preferrably use `jobLabel`.
 - `.JobLabel`\*
-- `.JobGrade`\* - Preferrably use `jobGradeLabel`.
+- `.JobGrade`\- - Preferrably use `jobGradeLabel`.
 - `.JobGradeLabel`\*
 - `.Firstname`
 - `.Lastname`
@@ -91,7 +100,7 @@ To learn more about different date and time formats, check out [the Golang `time
 
 ## Examples
 
-### Show List of Vehicles
+### Displaying a list of Vehicles
 
 ```gotemplate
 {{ if not .Vehicles }}

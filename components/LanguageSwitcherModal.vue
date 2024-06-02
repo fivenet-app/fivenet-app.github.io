@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { type LocaleObject } from 'vue-i18n-routing';
+import { type LocaleObject } from "vue-i18n-routing";
 
 const { t, locale, locales } = useI18n();
 
@@ -11,7 +11,7 @@ const languages = ref<LocaleObject[]>([]);
 
 onMounted(async () => {
     locales.value.forEach((lang) => {
-        if (typeof lang === 'string') {
+        if (typeof lang === "string") {
             return;
         }
 
@@ -20,7 +20,7 @@ onMounted(async () => {
             code: lang.code,
             name: lang.name!,
             iso: lang.iso!,
-            icon: lang.icon ?? 'i-mdi-question',
+            icon: lang.icon ?? "i-mdi-question",
         });
     });
 });
@@ -32,15 +32,15 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
         return;
     }
 
-    console.debug('Switching language to:', lang.name);
+    console.debug("Switching language to:", lang.name);
     preventClose.value = true;
 
     locale.value = lang.iso!;
 
     toast.add({
-        title: t('notifications.language_switched.title'),
-        description: t('notifications.language_switched.content'),
-        color: 'green',
+        title: t("notifications.language_switched.title"),
+        description: t("notifications.language_switched.content"),
+        color: "green",
         timeout: 1750,
         callback: () => reloadNuxtApp({ persistState: false, force: true }),
     });
@@ -49,11 +49,16 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
 
 <template>
     <UModal :prevent-close="preventClose">
-        <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+        <UCard
+            :ui="{
+                ring: '',
+                divide: 'divide-y divide-gray-100 dark:divide-gray-800',
+            }"
+        >
             <template #header>
                 <div class="flex items-center justify-between">
                     <h3 class="text-2xl font-semibold leading-6">
-                        {{ $t('components.language_switcher.title') }}
+                        {{ $t("components.language_switcher.title") }}
                     </h3>
 
                     <UButton
@@ -78,8 +83,14 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
             </UPageGrid>
 
             <template #footer>
-                <UButton block class="flex-1" color="black" :disabled="preventClose" @click="isOpen = false">
-                    {{ $t('common.close', 1) }}
+                <UButton
+                    block
+                    class="flex-1"
+                    color="black"
+                    :disabled="preventClose"
+                    @click="isOpen = false"
+                >
+                    {{ $t("common.close", 1) }}
                 </UButton>
             </template>
         </UCard>

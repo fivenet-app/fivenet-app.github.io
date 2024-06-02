@@ -1,22 +1,27 @@
 <script lang="ts" setup>
-import mermaid from 'mermaid';
+import mermaid from "mermaid";
 
-withDefaults(defineProps<{
-    init?: string;
-}>(), {
-    init: '%%{init: {\'theme\': \'dark\' } }%%',
-});
+withDefaults(
+    defineProps<{
+        init?: string;
+    }>(),
+    {
+        init: "%%{init: {'theme': 'dark' } }%%",
+    }
+);
 
 const diagramRef = ref<HTMLDivElement | null>(null);
 
 onMounted(() => {
     if (diagramRef.value) {
-        diagramRef.value.innerHTML = diagramRef.value.innerHTML.replace(/<\!--.*?-->/g, "");
+        diagramRef.value.innerHTML = diagramRef.value.innerHTML.replace(
+            /<\!--.*?-->/g,
+            ""
+        );
     }
 
     mermaid.initialize({
-        startOnLoad: true
-
+        startOnLoad: true,
     });
     mermaid.init();
 });

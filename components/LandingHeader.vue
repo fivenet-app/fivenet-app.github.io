@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LanguageSwitcherModal from './LanguageSwitcherModal.vue';
+import LanguageSwitcherModal from "./LanguageSwitcherModal.vue";
 
 const modal = useModal();
 </script>
@@ -10,7 +10,10 @@ const modal = useModal();
             <ULink class="inline-flex w-full items-center gap-2" to="/">
                 <img src="/images/logo-200x200.png" class="size-10" />
 
-                <span class="truncate font-semibold text-gray-900 dark:text-white">FiveNet</span>
+                <span
+                    class="truncate font-semibold text-gray-900 dark:text-white"
+                    >FiveNet</span
+                >
             </ULink>
         </template>
 

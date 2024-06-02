@@ -5,7 +5,12 @@ const year = new Date().getFullYear();
 <template>
     <UFooter :links="[]">
         <template #left>
-            <img src="/images/logo-200x200.png" alt="FiveNet Logo" title="FiveNet" class="mr-1 h-auto w-8" />
+            <img
+                src="/images/logo-200x200.png"
+                alt="FiveNet Logo"
+                title="FiveNet"
+                class="mr-1 h-auto w-8"
+            />
 
             <I18nT keypath="copyright">
                 <template #year>

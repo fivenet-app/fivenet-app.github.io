@@ -21,7 +21,7 @@
     "@nuxtjs/fontaine": "^0.4.2",
     "emoji-blast": "^0.10.0",
     "mermaid": "^10.9.1",
-    "nuxt": "^3.11.2",
+    "nuxt": "^3.12.1",
     "nuxt-og-image": "^2.2.4"
   },
   "devDependencies": {

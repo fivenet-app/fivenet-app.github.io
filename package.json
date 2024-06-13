@@ -12,26 +12,26 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@fontsource/dm-sans": "^5.0.21",
-    "@iconify-json/flagpack": "^1.1.14",
-    "@iconify-json/mdi": "^1.1.66",
-    "@iconify-json/simple-icons": "^1.1.105",
-    "@nuxt/content": "^2.12.1",
-    "@nuxt/ui-pro": "^1.2.0",
-    "@nuxtjs/fontaine": "^0.4.2",
-    "emoji-blast": "^0.10.0",
-    "mermaid": "^10.9.1",
-    "nuxt-og-image": "^2.2.4"
+    "@fontsource/dm-sans": "5.0.21",
+    "@iconify-json/flagpack": "1.1.14",
+    "@iconify-json/mdi": "1.1.66",
+    "@iconify-json/simple-icons": "1.1.105",
+    "@nuxt/content": "2.12.1",
+    "@nuxt/ui-pro": "1.2.0",
+    "@nuxtjs/fontaine": "0.4.2",
+    "emoji-blast": "0.10.0",
+    "mermaid": "10.9.1",
+    "nuxt-og-image": "2.2.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.3.13",
-    "@nuxthq/studio": "^1.1.2",
-    "@nuxtjs/i18n": "^8.3.1",
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@pinia/nuxt": "^0.5.1",
-    "eslint": "^9.4.0",
-    "nuxt": "^3.11.2",
-    "vue-i18n-routing": "^1.2.0",
-    "vue-tsc": "^2.0.21"
+    "@nuxt/eslint-config": "0.3.13",
+    "@nuxthq/studio": "2.0.0",
+    "@nuxtjs/i18n": "8.3.1",
+    "@pinia-plugin-persistedstate/nuxt": "1.2.0",
+    "@pinia/nuxt": "0.5.1",
+    "eslint": "9.4.0",
+    "nuxt": "3.11.2",
+    "vue-i18n-routing": "1.2.0",
+    "vue-tsc": "2.0.21"
   }
 }

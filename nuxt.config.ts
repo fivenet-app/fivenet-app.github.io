@@ -6,6 +6,7 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 export default defineNuxtConfig({
     telemetry: false,
     extends: ['@nuxt/ui-pro'],
+
     modules: [
         '@nuxt/content',
         '@nuxt/ui',
@@ -14,8 +15,16 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@nuxthq/studio',
         'nuxt-og-image',
-        '@nuxtjs/fontaine'
+        '@nuxtjs/fontaine',
+        "@nuxt/image"
     ],
+
+    future: {
+        compatibilityVersion: 4,
+    },
+
+    compatibilityDate: '2024-07-05',
+
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
         'components:extend': (components) => {
@@ -24,19 +33,24 @@ export default defineNuxtConfig({
             globals.forEach((c) => (c.global = true));
         },
     },
+
     ui: {
         icons: ['mdi', 'simple-icons', 'flagpack'],
         safelistColors: ['primary', 'malibu'],
     },
+
     routeRules: {
         '/api/search.json': { prerender: true },
     },
+
     devtools: {
         enabled: true,
     },
+
     typescript: {
         strict: false,
     },
+
     css: [
         // DM Sans font (all weights)
         '@fontsource/dm-sans/100.css',
@@ -49,16 +63,19 @@ export default defineNuxtConfig({
         '@fontsource/dm-sans/800.css',
         '@fontsource/dm-sans/900.css',
     ],
+
     vue: {
         compilerOptions: {
             comments: false,
         },
     },
+
     vite: {
         define: {
             __APP_VERSION__: `"${appVersion}"`,
         },
     },
+
     i18n: {
         strategy: STRATEGIES.PREFIX_EXCEPT_DEFAULT,
         detectBrowserLanguage: {
@@ -95,6 +112,7 @@ export default defineNuxtConfig({
         },
         parallelPlugin: true,
     },
+
     piniaPersistedstate: {
         storage: 'localStorage',
         debug: false,

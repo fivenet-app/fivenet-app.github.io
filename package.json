@@ -25,12 +25,13 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.3.13",
+    "@nuxt/image": "1.7.0",
     "@nuxthq/studio": "2.0.3",
     "@nuxtjs/i18n": "8.3.1",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
     "@pinia/nuxt": "0.5.1",
     "eslint": "9.6.0",
-    "nuxt": "3.12.3",
+    "nuxt": "3.12.2",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "2.0.26"
   }

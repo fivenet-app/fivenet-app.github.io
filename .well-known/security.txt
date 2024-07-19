@@ -1,0 +1,4 @@
+Contact: https://github.com/fivenet-app/fivenet/blob/main/SECURITY.md
+Expires: 2025-01-01T12:00:00.000Z
+Preferred-Languages: en, de
+Policy: https://github.com/fivenet-app/fivenet/blob/main/SECURITY.md

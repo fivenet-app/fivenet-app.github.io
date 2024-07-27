@@ -13,6 +13,8 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n',
         '@pinia/nuxt',
         '@pinia-plugin-persistedstate/nuxt',
+        '@nuxt/fonts',
+        '@nuxtjs/fontaine',
         '@nuxthq/studio',
         'nuxt-og-image',
         '@nuxtjs/fontaine',
@@ -39,6 +41,10 @@ export default defineNuxtConfig({
         safelistColors: ['primary', 'malibu'],
     },
 
+    fonts: {
+        families: [{ name: 'DM Sans', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900], global: true }],
+    },
+
     routeRules: {
         '/api/search.json': { prerender: true },
     },
@@ -50,19 +56,6 @@ export default defineNuxtConfig({
     typescript: {
         strict: false,
     },
-
-    css: [
-        // DM Sans font (all weights)
-        '@fontsource/dm-sans/100.css',
-        '@fontsource/dm-sans/200.css',
-        '@fontsource/dm-sans/300.css',
-        '@fontsource/dm-sans/400.css',
-        '@fontsource/dm-sans/500.css',
-        '@fontsource/dm-sans/600.css',
-        '@fontsource/dm-sans/700.css',
-        '@fontsource/dm-sans/800.css',
-        '@fontsource/dm-sans/900.css',
-    ],
 
     vue: {
         compilerOptions: {

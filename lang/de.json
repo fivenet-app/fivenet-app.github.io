@@ -21,7 +21,27 @@
         "decline": "Ablehnen",
         "accept": "Akzeptieren",
         "imprint": "Impressum",
-        "privacy_policy": "Datenschutzerklärung"
+        "privacy_policy": "Datenschutzerklärung",
+        "time_ago": {
+            "just-now": "gerade jetzt",
+            "ago": "vor {0}",
+            "in": "in {0}",
+            "last-month": "Letzter Monat",
+            "next-month": "Nächster Monat",
+            "month": "Monat | Monate",
+            "last-year": "Letztes Jahr",
+            "next-year": "Nächstes Jahr",
+            "year": "Jahr | Jahre",
+            "yesterday": "gestern",
+            "tomorrow": "morgen",
+            "day": "Tag | Tage",
+            "last-week": "Letzte Woche",
+            "next-week": "Nächste Woche",
+            "week": "Woche | Wochen",
+            "hour": "Stunde | Stunden",
+            "minute": "Minute | Minuten",
+            "second": "Sekunde | Sekunden"
+        }
     },
     "notifications": {
         "language_switched": {
@@ -99,6 +119,17 @@
         },
         "language_switcher": {
             "title": "Sprache wechseln"
+        },
+        "stats": {
+            "title": "FiveNet in Zahlen",
+            "stats": {
+                "users_registered": "Benutzer registriert",
+                "documents_created": "Dokumente erstellt",
+                "dispatches_created": "Notrufe abgesetzt",
+                "citizen_activity": "Bürgeraktivitäten protokolliert",
+                "timeclock_tracked": "Dienstzeit erfasst",
+                "citizens_total": "Bürgerakten geführt"
+            }
         }
     }
 }

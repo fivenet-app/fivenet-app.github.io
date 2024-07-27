@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import CountUp from "vue-countup-v3";
 import "~/assets/css/herofull-pattern.css";
 
 const { data: page } = await useAsyncData("index", () =>
@@ -169,6 +170,47 @@ const cta = {
                     />
                 </ULink>
             </ULandingLogos>
+        </ULandingSection>
+
+        <ULandingSection :title="$t('components.stats.title')" class="!pt-0">
+            <UPageGrid>
+                <ULandingCard
+                    v-for="stat in page.stats"
+                    :key="stat.key"
+                    :title="$t(`components.stats.stats.${stat.key}`)"
+                    :icon="stat.icon"
+                >
+                    <template #description>
+                        <p
+                            class="mt-2 flex w-full items-center gap-x-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            <template v-if="stat.type === 'seconds'">
+                                {{
+                                    fromSecondsToFormattedDuration(
+                                        stat.number,
+                                        {
+                                            seconds: false,
+                                            emptyText: "common.none",
+                                        }
+                                    )
+                                }}
+                            </template>
+                            <template v-else-if="stat.type === 'unit'">
+                                {{ stat.number }}
+                                {{ $t(stat.unit ?? "common.time_ago.week", 2) }}
+                            </template>
+                            <ClientOnly v-else>
+                                <CountUp
+                                    :end-val="stat.number"
+                                    :options="{ enableScrollSpy: true }"
+                                />
+                            </ClientOnly>
+
+                            <span v-if="!stat.hidePlus"> + </span>
+                        </p>
+                    </template>
+                </ULandingCard>
+            </UPageGrid>
         </ULandingSection>
 
         <ULandingSection

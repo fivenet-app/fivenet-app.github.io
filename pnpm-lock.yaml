@@ -29,6 +29,9 @@ dependencies:
   nuxt-og-image:
     specifier: 2.2.6
     version: 2.2.6(@nuxt/devtools@1.3.9)(@vue/compiler-core@3.4.33)(nuxt@3.12.4)(postcss@8.4.39)(rollup@4.19.0)(vite@5.3.4)(vue@3.4.33)(webpack@5.93.0)
+  vue-countup-v3:
+    specifier: ^1.4.2
+    version: 1.4.2(vue@3.4.33)
 
 devDependencies:
   '@nuxt/eslint-config':
@@ -4715,6 +4718,10 @@ packages:
     resolution: {integrity: sha512-s9whTXInMSgAp/NVXVNuVxVKzGH2qck3aQlVHxDCdAEPgtMKwc4Wq6/QKhgdEdgbLSi9rBTAcPoRa6JpiG4ksg==}
     dependencies:
       layout-base: 1.0.2
+    dev: false
+
+  /countup.js@2.8.0:
+    resolution: {integrity: sha512-f7xEhX0awl4NOElHulrl4XRfKoNH3rB+qfNSZZyjSZhaAoUk6elvhH+MNxMmlmuUJ2/QNTWPSA7U4mNtIAKljQ==}
     dev: false
 
   /crc-32@1.2.2:
@@ -11206,6 +11213,15 @@ packages:
   /vue-component-type-helpers@1.8.27:
     resolution: {integrity: sha512-0vOfAtI67UjeO1G6UiX5Kd76CqaQ67wrRZiOe7UAb9Jm6GzlUr/fC7CV90XfwapJRjpCMaZFhv1V0ajWRmE9Dg==}
     dev: true
+
+  /vue-countup-v3@1.4.2(vue@3.4.33):
+    resolution: {integrity: sha512-nRC65jBcdgwybxqztgd/WaK8ZN5T9ECPyiCFGYFMewCsvqdRVo1CtpT7JREcPNF837Fgu/izTSFiuzrIGD6w0A==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      countup.js: 2.8.0
+      vue: 3.4.33(typescript@5.5.3)
+    dev: false
 
   /vue-demi@0.14.8(vue@3.4.33):
     resolution: {integrity: sha512-Uuqnk9YE9SsWeReYqK2alDI5YzciATE0r2SkA6iMAtuXvNTMNACJLJEXNXaEy94ECuBe4Sk6RzRU80kjdbIo1Q==}

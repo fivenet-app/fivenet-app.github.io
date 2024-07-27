@@ -110,4 +110,8 @@ export default defineNuxtConfig({
         storage: 'localStorage',
         debug: false,
     },
+
+    build: {
+        transpile: ['vue-countup-v3'],
+    },
 });

@@ -19,7 +19,7 @@ onMounted(async () => {
         languages.value.push({
             code: lang.code,
             name: lang.name!,
-            iso: lang.iso!,
+            language: lang.language!,
             icon: lang.icon ?? "i-mdi-question",
         });
     });
@@ -28,14 +28,14 @@ onMounted(async () => {
 const preventClose = ref(false);
 
 async function switchLanguage(lang: LocaleObject): Promise<void> {
-    if (locale.value === lang.iso) {
+    if (locale.value === lang.language) {
         return;
     }
 
     console.debug("Switching language to:", lang.name);
     preventClose.value = true;
 
-    locale.value = lang.iso!;
+    locale.value = lang.language!;
 
     toast.add({
         title: t("notifications.language_switched.title"),

@@ -14,7 +14,7 @@
   "dependencies": {
     "@iconify-json/flagpack": "1.1.15",
     "@iconify-json/mdi": "1.1.68",
-    "@iconify-json/simple-icons": "1.1.114",
+    "@iconify-json/simple-icons": "1.1.115",
     "@nuxt/content": "2.13.2",
     "@nuxt/ui-pro": "1.4.1",
     "emoji-blast": "0.10.1",
@@ -23,9 +23,9 @@
     "vue-countup-v3": "^1.4.2"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "0.5.2",
+    "@nuxt/eslint-config": "0.5.3",
     "@nuxt/fonts": "^0.7.2",
-    "@nuxt/image": "1.7.0",
+    "@nuxt/image": "1.7.1",
     "@nuxthq/studio": "2.0.3",
     "@nuxtjs/fontaine": "0.4.3",
     "@nuxtjs/i18n": "8.5.1",
@@ -34,7 +34,7 @@
     "eslint": "9.9.1",
     "nuxt": "3.13.0",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "2.0.29"
+    "vue-tsc": "2.1.2"
   },
-  "packageManager": "pnpm@9.7.1"
+  "packageManager": "pnpm@9.9.0"
 }

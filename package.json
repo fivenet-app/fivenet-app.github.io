@@ -34,7 +34,7 @@
     "eslint": "9.9.1",
     "nuxt": "3.13.0",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "2.1.4"
+    "vue-tsc": "2.1.6"
   },
   "packageManager": "pnpm@9.9.0"
 }

@@ -28,7 +28,7 @@
     "@nuxt/image": "1.8.0",
     "@nuxthq/studio": "2.0.3",
     "@nuxtjs/fontaine": "0.4.3",
-    "@nuxtjs/i18n": "8.5.1",
+    "@nuxtjs/i18n": "8.5.2",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
     "@pinia/nuxt": "0.5.4",
     "eslint": "9.9.1",

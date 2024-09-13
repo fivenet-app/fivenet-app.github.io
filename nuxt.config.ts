@@ -37,8 +37,11 @@ export default defineNuxtConfig({
     },
 
     ui: {
-        icons: ['mdi', 'simple-icons', 'flagpack'],
         safelistColors: ['primary', 'malibu'],
+    },
+    icon: {
+        collections: ['mdi', 'simple-icons', 'flagpack'],
+        serverBundle: 'local',
     },
 
     fonts: {

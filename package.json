@@ -20,11 +20,11 @@
     "emoji-blast": "0.10.1",
     "mermaid": "11.2.0",
     "nuxt-og-image": "3.0.2",
-    "vue-countup-v3": "^1.4.2"
+    "vue-countup-v3": "1.4.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "0.5.7",
-    "@nuxt/fonts": "^0.8.0",
+    "@nuxt/fonts": "0.8.0",
     "@nuxt/image": "1.8.0",
     "@nuxthq/studio": "2.1.0",
     "@nuxtjs/fontaine": "0.4.3",
@@ -32,7 +32,7 @@
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
     "@pinia/nuxt": "0.5.4",
     "eslint": "9.10.0",
-    "nuxt": "3.13.0",
+    "nuxt": "3.13.1",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "2.1.6"
   },

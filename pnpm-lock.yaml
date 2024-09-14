@@ -36,6 +36,9 @@ importers:
         specifier: 1.4.2
         version: 1.4.2(vue@3.5.3(typescript@5.5.4))
     devDependencies:
+      '@iconify-json/ph':
+        specifier: ^1.2.0
+        version: 1.2.0
       '@nuxt/eslint-config':
         specifier: 0.5.7
         version: 0.5.7(eslint@9.10.0(jiti@1.21.6))(typescript@5.5.4)
@@ -775,6 +778,9 @@ packages:
 
   '@iconify-json/mdi@1.2.0':
     resolution: {integrity: sha512-E9/3l5Syg3wfuarorFodhn4s8YorxhH3U3U20LaNBNiqw1kFNIDWhF6HymuzAD35k7RH0OBasJ+ZUyFtVVV6eg==}
+
+  '@iconify-json/ph@1.2.0':
+    resolution: {integrity: sha512-013eLpgTmX1lACOuDnkuhC7gRHyYj9w/j8SyDmlyUYvsKQrwdRsv1otcXtwH3DevuDAzSkreeeRsCeez+gTyVA==}
 
   '@iconify-json/simple-icons@1.2.2':
     resolution: {integrity: sha512-VMgCoMnpvcCJ5b3rTOGPzW5j6959nIdRCk+8FGzK/vAaDd6f9sx65OcKOqP3C75llpybH/iQhk5yrJ/TOdQKeg==}
@@ -6434,6 +6440,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/mdi@1.2.0':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/ph@1.2.0':
     dependencies:
       '@iconify/types': 2.0.0
 

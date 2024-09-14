@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import type { NavItem, ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { NavItem, ParsedContent } from "@nuxt/content";
 
-const { t } = useI18n();
+const { finalizePendingLocaleChange, t } = useI18n();
+
+const toast = useToast();
 
 const { data: navigation } = await useAsyncData<NavItem[]>(
     "navigation",
@@ -44,6 +46,25 @@ useSeoMeta({
     twitterCard: "summary_large_image",
 });
 
+const onBeforeEnter = async () => {
+    await finalizePendingLocaleChange();
+};
+
+const route = useRoute();
+
+onMounted(() => {
+    if (route.query.locale_switched === undefined) {
+        return;
+    }
+
+    toast.add({
+        title: t("notifications.language_switched.title"),
+        description: t("notifications.language_switched.content"),
+        color: "green",
+        timeout: 1750,
+    });
+});
+
 provide("navigation", navigation);
 </script>
 
@@ -55,7 +76,11 @@ provide("navigation", navigation);
 
         <UMain>
             <NuxtLayout>
-                <NuxtPage />
+                <NuxtPage
+                    :transition="{
+                        onBeforeEnter,
+                    }"
+                />
             </NuxtLayout>
         </UMain>
 

@@ -46,7 +46,7 @@
     "notifications": {
         "language_switched": {
             "title": "Sprache gewechselt",
-            "content": "Sprache wird zu {name} gewechselt."
+            "content": "Sprache wurde zu {name} gewechselt."
         }
     },
     "docs": {

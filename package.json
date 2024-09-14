@@ -23,6 +23,7 @@
     "vue-countup-v3": "1.4.2"
   },
   "devDependencies": {
+    "@iconify-json/ph": "^1.2.0",
     "@nuxt/eslint-config": "0.5.7",
     "@nuxt/fonts": "0.8.0",
     "@nuxt/image": "1.8.0",

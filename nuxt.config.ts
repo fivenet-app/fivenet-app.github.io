@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@nuxt/fonts',
         '@nuxtjs/fontaine',
-	// Disabled due to https://github.com/nuxt/nuxt/issues/26798
+        // Disabled due to https://github.com/nuxt/nuxt/issues/26798
         //'@nuxthq/studio',
         'nuxt-og-image',
         '@nuxtjs/fontaine',
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
         safelistColors: ['primary', 'malibu'],
     },
     icon: {
-        collections: ['mdi', 'simple-icons', 'flagpack'],
+        collections: ['ph', 'mdi', 'simple-icons', 'flagpack'],
         serverBundle: 'local',
     },
 
@@ -76,7 +76,7 @@ export default defineNuxtConfig({
     i18n: {
         strategy: STRATEGIES.PREFIX_EXCEPT_DEFAULT,
         detectBrowserLanguage: {
-            useCookie: false,
+            useCookie: true,
         },
         skipSettingLocaleOnNavigate: true,
         locales: [

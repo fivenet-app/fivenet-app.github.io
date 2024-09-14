@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import { type LocaleObject } from "vue-i18n-routing";
 
-const { t, locale, locales } = useI18n();
-
-const toast = useToast();
+const { locale, locales, setLocale } = useI18n();
 
 const { isOpen } = useModal();
 
@@ -35,14 +33,12 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
     console.debug("Switching language to:", lang.name);
     preventClose.value = true;
 
-    locale.value = lang.language!;
+    await setLocale(locale.value);
 
-    toast.add({
-        title: t("notifications.language_switched.title"),
-        description: t("notifications.language_switched.content"),
-        color: "green",
-        timeout: 1750,
-        callback: () => reloadNuxtApp({ persistState: false, force: true }),
+    reloadNuxtApp({
+        persistState: false,
+        force: true,
+        path: useRoute().path + "?locale_switched=1",
     });
 }
 </script>

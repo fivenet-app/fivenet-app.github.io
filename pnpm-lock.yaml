@@ -55,8 +55,8 @@ importers:
         specifier: 0.4.3
         version: 0.4.3(magicast@0.3.5)(rollup@4.21.0)(webpack-sources@3.2.3)
       '@nuxtjs/i18n':
-        specifier: 8.5.4
-        version: 8.5.4(magicast@0.3.5)(rollup@4.21.0)(vue@3.5.5(typescript@5.5.4))(webpack-sources@3.2.3)
+        specifier: 8.5.5
+        version: 8.5.5(magicast@0.3.5)(rollup@4.21.0)(vue@3.5.5(typescript@5.5.4))(webpack-sources@3.2.3)
       '@pinia-plugin-persistedstate/nuxt':
         specifier: 1.2.1
         version: 1.2.1(@pinia/nuxt@0.5.4(magicast@0.3.5)(rollup@4.21.0)(typescript@5.5.4)(vue@3.5.5(typescript@5.5.4))(webpack-sources@3.2.3))(magicast@0.3.5)(pinia@2.2.2(typescript@5.5.4)(vue@3.5.5(typescript@5.5.4)))(rollup@4.21.0)(webpack-sources@3.2.3)
@@ -1052,8 +1052,8 @@ packages:
   '@nuxtjs/fontaine@0.4.3':
     resolution: {integrity: sha512-2bERBEzJgyKSjUGnQoj4kEFiAQErrG9rpBqzVLVMNTB59Fmep/j77CqT7j7yIKKfsr2W+n5nC7WPjp2bHi994Q==}
 
-  '@nuxtjs/i18n@8.5.4':
-    resolution: {integrity: sha512-8onnhHHUhKwZm7CKMDNGmLCJMt7Af0Y4VaYJ/hEvKT9O9sd1MKvGMQKNefBeSOggllRU2iOgcqCsb5qozPVP5A==}
+  '@nuxtjs/i18n@8.5.5':
+    resolution: {integrity: sha512-HVXRy61VBACIwmap1WxuhT9nNf6liU9L9LQSB6D7LDJ+8w57Cc6qWHRJ7dNI9sI/IQ2FQWk7PkTWriybAd3MlQ==}
     engines: {node: ^14.16.0 || >=16.11.0}
 
   '@nuxtjs/mdc@0.8.3':
@@ -7235,7 +7235,7 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@nuxtjs/i18n@8.5.4(magicast@0.3.5)(rollup@4.21.0)(vue@3.5.5(typescript@5.5.4))(webpack-sources@3.2.3)':
+  '@nuxtjs/i18n@8.5.5(magicast@0.3.5)(rollup@4.21.0)(vue@3.5.5(typescript@5.5.4))(webpack-sources@3.2.3)':
     dependencies:
       '@intlify/h3': 0.5.0
       '@intlify/shared': 9.14.0

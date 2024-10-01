@@ -15,8 +15,7 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@nuxt/fonts',
         '@nuxtjs/fontaine',
-        // Disabled due to https://github.com/nuxt/nuxt/issues/26798
-        //'@nuxthq/studio',
+        '@nuxthq/studio',
         'nuxt-og-image',
         '@nuxtjs/fontaine',
         "@nuxt/image"

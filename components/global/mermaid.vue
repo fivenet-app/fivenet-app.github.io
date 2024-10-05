@@ -23,7 +23,7 @@ onMounted(() => {
     mermaid.initialize({
         startOnLoad: true,
     });
-    mermaid.init();
+    mermaid.run({});
 });
 </script>
 

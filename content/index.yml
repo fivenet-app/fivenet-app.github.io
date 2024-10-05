@@ -3,9 +3,12 @@ logos:
     - image: "modernv.png"
       alt: "ModernV"
       to: "https://modernv.net/"
-    - image: "flashliferp.png"
-      alt: "Flashlife Roleplay"
-      to: "https://discord.gg/nmd6FC7n"
+    - image: "mysticv.png"
+      alt: "MysticV"
+      to: "https://discord.gg/mysticv"
+    - image: "varocity.png"
+      alt: "VaroCity"
+      to: "https://discord.gg/varocity"
 
 stats:
   - key: users_registered

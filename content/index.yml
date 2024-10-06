@@ -6,9 +6,9 @@ logos:
     - image: "mysticv.png"
       alt: "MysticV"
       to: "https://discord.gg/mysticv"
-    - image: "varocity.png"
-      alt: "VaroCity"
-      to: "https://discord.gg/varocity"
+    - image: "derpde.png"
+      alt: "DE-RP.de"
+      to: "https://discord.gg/derpde"
 
 stats:
   - key: users_registered

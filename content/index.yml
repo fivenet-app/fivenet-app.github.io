@@ -6,9 +6,9 @@ logos:
     - image: "mysticv.png"
       alt: "MysticV"
       to: "https://discord.gg/mysticv"
-    - image: "derpde.png"
-      alt: "DE-RP.de"
-      to: "https://discord.gg/derpde"
+    - image: "malagacity.png"
+      alt: "MalagaCity"
+      to: "https://discord.gg/malagacity"
 
 stats:
   - key: users_registered

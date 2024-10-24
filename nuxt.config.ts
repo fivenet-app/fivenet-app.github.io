@@ -117,4 +117,10 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vue-countup-v3'],
     },
+
+    content: {
+        highlight: {
+            langs: ['js','jsx','json','ts','tsx','vue','css','html','vue','bash','md','mdc','yaml', 'sql', 'go', 'yml', 'console'],
+        },
+    },
 });

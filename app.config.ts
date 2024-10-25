@@ -11,7 +11,6 @@ export default defineAppConfig({
         },
 
         icons: {
-            dynamic: true,
             // Nuxt UI Pro Icons
             dark: "i-mdi-moon-and-stars",
             light: "i-mdi-weather-sunny",

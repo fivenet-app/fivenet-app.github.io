@@ -8,7 +8,7 @@ definePageMeta({
 const { t } = useI18n();
 
 const route = useRoute();
-const { toc, seo } = useAppConfig();
+const { toc } = useAppConfig();
 
 const { data: page } = await useAsyncData(route.path, () =>
     queryContent(route.path).findOne()
@@ -37,8 +37,10 @@ useSeoMeta({
 
 defineOgImage({
     component: "Docs",
-    title: page.value.title,
-    description: page.value.description,
+    props: {
+        title: page.value.title,
+        description: page.value.description,
+    },
 });
 
 const headline = computed(() => findPageHeadline(page.value));

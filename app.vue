@@ -48,8 +48,8 @@ useSeoMeta({
         return title ? `${title} - FiveNet` : "FiveNet";
     },
     ogSiteName: "FiveNet",
-    ogImage: "/images/social-card.png",
-    twitterImage: "/images/social-card.png",
+    ogImage: "/social-card.png",
+    twitterImage: "/social-card.png",
     twitterCard: "summary_large_image",
 });
 

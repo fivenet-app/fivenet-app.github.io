@@ -24,10 +24,10 @@
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.2.1",
-    "@nuxt/eslint-config": "0.6.0",
+    "@nuxt/eslint-config": "0.6.1",
     "@nuxt/fonts": "0.10.2",
     "@nuxt/image": "1.8.1",
-    "@nuxthq/studio": "2.1.1",
+    "@nuxthq/studio": "2.2.0",
     "@nuxtjs/fontaine": "0.4.3",
     "@nuxtjs/i18n": "8.5.5",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",

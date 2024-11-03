@@ -31,7 +31,7 @@
     "@nuxtjs/fontaine": "0.4.3",
     "@nuxtjs/i18n": "8.5.6",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
-    "@pinia/nuxt": "0.6.1",
+    "@pinia/nuxt": "0.7.0",
     "eslint": "9.14.0",
     "nuxt": "3.13.2",
     "vue-i18n-routing": "1.2.0",

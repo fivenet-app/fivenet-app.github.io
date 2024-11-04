@@ -24,8 +24,8 @@ importers:
         specifier: 1.4.4
         version: 1.4.4(change-case@5.4.4)(focus-trap@7.5.4)(magicast@0.3.5)(rollup@4.24.4)(vite@5.4.10(@types/node@22.5.0)(terser@5.31.6))(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)
       emoji-blast:
-        specifier: 0.10.1
-        version: 0.10.1
+        specifier: 0.10.2
+        version: 0.10.2
       mermaid:
         specifier: 11.4.0
         version: 11.4.0
@@ -2996,8 +2996,8 @@ packages:
   electron-to-chromium@1.5.47:
     resolution: {integrity: sha512-zS5Yer0MOYw4rtK2iq43cJagHZ8sXN0jDHDKzB+86gSBSAI4v07S97mcq+Gs2vclAxSh1j7vOAHxSVgduiiuVQ==}
 
-  emoji-blast@0.10.1:
-    resolution: {integrity: sha512-4e3vWOWhLdTEemJ+sP1mDJ5dvlwLSHrJsU9csqkJQNBw5JkGJjHVOLwIWnS3VuanzIgtSkpv0Sd7usReQyyPQw==}
+  emoji-blast@0.10.2:
+    resolution: {integrity: sha512-3VrqajirPj8QeQxQeMHUfD+03H64XTEVPGRjxP5rjDCVEC5NGF3FgutMpU5scIOhcuzG23Qvs32k0Pnj+hRzGA==}
     engines: {node: '>=18'}
 
   emoji-regex@10.3.0:
@@ -9840,7 +9840,7 @@ snapshots:
 
   electron-to-chromium@1.5.47: {}
 
-  emoji-blast@0.10.1: {}
+  emoji-blast@0.10.2: {}
 
   emoji-regex@10.3.0: {}
 

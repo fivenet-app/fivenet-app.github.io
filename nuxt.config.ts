@@ -68,7 +68,7 @@ export default defineNuxtConfig({
 
     vite: {
         define: {
-            __APP_VERSION__: `"${appVersion}"`,
+            APP_VERSION: `"${appVersion}"`,
         },
     },
 
@@ -96,9 +96,7 @@ export default defineNuxtConfig({
                 icon: 'i-flagpack-de',
             },
         ],
-        debug: false,
         lazy: true,
-        langDir: './lang',
         defaultLocale: 'en',
         defaultDirection: 'ltr',
         baseUrl: '',

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import type { ButtonSize, ButtonColor } from "#ui/types";
 import CountUp from "vue-countup-v3";
 import "~/assets/css/herofull-pattern.css";
 
@@ -18,13 +19,13 @@ definePageMeta({
 
 const { t } = useI18n();
 
-const appVersion = __APP_VERSION__.split("-")[0];
+const appVersion = APP_VERSION.split("-")[0];
 
 const links = [
     {
         label: t("common.docs"),
         icon: "i-mdi-book-open-variant-outline",
-        size: "lg",
+        size: "lg" as ButtonSize,
         to: "/getting-started",
     },
 ];
@@ -36,9 +37,9 @@ const features = {
         {
             label: t("docs.features.links.explore.label"),
             trailingIcon: "i-mdi-arrow-right",
-            color: "gray",
+            color: "gray" as ButtonColor,
             to: "/getting-started",
-            size: "lg",
+            size: "lg" as ButtonSize,
         },
     ],
     items: [

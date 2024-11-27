@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { type LocaleObject } from "vue-i18n-routing";
+import type { LocaleObject } from "vue-i18n-routing";
 
 const { locale, locales, setLocale } = useI18n();
 
@@ -13,7 +13,6 @@ onMounted(async () => {
             return;
         }
 
-        lang = lang as LocaleObject;
         languages.value.push({
             code: lang.code,
             name: lang.name!,
@@ -30,7 +29,7 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
         return;
     }
 
-    console.debug("Switching language to:", lang.name);
+    console.info("Switching language to:", lang.name);
     preventClose.value = true;
 
     await setLocale(locale.value);

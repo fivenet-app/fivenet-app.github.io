@@ -32,7 +32,7 @@
     "@nuxtjs/i18n": "9.1.0",
     "@pinia-plugin-persistedstate/nuxt": "1.2.1",
     "@pinia/nuxt": "0.8.0",
-    "eslint": "9.15.0",
+    "eslint": "9.16.0",
     "nuxt": "3.14.1592",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "2.1.10"

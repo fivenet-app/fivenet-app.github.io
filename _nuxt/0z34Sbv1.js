@@ -1,1 +1,0 @@
-import{E as r,F as s,G as t,r as n}from"./D4ttrYv4.js";const o={};function a(e,c){return s(),t("td",null,[n(e.$slots,"default")])}const _=Object.assign(r(o,[["render",a]]),{__name:"ProseTd"});export{_ as default};

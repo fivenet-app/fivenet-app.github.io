@@ -1,1 +1,0 @@
-import{E as r,F as s,G as a,r as t}from"./gNZnsPAx.js";const n={};function o(e,c){return s(),a("thead",null,[t(e.$slots,"default")])}const _=Object.assign(r(n,[["render",o]]),{__name:"ProseThead"});export{_ as default};

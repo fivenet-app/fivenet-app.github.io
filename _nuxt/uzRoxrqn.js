@@ -1,1 +1,0 @@
-import{E as r,F as s,G as n,r as o}from"./gNZnsPAx.js";const t={};function a(e,c){return s(),n("p",null,[o(e.$slots,"default")])}const _=Object.assign(r(t,[["render",a]]),{__name:"ProseP"});export{_ as default};

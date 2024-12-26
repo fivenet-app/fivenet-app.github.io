@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         '@nuxt/ui',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
-        '@pinia-plugin-persistedstate/nuxt',
+        'pinia-plugin-persistedstate/nuxt',
         '@nuxt/fonts',
         '@nuxtjs/fontaine',
         '@nuxthq/studio',

@@ -6,9 +6,9 @@ logos:
     - image: "mysticv.png"
       alt: "MysticV"
       to: "https://discord.gg/mysticv"
-    - image: "malagacity.png"
-      alt: "MalagaCity"
-      to: "https://discord.gg/malagacity"
+    - image: "strokee-roleplay.png"
+      alt: "Strokee Roleplay"
+      to: "https://discord.gg/strokee"
 
 stats:
   - key: users_registered

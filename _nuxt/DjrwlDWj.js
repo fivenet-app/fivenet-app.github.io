@@ -1,1 +1,0 @@
-import{E as r,F as s,G as n,r as o}from"./BBEZPIHt.js";const t={};function a(e,c){return s(),n("ul",null,[o(e.$slots,"default")])}const _=Object.assign(r(t,[["render",a]]),{__name:"ProseUl"});export{_ as default};

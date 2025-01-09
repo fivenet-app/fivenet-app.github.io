@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@iconify-json/ph": "1.2.2",
-    "@nuxt/eslint-config": "0.7.4",
+    "@nuxt/eslint-config": "0.7.5",
     "@nuxt/fonts": "0.10.3",
     "@nuxt/image": "1.9.0",
     "@nuxthq/studio": "2.2.1",

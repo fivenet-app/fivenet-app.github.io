@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { NavItem } from "@nuxt/content";
-import LanguageSwitcherModal from "./LanguageSwitcherModal.vue";
+//import LanguageSwitcherModal from "./LanguageSwitcherModal.vue";
 
 const navigation = inject<NavItem[]>("navigation", []);
 
-const modal = useModal();
+//const modal = useModal();
 </script>
 
 <template>
@@ -27,12 +27,14 @@ const modal = useModal();
         <template #right>
             <UContentSearchButton :label="null" class="lg:hidden" />
 
+            <!--
             <UButton
                 :label="$t('common.language')"
                 icon="i-mdi-translate"
                 color="gray"
                 @click="modal.open(LanguageSwitcherModal, {})"
             />
+            -->
 
             <UColorModeButton />
         </template>

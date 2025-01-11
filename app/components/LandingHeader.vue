@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import LanguageSwitcherModal from "./LanguageSwitcherModal.vue";
+//import LanguageSwitcherModal from "./LanguageSwitcherModal.vue";
 
-const modal = useModal();
+//const modal = useModal();
 </script>
 
 <template>
@@ -18,12 +18,14 @@ const modal = useModal();
         </template>
 
         <template #right>
+            <!--
             <UButton
                 :label="$t('common.language')"
                 icon="i-mdi-translate"
                 color="gray"
                 @click="modal.open(LanguageSwitcherModal, {})"
             />
+            -->
 
             <UColorModeButton />
         </template>

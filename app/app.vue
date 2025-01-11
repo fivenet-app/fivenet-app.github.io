@@ -57,6 +57,7 @@ const onBeforeEnter = async () => {
     await finalizePendingLocaleChange();
 };
 
+/*
 const route = useRoute();
 
 onMounted(() => {
@@ -71,6 +72,7 @@ onMounted(() => {
         timeout: 1750,
     });
 });
+*/
 
 provide("navigation", navigation);
 </script>

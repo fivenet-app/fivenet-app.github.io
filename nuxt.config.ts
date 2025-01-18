@@ -16,7 +16,6 @@ export default defineNuxtConfig({
         '@nuxt/fonts',
         '@nuxthq/studio',
         'nuxt-og-image',
-        '@nuxtjs/fontaine',
         "@nuxt/image"
     ],
 

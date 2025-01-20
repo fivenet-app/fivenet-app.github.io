@@ -107,6 +107,10 @@
                 "open_source": {
                     "title": "Open Source",
                     "description": "FiveNet's code is licensed under the Apache 2.0 license."
+                },
+                "mailer": {
+                    "title": "E-Mails",
+                    "description": "Write emails to colleagues and citizens for quick communication."
                 }
             }
         }

@@ -1,56 +1,49 @@
 <script setup lang="ts">
-import type { NavItem, ParsedContent } from "@nuxt/content";
+import type { NavItem, ParsedContent } from '@nuxt/content';
 
 const { finalizePendingLocaleChange, t } = useI18n();
 
 const toast = useToast();
 
-const { data: navigation } = await useAsyncData<NavItem[]>(
-    "navigation",
-    () => fetchContentNavigation(),
-    {
-        default: () => [],
-    }
-);
-const { data: files } = useLazyFetch<ParsedContent[]>("/api/search.json", {
+const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation(), {
+    default: () => [],
+});
+const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
     default: () => [],
     server: false,
 });
 
 useHead({
     htmlAttrs: {
-        lang: "en",
+        lang: 'en',
     },
-    meta: [
-        { charset: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-    ],
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
     link: [
         {
-            rel: "icon",
-            type: "image/png",
-            href: "/favicon.png",
+            rel: 'icon',
+            type: 'image/png',
+            href: '/favicon.png',
         },
     ],
     titleTemplate: (title?: string) => {
-        if (title?.includes(".")) {
+        if (title?.includes('.')) {
             title = t(title);
         }
-        return title ? `${title} - FiveNet` : "FiveNet";
+        return title ? `${title} - FiveNet` : 'FiveNet';
     },
 });
 
 useSeoMeta({
     titleTemplate: (title?: string) => {
-        if (title?.includes(".")) {
+        if (title?.includes('.')) {
             title = t(title);
         }
-        return title ? `${title} - FiveNet` : "FiveNet";
+        return title ? `${title} - FiveNet` : 'FiveNet';
     },
-    ogSiteName: "FiveNet",
-    ogImage: "/social-card.png",
-    twitterImage: "/social-card.png",
-    twitterCard: "summary_large_image",
+    ogSiteName: 'FiveNet',
+    ogImage: '/social-card.png',
+    twitterImage: '/social-card.png',
+    twitterCard: 'summary_large_image',
 });
 
 const onBeforeEnter = async () => {
@@ -74,14 +67,12 @@ onMounted(() => {
 });
 */
 
-provide("navigation", navigation);
+provide('navigation', navigation);
 </script>
 
 <template>
     <div>
-        <NuxtLoadingIndicator
-            color="repeating-linear-gradient(to right, #55dde0 0%, #34cdfe 50%, #7161ef 100%)"
-        />
+        <NuxtLoadingIndicator color="repeating-linear-gradient(to right, #55dde0 0%, #34cdfe 50%, #7161ef 100%)" />
 
         <UMain>
             <NuxtLayout>

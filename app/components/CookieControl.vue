@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { emojiBlast } from "emoji-blast";
-import { useCookiesStore } from "~/store/cookies";
+import { emojiBlast } from 'emoji-blast';
+import { useCookiesStore } from '~/store/cookies';
 
 const cookiesStore = useCookiesStore();
 const { cookiesState } = storeToRefs(cookiesStore);
@@ -19,7 +19,7 @@ const open = ref(cookiesState.value === null);
             <template #header>
                 <div class="flex items-center justify-between">
                     <h3 class="text-2xl font-semibold leading-6">
-                        {{ $t("components.CookieControl.title") }}
+                        {{ $t('components.CookieControl.title') }}
                         <span
                             class="select-none"
                             @click="
@@ -31,18 +31,12 @@ const open = ref(cookiesState.value === null);
                         >
                     </h3>
 
-                    <UButton
-                        color="gray"
-                        variant="ghost"
-                        icon="i-mdi-window-close"
-                        class="-my-1"
-                        @click="open = false"
-                    />
+                    <UButton color="gray" variant="ghost" icon="i-mdi-window-close" class="-my-1" @click="open = false" />
                 </div>
             </template>
 
             <div class="flex w-full flex-col gap-2">
-                <p>{{ $t("components.CookieControl.subtitle") }}</p>
+                <p>{{ $t('components.CookieControl.subtitle') }}</p>
 
                 <UButtonGroup class="inline-flex w-full flex-1">
                     <UButton
@@ -53,35 +47,23 @@ const open = ref(cookiesState.value === null);
                         :to="links.privacyPolicy"
                         :external="true"
                     >
-                        {{ $t("common.privacy_policy") }}
+                        {{ $t('common.privacy_policy') }}
                     </UButton>
 
-                    <UButton
-                        v-if="links.imprint"
-                        variant="link"
-                        block
-                        class="flex-1"
-                        :to="links.imprint"
-                        :external="true"
-                    >
-                        {{ $t("common.imprint") }}
+                    <UButton v-if="links.imprint" variant="link" block class="flex-1" :to="links.imprint" :external="true">
+                        {{ $t('common.imprint') }}
                     </UButton>
                 </UButtonGroup>
 
                 <p class="text-xs">
-                    {{ $t("components.CookieControl.description") }}
+                    {{ $t('components.CookieControl.description') }}
                 </p>
             </div>
 
             <template #footer>
                 <UButtonGroup class="inline-flex w-full">
-                    <UButton
-                        color="black"
-                        block
-                        class="flex-1"
-                        @click="open = false"
-                    >
-                        {{ $t("common.close", 1) }}
+                    <UButton color="black" block class="flex-1" @click="open = false">
+                        {{ $t('common.close', 1) }}
                     </UButton>
 
                     <UButton
@@ -94,7 +76,7 @@ const open = ref(cookiesState.value === null);
                             open = false;
                         "
                     >
-                        {{ $t("common.decline", 1) }}
+                        {{ $t('common.decline', 1) }}
                     </UButton>
 
                     <UButton
@@ -107,7 +89,7 @@ const open = ref(cookiesState.value === null);
                             open = false;
                         "
                     >
-                        {{ $t("common.accept", 1) }}
+                        {{ $t('common.accept', 1) }}
                     </UButton>
                 </UButtonGroup>
             </template>

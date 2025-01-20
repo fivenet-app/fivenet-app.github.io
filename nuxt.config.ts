@@ -9,21 +9,21 @@ export default defineNuxtConfig({
 
     modules: [
         '@nuxt/content',
+        '@nuxt/eslint',
+        '@nuxt/fonts',
+        '@nuxt/image',
         '@nuxt/ui',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
-        '@nuxt/fonts',
         '@nuxthq/studio',
-        'nuxt-og-image',
-        "@nuxt/image"
     ],
 
     future: {
         compatibilityVersion: 4,
     },
 
-    compatibilityDate: '2024-07-05',
+    compatibilityDate: '2024-07-11',
 
     hooks: {
         // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
@@ -105,7 +105,7 @@ export default defineNuxtConfig({
         parallelPlugin: true,
     },
 
-    piniaPersistedstate: {
+    piniaPluginPersistedstate: {
         storage: 'localStorage',
         debug: false,
     },
@@ -116,7 +116,25 @@ export default defineNuxtConfig({
 
     content: {
         highlight: {
-            langs: ['js','jsx','json','ts','tsx','vue','css','html','vue','bash','md','mdc','yaml', 'sql', 'go', 'yml', 'console'],
+            langs: [
+                'js',
+                'jsx',
+                'json',
+                'ts',
+                'tsx',
+                'vue',
+                'css',
+                'html',
+                'vue',
+                'bash',
+                'md',
+                'mdc',
+                'yaml',
+                'sql',
+                'go',
+                'yml',
+                'console',
+            ],
         },
     },
 });

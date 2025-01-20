@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { LocaleObject } from "vue-i18n-routing";
+import type { LocaleObject } from 'vue-i18n-routing';
 
 const { locale, locales, setLocale } = useI18n();
 
@@ -9,7 +9,7 @@ const languages = ref<LocaleObject[]>([]);
 
 onMounted(async () => {
     locales.value.forEach((lang) => {
-        if (typeof lang === "string") {
+        if (typeof lang === 'string') {
             return;
         }
 
@@ -17,7 +17,7 @@ onMounted(async () => {
             code: lang.code,
             name: lang.name!,
             language: lang.language!,
-            icon: lang.icon ?? "i-mdi-question",
+            icon: lang.icon ?? 'i-mdi-question',
         });
     });
 });
@@ -29,7 +29,7 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
         return;
     }
 
-    console.info("Switching language to:", lang.name);
+    console.info('Switching language to:', lang.name);
     preventClose.value = true;
 
     await setLocale(locale.value);
@@ -37,7 +37,7 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
     reloadNuxtApp({
         persistState: false,
         force: true,
-        path: useRoute().path + "?locale_switched=1",
+        path: useRoute().path + '?locale_switched=1',
     });
 }
 </script>
@@ -53,7 +53,7 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
             <template #header>
                 <div class="flex items-center justify-between">
                     <h3 class="text-2xl font-semibold leading-6">
-                        {{ $t("components.language_switcher.title") }}
+                        {{ $t('components.language_switcher.title') }}
                     </h3>
 
                     <UButton
@@ -78,14 +78,8 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
             </UPageGrid>
 
             <template #footer>
-                <UButton
-                    block
-                    class="flex-1"
-                    color="black"
-                    :disabled="preventClose"
-                    @click="isOpen = false"
-                >
-                    {{ $t("common.close", 1) }}
+                <UButton block class="flex-1" color="black" :disabled="preventClose" @click="isOpen = false">
+                    {{ $t('common.close', 1) }}
                 </UButton>
             </template>
         </UCard>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { withoutTrailingSlash } from "ufo";
+import { withoutTrailingSlash } from 'ufo';
 
 definePageMeta({
-    layout: "docs",
+    layout: 'docs',
 });
 
 const { t } = useI18n();
@@ -10,22 +10,20 @@ const { t } = useI18n();
 const route = useRoute();
 const { toc } = useAppConfig();
 
-const { data: page } = await useAsyncData(route.path, () =>
-    queryContent(route.path).findOne()
-);
+const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
 if (!page.value) {
     throw createError({
         statusCode: 404,
-        statusMessage: "Page not found",
+        statusMessage: 'Page not found',
         fatal: true,
     });
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
     queryContent()
-        .where({ _extension: "md", navigation: { $ne: false } })
-        .only(["title", "description", "_path"])
-        .findSurround(withoutTrailingSlash(route.path))
+        .where({ _extension: 'md', navigation: { $ne: false } })
+        .only(['title', 'description', '_path'])
+        .findSurround(withoutTrailingSlash(route.path)),
 );
 
 useSeoMeta({
@@ -35,42 +33,29 @@ useSeoMeta({
     ogDescription: page.value.description,
 });
 
-defineOgImage({
-    component: "Docs",
-    props: {
-        title: page.value.title,
-        description: page.value.description,
-    },
-});
-
 const headline = computed(() => findPageHeadline(page.value));
 
 const links = computed(() =>
     [
         toc?.bottom?.edit && {
-            icon: "i-mdi-pencil-box",
-            label: t("docs.toc.bottom.edit"),
+            icon: 'i-mdi-pencil-box',
+            label: t('docs.toc.bottom.edit'),
             to: `${toc.bottom.edit}/${page?.value?._file}`,
-            target: "_blank",
+            target: '_blank',
         },
         {
-            icon: "i-mdi-star",
-            label: t("docs.toc.bottom.star"),
-            to: "https://github.com/fivenet-app/fivenet",
-            target: "_blank",
+            icon: 'i-mdi-star',
+            label: t('docs.toc.bottom.star'),
+            to: 'https://github.com/fivenet-app/fivenet',
+            target: '_blank',
         },
-    ].filter(Boolean)
+    ].filter(Boolean),
 );
 </script>
 
 <template>
     <UPage>
-        <UPageHeader
-            :title="page.title"
-            :description="page.description"
-            :links="page.links"
-            :headline="headline"
-        />
+        <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
         <UPageBody prose>
             <ContentRenderer v-if="page.body" :value="page" />
@@ -81,24 +66,12 @@ const links = computed(() =>
         </UPageBody>
 
         <template v-if="page.toc !== false" #right>
-            <UContentToc
-                :title="$t('common.toc')"
-                :links="page.body?.toc?.links"
-            >
+            <UContentToc :title="$t('common.toc')" :links="page.body?.toc?.links">
                 <template v-if="toc?.bottom" #bottom>
-                    <div
-                        class="hidden space-y-6 lg:block"
-                        :class="{ '!mt-6': page.body?.toc?.links?.length }"
-                    >
-                        <UDivider
-                            v-if="page.body?.toc?.links?.length"
-                            type="dashed"
-                        />
+                    <div class="hidden space-y-6 lg:block" :class="{ '!mt-6': page.body?.toc?.links?.length }">
+                        <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
 
-                        <UPageLinks
-                            :title="$t('common.community')"
-                            :links="links"
-                        />
+                        <UPageLinks :title="$t('common.community')" :links="links" />
                     </div>
                 </template>
             </UContentToc>

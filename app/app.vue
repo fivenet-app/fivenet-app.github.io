@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import type { NavItem, ParsedContent } from '@nuxt/content';
 
-const { finalizePendingLocaleChange, t } = useI18n();
-
-const toast = useToast();
+const { finalizePendingLocaleChange, t, locale, setLocale } = useI18n();
 
 const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation(), {
     default: () => [],
@@ -50,8 +48,12 @@ const onBeforeEnter = async () => {
     await finalizePendingLocaleChange();
 };
 
+locale.value = 'en';
+await setLocale('en');
+
 /*
 const route = useRoute();
+const toast = useToast();
 
 onMounted(() => {
     if (route.query.locale_switched === undefined) {

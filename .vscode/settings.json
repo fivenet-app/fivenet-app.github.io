@@ -1,9 +1,10 @@
 {
     "i18n-ally.localesPaths": [
-        "lang"
+        "i18n/locales/"
     ],
     "[vue]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": true
-    }
+    },
+    "i18n-ally.keystyle": "nested"
 }

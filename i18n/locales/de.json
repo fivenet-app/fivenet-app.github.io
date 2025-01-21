@@ -62,11 +62,6 @@
         },
         "features": {
             "title": "Funktionalitäten von FiveNet",
-            "links": {
-                "explore": {
-                    "label": "Entdecke FiveNet"
-                }
-            },
             "items": {
                 "citizens": {
                     "title": "Search Citizens",
@@ -129,6 +124,17 @@
                 "citizen_activity": "Bürgeraktivitäten protokolliert",
                 "timeclock_tracked": "Dienstzeit erfasst",
                 "citizens_total": "Bürgerakten geführt"
+            }
+        }
+    },
+    "cta": {
+        "title": "Erkunde FiveNets Community und Dokumentation",
+        "links": {
+            "discord": {
+                "label": "Trete unserem Discord bei"
+            },
+            "explore": {
+                "label": "Entdecke FiveNet"
             }
         }
     }

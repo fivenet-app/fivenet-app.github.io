@@ -12,22 +12,22 @@ logos:
 
 stats:
   - key: users_registered
-    number: 1983
+    number: 2703
     icon: i-ph-user
   - key: documents_created
-    number: 26627
+    number: 37647
     icon: i-ph-file-doc
   - key: dispatches_created
-    number: 295320
+    number: 345320
     icon: i-ph-siren
   - key: citizens_total
-    number: 40843
+    number: 46413
     icon: i-ph-users-four
   - key: citizen_activity
-    number: 82111
+    number: 116162
     icon: i-ph-activity
   - key: timeclock_tracked
-    number: 23
+    number: 477810
     type: unit
     unit: 'common.time_ago.year'
     icon: i-ph-timer

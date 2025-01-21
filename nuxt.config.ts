@@ -4,6 +4,8 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false,
+
     telemetry: false,
     extends: ['@nuxt/ui-pro'],
 
@@ -35,7 +37,7 @@ export default defineNuxtConfig({
     },
 
     ui: {
-        safelistColors: ['primary', 'malibu'],
+        safelistColors: ['primary'],
     },
     icon: {
         collections: ['ph', 'mdi', 'simple-icons', 'flagpack'],

@@ -2,9 +2,14 @@
     "pages": {
         "index": {
             "welcome": "Welcome to FiveNet!",
-            "subtext": "From searching the state's citizen and vehicles database, filling documents for investigations, court, and a map of your colleagues and dispatches. All that and more is (mostly) ready in this net, the FiveNet.",
+            "description": "A full suite of features to take your communities roleplay to the next level, all in one \"Net\", FiveNet.",
+            "headline": "Enhance Your Communities' Roleplay",
             "whats_new_in": "See what's new in {version}",
-            "logos": "Used by great RP Communities"
+            "logos": "Used by great RP Communities",
+            "what_is": {
+                "title": "What is FiveNet?",
+                "description": "FiveNet is an open source project with several features to enhances your communities roleplay. From searching the state's citizen and vehicles database, filling documents for police investigations, court, and livemap of your colleagues and dispatches. A plugin especially for FiveM servers is available that enalbes the in-game tablet."
+            }
         },
         "notfound": {
             "go_back": "Go back home"
@@ -41,7 +46,8 @@
             "hour": "hour | hours",
             "minute": "minute | minutes",
             "second": "second | seconds"
-        }
+        },
+        "demo": "Demo"
     },
     "notifications": {
         "language_switched": {
@@ -62,11 +68,6 @@
         },
         "features": {
             "title": "Features of FiveNet",
-            "links": {
-                "explore": {
-                    "label": "Explore FiveNet"
-                }
-            },
             "items": {
                 "citizens": {
                     "title": "Search Citizens",
@@ -133,6 +134,17 @@
                 "citizen_activity": "Citizen activity logged",
                 "timeclock_tracked": "Service time tracked",
                 "citizens_total": "Citizen files maintained"
+            }
+        }
+    },
+    "cta": {
+        "title": "Explore FiveNet's Community and Documentation",
+        "links": {
+            "discord": {
+                "label": "Join Our Discord"
+            },
+            "explore": {
+                "label": "Explore Documentation"
             }
         }
     }

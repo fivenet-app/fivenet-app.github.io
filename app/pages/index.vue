@@ -5,18 +5,13 @@ import '~/assets/css/herofull-pattern.css';
 
 const { data: page } = await useAsyncData('index', () => queryContent('/').findOne());
 
-useHead({
-    title: 'common.home',
-});
 definePageMeta({
-    title: 'common.home',
     layout: 'landing',
     requiresAuth: false,
     showCookieOptions: true,
 });
 
 useSeoMeta({
-    title: 'FiveNet',
     ogTitle: 'FiveNet',
     description: 'FiveNet project website and documentation.',
     ogDescription: 'FiveNet project website and documentation.',
@@ -27,6 +22,12 @@ const { t } = useI18n();
 const appVersion = APP_VERSION.split('-')[0];
 
 const links = [
+    {
+        label: t('common.demo'),
+        icon: 'i-mdi-play-outline',
+        size: 'lg' as ButtonSize,
+        to: '/getting-started/demo',
+    },
     {
         label: t('common.docs'),
         icon: 'i-mdi-book-open-variant-outline',
@@ -40,7 +41,15 @@ const features = {
     description: undefined,
     links: [
         {
-            label: t('docs.features.links.explore.label'),
+            label: t('cta.links.discord.label'),
+            icon: 'i-simple-icons-discord',
+            color: 'primary' as ButtonColor,
+            to: 'https://discord.gg/ASRPPr8CeT',
+            external: true,
+            size: 'lg' as ButtonSize,
+        },
+        {
+            label: t('cta.links.explore.label'),
             trailingIcon: 'i-mdi-arrow-right',
             color: 'gray' as ButtonColor,
             to: '/getting-started',
@@ -118,15 +127,31 @@ const features = {
 };
 
 const cta = {
-    title: t('docs.features.links.explore.label'),
+    title: t('cta.title'),
 };
 </script>
 
 <template>
     <div>
-        <ULandingHero :title="$t('pages.index.welcome')" :description="$t('pages.index.subtext')" :links="links">
-            <div class="hero absolute inset-0 z-[-1] [mask-image:radial-gradient(100%_100%_at_top,white,transparent)]" />
+        <ULandingHero :title="$t('pages.index.welcome')" :description="$t('pages.index.description')" :links="links">
+            <template #default>
+                <div class="hero absolute inset-0 z-[-1] [mask-image:radial-gradient(100%_100%_at_top,white,transparent)]" />
+            </template>
 
+            <template #headline>
+                <UBadge color="gray" :label="$t('pages.index.headline')" />
+            </template>
+        </ULandingHero>
+
+        <ULandingSection class="!pt-0">
+            <ImagePlaceholder />
+        </ULandingSection>
+
+        <ULandingSection
+            :title="$t('pages.index.what_is.title')"
+            :description="$t('pages.index.what_is.description')"
+            align="left"
+        >
             <template #headline>
                 <UButton
                     color="gray"
@@ -142,10 +167,11 @@ const cta = {
                     class="rounded-full"
                 />
             </template>
-        </ULandingHero>
 
-        <ULandingSection class="!pt-0">
-            <ImagePlaceholder />
+            <img
+                src="/images/screenshots/ingame-tablet.png"
+                class="max-h-96 w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
+            />
         </ULandingSection>
 
         <ULandingSection :title="features.title" :description="features.description ?? undefined" class="!pt-0">
@@ -187,14 +213,12 @@ const cta = {
                                 }}
                             </template>
                             <template v-else-if="stat.type === 'unit'">
-                                {{ stat.number }}
+                                {{ $n(stat.number) }}
                                 {{ $t(stat.unit ?? 'common.time_ago.week', 2) }}
                             </template>
                             <ClientOnly v-else>
                                 <CountUp :end-val="stat.number" :options="{ enableScrollSpy: true }" />
                             </ClientOnly>
-
-                            <span v-if="!stat.hidePlus"> + </span>
                         </p>
                     </template>
                 </ULandingCard>

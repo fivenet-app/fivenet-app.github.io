@@ -4,6 +4,8 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false,
+
     telemetry: false,
     extends: ['@nuxt/ui-pro'],
 
@@ -73,7 +75,8 @@ export default defineNuxtConfig({
     i18n: {
         strategy: STRATEGIES.PREFIX_EXCEPT_DEFAULT,
         detectBrowserLanguage: {
-            useCookie: true,
+            useCookie: false,
+            fallbackLocale: 'en',
         },
         skipSettingLocaleOnNavigate: true,
         locales: [

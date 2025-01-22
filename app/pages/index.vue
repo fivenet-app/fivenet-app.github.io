@@ -192,7 +192,7 @@ const cta = {
             </ULandingLogos>
         </ULandingSection>
 
-        <ULandingSection :title="$t('components.stats.title')" class="!pt-0">
+        <ULandingSection :title="$t('components.stats.title')" :description="$t('components.stats.description')" class="!pt-0">
             <UPageGrid>
                 <ULandingCard
                     v-for="stat in page.stats"

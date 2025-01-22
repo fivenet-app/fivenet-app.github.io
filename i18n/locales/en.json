@@ -127,6 +127,7 @@
         },
         "stats": {
             "title": "FiveNet in Numbers",
+            "description": "Stats collected across the FiveNet instances run by the FiveNet Cloud team.",
             "stats": {
                 "users_registered": "Users registered",
                 "documents_created": "Documents created",

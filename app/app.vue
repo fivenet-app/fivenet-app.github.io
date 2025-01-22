@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NavItem, ParsedContent } from '@nuxt/content';
 
-const { finalizePendingLocaleChange, t, locale, setLocale } = useI18n();
+const { finalizePendingLocaleChange, t, locale } = useI18n();
 
 const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation(), {
     default: () => [],
@@ -49,7 +49,6 @@ const onBeforeEnter = async () => {
 };
 
 locale.value = 'en';
-await setLocale('en');
 
 /*
 const route = useRoute();

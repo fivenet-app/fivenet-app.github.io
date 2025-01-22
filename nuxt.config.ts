@@ -103,7 +103,7 @@ export default defineNuxtConfig({
                 icon: 'i-flagpack-de',
             },
         ],
-        lazy: true,
+        lazy: false,
         defaultLocale: 'en',
         defaultDirection: 'ltr',
         baseUrl: '',

@@ -24,8 +24,9 @@ const appVersion = APP_VERSION.split('-')[0];
 const links = [
     {
         label: t('common.demo'),
-        icon: 'i-mdi-play-outline',
+        icon: 'i-mdi-lightning-bolt',
         size: 'lg' as ButtonSize,
+        color: 'gray' as ButtonColor,
         to: '/getting-started/demo',
     },
     {

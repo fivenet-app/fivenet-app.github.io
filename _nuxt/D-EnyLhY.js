@@ -1,1 +1,0 @@
-import{E as r,F as s,G as n,r as o}from"./cTj_r0b6.js";const t={};function a(e,c){return s(),n("em",null,[o(e.$slots,"default")])}const _=Object.assign(r(t,[["render",a]]),{__name:"ProseEm"});export{_ as default};

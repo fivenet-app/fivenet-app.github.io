@@ -79,7 +79,7 @@ export default defineNuxtConfig({
     },
 
     i18n: {
-        strategy: STRATEGIES.PREFIX_EXCEPT_DEFAULT,
+        strategy: STRATEGIES.NO_PREFIX,
         detectBrowserLanguage: {
             useCookie: false,
             fallbackLocale: 'en',

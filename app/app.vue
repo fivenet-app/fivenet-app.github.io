@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { NavItem, ParsedContent } from '@nuxt/content';
 
-const { finalizePendingLocaleChange, setLocale, t, locale } = useI18n();
+const { finalizePendingLocaleChange, t } = useI18n();
 
 const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation(), {
     default: () => [],
@@ -47,9 +47,6 @@ useSeoMeta({
 const onBeforeEnter = async () => {
     await finalizePendingLocaleChange();
 };
-
-locale.value = 'en';
-await setLocale('en');
 
 /*
 const route = useRoute();

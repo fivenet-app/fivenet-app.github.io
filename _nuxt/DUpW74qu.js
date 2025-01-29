@@ -1,1 +1,0 @@
-import{E as o,F as t,G as r,r as s}from"./oSL-diPI.js";const c={};function n(e,a){return t(),r("blockquote",null,[s(e.$slots,"default")])}const _=Object.assign(o(c,[["render",n]]),{__name:"ProseBlockquote"});export{_ as default};

@@ -43,5 +43,5 @@
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "2.2.0"
   },
-  "packageManager": "pnpm@9.15.4"
+  "packageManager": "pnpm@9.15.5"
 }

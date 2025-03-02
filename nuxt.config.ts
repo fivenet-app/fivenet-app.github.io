@@ -143,6 +143,7 @@ export default defineNuxtConfig({
                 'go',
                 'yml',
                 'console',
+                'templ',
             ],
         },
     },

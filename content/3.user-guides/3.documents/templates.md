@@ -60,7 +60,7 @@ A template must render out to valid HTML.
 
 ### Access Creator Info
 
-```gotemplate
+```templ
 {{ .ActiveChar.Firstname }}, {{ .ActiveChar.Lastname }}
 ```
 
@@ -68,19 +68,19 @@ A template must render out to valid HTML.
 
 Get the first user in the list (first in the user's clipboard):
 
-```gotemplate
+```templ
 {{- $citizen := first .Users -}}
 ```
 
 Example access citizen info:
 
-```gotemplate
+```templ
 {{ $citizen.Firstname }}, {{ $citizen.Lastname }} ({{ $citizen.Dateofbirth }})
 ```
 
 ### Current Date and Time
 
-```gotemplate
+```templ
 {{ now | date "02.01.2006 15:04" }}
 ```
 
@@ -88,7 +88,7 @@ To learn more about different date and time formats, check out [the Golang `time
 
 ### Showing a Timestamp (e.g., `CreatedAt`)
 
-```gotemplate
+```templ
 {{ .CreatedAt | date "02.01.2006 15:04" }}
 ```
 
@@ -102,7 +102,7 @@ To learn more about different date and time formats, check out [the Golang `time
 
 ### Displaying a list of Vehicles
 
-```gotemplate
+```templ
 {{ if not .Vehicles }}
 <p>
 No Vehicles involved.

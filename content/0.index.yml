@@ -1,0 +1,148 @@
+title: FiveNet
+description: FiveNet is your easy way to have FiveNet ready for your roleplay gaming community.
+navigation: false
+hero:
+  title: Get Started with [FiveNet Cloud]{.text-(--ui-primary)}
+  description: FiveNet Cloud is your quick way to get a hosted FiveNet instance up'n'running quick for your community. We'll take care of running and updating your FiveNet instance.
+  links:
+    - label: Demo
+      icon: i-mdi-lightning-bolt
+      size: xl
+      color: neutral
+      variant: subtle
+      to: https://fivenet.app/getting-started/demo
+      target: _blank
+    - label: Get started
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /pricing
+      size: xl
+
+logos:
+  icons:
+    - image: "modernv.png"
+      alt: "ModernV"
+      to: "https://modernv.net/"
+    - image: "mysticv.png"
+      alt: "MysticV"
+      to: "https://discord.gg/mysticv"
+    - image: "strokee-roleplay.png"
+      alt: "Strokee Roleplay"
+      to: "https://discord.gg/strokee"
+
+sections:
+  - title: Ready to be used [In-Game]{.text-(--ui-primary)}
+    description: FiveNet plugins are available for FiveM servers at the moment. Using a FiveNet Cloud instance is the fastest way to get you started with the in-game tablet.
+    id: features
+    #orientation: horizontal
+    #image:
+    #  src: '/images/screenshots/ingame-tablet.png'
+    #  alt: 'FiveNet Tablet FiveM in-game Screenshot'
+    features:
+      - name: Quick Setup
+        description: Your FiveNet Cloud instance will be ready in a few seconds.
+        icon: i-lucide-rocket
+      - name: HTTPS Encryption
+        description: Each FiveNet Cloud instance will be securely reachable via HTTPS and its own subdomain.
+        icon: i-lucide-lock
+      - name: Easily extendable
+        description: The plugin code is easily extendable by your developers to integrate with your servers framework and plugins (e.g., fines, location tracking).
+        icon: i-lucide-cog
+features:
+  title: Features That Set Us Apart
+  description: Our platform combines enterprise-grade reliability with developer-friendly features, providing everything you need to build and scale your applications.
+  items:
+    - title: Developer Experience
+      description: Comprehensive documentation, powerful CLI tools, and intuitive APIs that make development a joy.
+      icon: i-lucide-cog
+    - title: Enterprise Ready
+      description: SOC 2 Type II certified, GDPR compliant, with 24/7 enterprise support and dedicated success managers.
+      icon: i-lucide-check
+    - title: Advanced Security
+      description: Multi-factor authentication, role-based access control, and audit logs keep your data protected.
+      icon: i-lucide-lock
+
+stats:
+  - key: users_registered
+    number: 2703
+    icon: i-ph-user
+  - key: documents_created
+    number: 37647
+    icon: i-ph-file-doc
+  - key: dispatches_created
+    number: 345320
+    icon: i-ph-siren
+  - key: citizens_total
+    number: 46413
+    icon: i-ph-users-four
+  - key: citizen_activity
+    number: 116162
+    icon: i-ph-activity
+  - key: timeclock_tracked
+    number: 477810
+    type: unit
+    unit: 'common.time_ago.year'
+    icon: i-ph-timer
+
+testimonials:
+  #headline: ''
+  title: Join other [roleplay servers]{.text-(--ui-primary)} already using FiveNet
+  description: See how other roleplay servers are transforming their roleplay experience with FiveNet.
+  items:
+    - quote: ''
+      user:
+        name: 'ModernV'
+        description: 'FiveM Roleplay Server'
+        target: _blank
+        avatar:
+          src: '/images/communities/modernv.png'
+        to: 'https://modernv.net'
+    - quote: ''
+      user:
+        name: 'MysticV'
+        description: 'FiveM Roleplay Server'
+        target: _blank
+        avatar:
+          src: '/images/communities/mysticv.png'
+    - quote: ''
+      user:
+        name: 'Strokee Roleplay'
+        description: 'FiveM Roleplay Server'
+        target: _blank
+        avatar:
+          src: '/images/communities/strokee-roleplay.png'
+
+faq:
+  title: Frequently asked questions
+  description: "Below, you'll find answers to some of the most common questions about FiveNet."
+  items:
+    - label: "What is FiveNet?"
+      content: "FiveNet is a comprehensive suite of applications designed to enhance roleplay on FiveM servers. It provides tools for, e.g., your police department to search citizens and vehicles, dispatch center system to handle emergencies, documents and many more features."
+    - label: "Who is FiveNet for?"
+      content: "FiveNet is perfect for FiveM roleplay servers looking to create a thriving roleplay environment."
+    - label: "Is FiveNet free to use?"
+      content: "Yes, FiveNet is an open source project licensed under the Apache 2.0 license meaning anyone can use and run FiveNet as they want."
+    - label: "Is FiveNet exclusive to ModernV?"
+      content: "No, FiveNet is an open source project licensed under the Apache 2.0 license."
+    - label: "Is FiveNet compatible with my FiveM server?"
+      content: "The plugin part of FiveNet is compatible with the latest version of FiveM and offers compatibility with ESX and QBCore frameworks via the config."
+    - label: "How do I set up FiveNet?"
+      content: "You can follow the getting started guide in the documentation to self host FiveNet, or sign up for the FiveNet Cloud offering. With the FiveNet Cloud offering, we'll host your FiveNet server and keep it up-to-date with the latest features and bug fixes as they are released."
+    - label: "Do I need technical expertise to use FiveNet?"
+      content: "If you want to self host FiveNet, you need to have basic Linux and Docker experience to be able to run FiveNet smoothly. In case of the FiveNet Cloud offering we'll take of everything and you just need to integrate the FiveNet plugin code with your server's plugins."
+    - label: "What support options are available?"
+      content: "We offer the documentation with step-by-step guides for the community, and Discord chat based support for FiveNet Cloud users."
+
+cta:
+  title: Get your own [FiveNet Cloud]{.text-(--ui-primary)} instance today
+  description: Checkout the FiveNet Cloud pricing page to get started or if you want to self-host the installation methods documentation.
+  links:
+    - label: Subscribe now
+      to: '/pricing'
+      target: _blank
+      icon: i-lucide-shopping-cart
+    - label: Self Host
+      to: 'https://fivenet.app/getting-started/installation/methods'
+      trailingIcon: i-lucide-circle-help
+      target: _blank
+      variant: subtle

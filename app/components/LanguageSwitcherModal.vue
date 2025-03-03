@@ -58,7 +58,7 @@ async function switchLanguage(lang: LocaleObject): Promise<void> {
 
                     <UButton
                         :disabled="preventClose"
-                        color="gray"
+                        color="neutral"
                         variant="ghost"
                         icon="i-mdi-window-close"
                         class="-my-1"

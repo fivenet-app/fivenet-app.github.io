@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import type { ButtonColor, ButtonSize } from '#ui/types';
 import CountUp from 'vue-countup-v3';
 import '~/assets/css/herofull-pattern.css';
 
-const { data: page } = await useAsyncData('index', () => queryContent('/').findOne());
+const { data: page } = await useAsyncData('index', () => queryCollection('index').first());
+if (!page.value) {
+    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
+}
 
 definePageMeta({
     layout: 'landing',
@@ -25,14 +27,14 @@ const links = [
     {
         label: t('common.demo'),
         icon: 'i-mdi-lightning-bolt',
-        size: 'lg' as ButtonSize,
-        color: 'gray' as ButtonColor,
+        size: 'lg',
+        color: 'neutral',
         to: '/getting-started/demo',
     },
     {
         label: t('common.docs'),
         icon: 'i-mdi-book-open-variant-outline',
-        size: 'lg' as ButtonSize,
+        size: 'lg',
         to: '/getting-started',
     },
 ];
@@ -44,17 +46,17 @@ const features = {
         {
             label: t('cta.links.discord.label'),
             icon: 'i-simple-icons-discord',
-            color: 'primary' as ButtonColor,
+            color: 'primary',
             to: 'https://discord.gg/ASRPPr8CeT',
             external: true,
-            size: 'lg' as ButtonSize,
+            size: 'lg',
         },
         {
             label: t('cta.links.explore.label'),
             trailingIcon: 'i-mdi-arrow-right',
-            color: 'gray' as ButtonColor,
+            color: 'neutral',
             to: '/getting-started',
-            size: 'lg' as ButtonSize,
+            size: 'lg',
         },
     ],
     items: [
@@ -134,28 +136,42 @@ const cta = {
 
 <template>
     <div>
-        <ULandingHero :title="$t('pages.index.welcome')" :description="$t('pages.index.description')" :links="links">
-            <template #default>
-                <div class="hero absolute inset-0 z-[-1] [mask-image:radial-gradient(100%_100%_at_top,white,transparent)]" />
-            </template>
-
+        <UPageHero
+            :title="$t('pages.index.welcome')"
+            :description="$t('pages.index.description')"
+            :links="links"
+            :ui="{ description: 'text-(--ui-text-highlighted)' }"
+        >
             <template #headline>
-                <UBadge color="gray" :label="$t('pages.index.headline')" />
+                <UBadge color="neutral" :label="$t('pages.index.headline')" />
             </template>
-        </ULandingHero>
 
-        <ULandingSection class="!pt-0">
-            <ImagePlaceholder />
-        </ULandingSection>
+            <template #top>
+                <div
+                    class="dark:bg-(--ui-primary) absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80"
+                />
 
-        <ULandingSection
+                <StarsBg />
+            </template>
+
+            <div class="hero absolute inset-0 z-[-1] [mask-image:radial-gradient(100%_100%_at_top,white,transparent)]"></div>
+
+            <div class="relative">
+                <UPageCard variant="subtle" class="rounded-2xl">
+                    <img src="/images/screenshots/overview.png" alt="FiveNet App Overview" />
+                </UPageCard>
+            </div>
+        </UPageHero>
+
+        <UPageSection
             :title="$t('pages.index.what_is.title')"
             :description="$t('pages.index.what_is.description')"
-            align="left"
+            orientation="horizontal"
+            :ui="{ headline: 'flex' }"
         >
             <template #headline>
                 <UButton
-                    color="gray"
+                    color="neutral"
                     :to="`https://github.com/fivenet-app/fivenet/releases/tag/${appVersion}`"
                     :external="true"
                     :label="
@@ -169,33 +185,59 @@ const cta = {
                 />
             </template>
 
-            <img
-                src="/images/screenshots/ingame-tablet.png"
-                class="max-h-96 w-full rounded-md shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
-            />
-        </ULandingSection>
+            <ImagePlaceholder src="/images/screenshots/ingame-tablet.png" alt="FiveNet FiveM in-game Tablet" />
+        </UPageSection>
 
-        <ULandingSection :title="features.title" :description="features.description ?? undefined" class="!pt-0">
+        <UPageSection :title="features.title" :description="features.description ?? undefined" class="!pt-0">
             <UPageGrid>
-                <ULandingCard v-for="(item, index) of features.items" :key="index" v-bind="item" />
+                <UPageCard v-for="(item, index) of features.items" :key="index" v-bind="item" />
             </UPageGrid>
-        </ULandingSection>
+        </UPageSection>
 
-        <ULandingSection :title="$t('pages.index.logos')" class="!pt-0">
-            <ULandingLogos align="center">
-                <ULink v-for="icon in page.logos.icons" :key="icon" variant="link">
-                    <img
-                        :src="`/images/communities/${icon.image}`"
-                        :alt="icon.alt"
-                        class="h-12 w-12 flex-shrink-0 text-gray-900 lg:h-20 lg:w-20 dark:text-white"
-                    />
-                </ULink>
-            </ULandingLogos>
-        </ULandingSection>
+        <UPageSection
+            v-for="(section, index) in page.sections"
+            :key="index"
+            :title="section.title"
+            :description="section.description"
+            :orientation="section.orientation"
+            :reverse="section.reverse"
+            :features="section.features"
+        >
+            <template #title>
+                <MDC :value="section.title" class="sm:*:leading-11" />
+            </template>
 
-        <ULandingSection :title="$t('components.stats.title')" :description="$t('components.stats.description')" class="!pt-0">
+            <ImagePlaceholder v-if="section?.image" :src="section?.image?.src" :alt="section?.image?.alt" />
+        </UPageSection>
+
+        <UPageSection
+            id="testimonials"
+            :headline="page.testimonials.headline"
+            :title="$t('pages.index.logos')"
+            :description="page.testimonials.description"
+        >
+            <template #title>
+                <MDC :value="page.testimonials.title" />
+            </template>
+
+            <UPageColumns class="xl:columns-4">
+                <UPageCard
+                    v-for="(testimonial, index) in page.testimonials.items"
+                    :key="index"
+                    variant="subtle"
+                    :description="testimonial.quote"
+                    :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]', footer: 'mt-0' }"
+                >
+                    <template #footer>
+                        <UUser v-bind="testimonial.user" size="lg" />
+                    </template>
+                </UPageCard>
+            </UPageColumns>
+        </UPageSection>
+
+        <UPageSection :title="$t('components.stats.title')" :description="$t('components.stats.description')" class="!pt-0">
             <UPageGrid>
-                <ULandingCard
+                <UPageCard
                     v-for="stat in page.stats"
                     :key="stat.key"
                     :title="$t(`components.stats.stats.${stat.key}`)"
@@ -222,44 +264,21 @@ const cta = {
                             </ClientOnly>
                         </p>
                     </template>
-                </ULandingCard>
+                </UPageCard>
             </UPageGrid>
-        </ULandingSection>
+        </UPageSection>
 
-        <ULandingSection
-            v-for="(section, index) in page.sections"
-            :key="index"
-            :title="section.title"
-            :description="section.description"
-            :align="section.align"
-            :features="section.features"
-        >
-            <ImagePlaceholder />
-        </ULandingSection>
-
-        <ULandingSection
+        <UPageSection
             id="faq"
             :title="page.faq.title"
             :description="page.faq.description"
             class="scroll-mt-[var(--header-height)]"
         >
-            <ULandingFAQ
-                multiple
-                :items="page.faq.items"
-                :ui="{
-                    button: {
-                        label: 'font-semibold',
-                        trailingIcon: {
-                            base: 'w-6 h-6',
-                        },
-                    },
-                }"
-                class="mx-auto max-w-4xl"
-            />
-        </ULandingSection>
+            <UPageAccordion multiple :items="page.faq.items" class="mx-auto max-w-4xl" />
+        </UPageSection>
 
-        <ULandingSection>
-            <ULandingCTA :title="cta.title" :links="features.links" class="bg-gray-100/50 dark:bg-gray-800/50" />
-        </ULandingSection>
+        <UPageSection>
+            <UPageCTA :title="cta.title" :links="features.links" class="bg-gray-100/50 dark:bg-gray-800/50" />
+        </UPageSection>
     </div>
 </template>

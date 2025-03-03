@@ -5,8 +5,6 @@ import { useCookiesStore } from '~/store/cookies';
 const cookiesStore = useCookiesStore();
 const { cookiesState } = storeToRefs(cookiesStore);
 
-const { links } = useAppConfig();
-
 const open = ref(cookiesState.value === null);
 </script>
 
@@ -19,7 +17,8 @@ const open = ref(cookiesState.value === null);
             <template #header>
                 <div class="flex items-center justify-between">
                     <h3 class="text-2xl font-semibold leading-6">
-                        {{ $t('components.CookieControl.title') }}
+                        We use cookies!
+
                         <span
                             class="select-none"
                             @click="
@@ -31,44 +30,31 @@ const open = ref(cookiesState.value === null);
                         >
                     </h3>
 
-                    <UButton color="gray" variant="ghost" icon="i-mdi-window-close" class="-my-1" @click="open = false" />
+                    <UButton color="neutral" variant="ghost" icon="i-mdi-window-close" class="-my-1" @click="open = false" />
                 </div>
             </template>
 
             <div class="flex w-full flex-col gap-2">
-                <p>{{ $t('components.CookieControl.subtitle') }}</p>
+                <p>The main purpose of our cookies is to have a basic user tracking for analytical purposes.</p>
 
                 <UButtonGroup class="inline-flex w-full flex-1">
-                    <UButton
-                        v-if="links.privacyPolicy"
-                        variant="link"
-                        block
-                        class="flex-1"
-                        :to="links.privacyPolicy"
-                        :external="true"
-                    >
-                        {{ $t('common.privacy_policy') }}
-                    </UButton>
+                    <UButton variant="link" block class="flex-1" to="/privacy" :external="true"> Privacy Policy </UButton>
 
-                    <UButton v-if="links.imprint" variant="link" block class="flex-1" :to="links.imprint" :external="true">
-                        {{ $t('common.imprint') }}
-                    </UButton>
+                    <UButton variant="link" block class="flex-1" to="/imprint" :external="true"> Imprint </UButton>
                 </UButtonGroup>
 
                 <p class="text-xs">
-                    {{ $t('components.CookieControl.description') }}
+                    The best way to remove this websites data is to use the clear website data function of your browser.
                 </p>
             </div>
 
             <template #footer>
                 <UButtonGroup class="inline-flex w-full">
-                    <UButton color="black" block class="flex-1" @click="open = false">
-                        {{ $t('common.close', 1) }}
-                    </UButton>
+                    <UButton color="neutral" block class="flex-1" @click="open = false"> Close </UButton>
 
                     <UButton
                         block
-                        color="red"
+                        color="error"
                         class="flex-1"
                         :variant="cookiesState === false ? 'soft' : 'solid'"
                         @click="
@@ -76,12 +62,12 @@ const open = ref(cookiesState.value === null);
                             open = false;
                         "
                     >
-                        {{ $t('common.decline', 1) }}
+                        Reject
                     </UButton>
 
                     <UButton
                         block
-                        color="green"
+                        color="success"
                         class="flex-1"
                         :variant="cookiesState === true ? 'soft' : 'solid'"
                         @click="
@@ -89,18 +75,12 @@ const open = ref(cookiesState.value === null);
                             open = false;
                         "
                     >
-                        {{ $t('common.accept', 1) }}
+                        Accept
                     </UButton>
                 </UButtonGroup>
             </template>
         </UCard>
 
-        <UButton
-            :ui="{ rounded: 'rounded-full' }"
-            icon="i-mdi-cookie-cog"
-            size="xl"
-            class="fixed bottom-10 right-6"
-            @click="open = true"
-        />
+        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed bottom-10 right-6" @click="open = true" />
     </div>
 </template>

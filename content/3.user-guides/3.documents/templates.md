@@ -14,7 +14,7 @@ Points to watch out when creating a template:
 - The whole template needs to be wrapped in `<p>` and `</p>`.
 - Use `<br>` for new lines.
 
-::callout{icon="i-mdi-warning-circle" color="amber"}
+::callout{icon="i-mdi-warning-circle" color="warning"}
 A template must render out to valid HTML.
 ::
 

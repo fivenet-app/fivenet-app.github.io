@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import type { NavItem, ParsedContent } from '@nuxt/content';
-
 const { finalizePendingLocaleChange, t } = useI18n();
 
-const { data: navigation } = await useAsyncData<NavItem[]>('navigation', () => fetchContentNavigation(), {
-    default: () => [],
-});
-const { data: files } = useLazyFetch<ParsedContent[]>('/api/search.json', {
-    default: () => [],
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'));
+
+const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
     server: false,
 });
 
@@ -60,7 +56,7 @@ onMounted(() => {
     toast.add({
         title: t("notifications.language_switched.title"),
         description: t("notifications.language_switched.content"),
-        color: "green",
+        color: "success",
         timeout: 1750,
     });
 });
@@ -70,7 +66,7 @@ provide('navigation', navigation);
 </script>
 
 <template>
-    <div>
+    <UApp>
         <NuxtLoadingIndicator color="repeating-linear-gradient(to right, #55dde0 0%, #34cdfe 50%, #7161ef 100%)" />
 
         <UMain>
@@ -83,15 +79,10 @@ provide('navigation', navigation);
             </NuxtLayout>
         </UMain>
 
-        <Footer />
-
         <ClientOnly>
             <LazyUContentSearch :files="files" :navigation="navigation" />
+
+            <CookieControl />
         </ClientOnly>
-
-        <UModals />
-        <UNotifications />
-
-        <CookieControl />
-    </div>
+    </UApp>
 </template>

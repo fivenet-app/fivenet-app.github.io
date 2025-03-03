@@ -1,23 +1,38 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content';
+import type { ContentNavigationItem } from '@nuxt/content';
+import AppHeader from '~/components/AppHeader.vue';
 
-const navigation = inject<Ref<NavItem[]>>('navigation');
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
 </script>
 
 <template>
     <div>
-        <DocsHeader />
+        <AppHeader />
 
-        <UContainer>
-            <UPage>
-                <template #left>
-                    <UAside>
-                        <UNavigationTree :links="mapContentNavigation(navigation)" />
-                    </UAside>
-                </template>
+        <UMain>
+            <UContainer>
+                <UPage>
+                    <template #left>
+                        <UPageAside>
+                            <template #top>
+                                <UContentSearchButton label="Search..." variant="outline" class="w-full">
+                                    <template #trailing>
+                                        <div class="ms-auto flex items-center gap-0.5">
+                                            <UKbd value="meta" />
+                                            <UKbd value="k" />
+                                        </div>
+                                    </template>
+                                </UContentSearchButton>
+                            </template>
+                            <UContentNavigation :navigation="navigation" highlight />
+                        </UPageAside>
+                    </template>
 
-                <slot />
-            </UPage>
-        </UContainer>
+                    <slot />
+                </UPage>
+            </UContainer>
+        </UMain>
+
+        <AppFooter />
     </div>
 </template>

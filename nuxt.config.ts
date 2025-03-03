@@ -5,18 +5,16 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     telemetry: false,
-    extends: ['@nuxt/ui-pro'],
 
     modules: [
+        '@nuxt/ui-pro',
         '@nuxt/content',
         '@nuxt/eslint',
         '@nuxt/fonts',
         '@nuxt/image',
-        '@nuxt/ui',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
         'pinia-plugin-persistedstate/nuxt',
-        '@nuxthq/studio',
     ],
 
     future: {
@@ -34,20 +32,27 @@ export default defineNuxtConfig({
         },
     },
 
-    ui: {
-        safelistColors: ['primary'],
+    app: {
+        baseURL: '/',
+        head: {
+            charset: 'utf-8',
+            viewport: 'width=device-width, initial-scale=1',
+            link: [
+                { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+                { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            ],
+            meta: [{ name: 'darkreader-lock', content: '' }],
+        },
     },
+    css: ['~/assets/css/main.css'],
+
     icon: {
-        collections: ['ph', 'mdi', 'simple-icons', 'flagpack'],
+        collections: ['ph', 'lucide', 'mdi', 'simple-icons', 'flagpack'],
         serverBundle: 'local',
     },
 
     fonts: {
         families: [{ name: 'DM Sans', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900], global: true }],
-    },
-
-    routeRules: {
-        '/api/search.json': { prerender: true },
     },
 
     devtools: {
@@ -58,20 +63,10 @@ export default defineNuxtConfig({
         strict: false,
     },
 
-    vue: {
-        compilerOptions: {
-            comments: false,
-        },
-    },
-
     vite: {
         define: {
             APP_VERSION: `"${appVersion}"`,
         },
-    },
-
-    app: {
-        baseURL: '/',
     },
 
     nitro: {
@@ -124,27 +119,31 @@ export default defineNuxtConfig({
     },
 
     content: {
-        highlight: {
-            langs: [
-                'js',
-                'jsx',
-                'json',
-                'ts',
-                'tsx',
-                'vue',
-                'css',
-                'html',
-                'vue',
-                'bash',
-                'md',
-                'mdc',
-                'yaml',
-                'sql',
-                'go',
-                'yml',
-                'console',
-                'templ',
-            ],
+        build: {
+            markdown: {
+                highlight: {
+                    langs: [
+                        'js',
+                        'jsx',
+                        'json',
+                        'ts',
+                        'tsx',
+                        'vue',
+                        'css',
+                        'html',
+                        'vue',
+                        'bash',
+                        'md',
+                        'mdc',
+                        'yaml',
+                        'sql',
+                        'go',
+                        'yml',
+                        'console',
+                        'templ',
+                    ],
+                },
+            },
         },
     },
 });

@@ -1,0 +1,1 @@
+import{o as _,c as a,a as e,b as c,r,_ as s,d as p}from"./DAX8_Io3.js";import{_ as d}from"./DlAUqK2U.js";const l={};function m(o,f){const n=s,t=p;return _(),a("div",null,[e(n),c("div",null,[r(o.$slots,"default")]),e(t)])}const x=d(l,[["render",m]]);export{x as default};

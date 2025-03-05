@@ -1,12 +1,26 @@
 <script lang="ts" setup>
 const year = new Date().getFullYear();
+
+const { t } = useI18n();
+
+const smallLinks = [
+    {
+        label: t('common.privacy_policy'),
+        to: '/privacy',
+    },
+    {
+        label: t('common.imprint'),
+        to: '/imprint',
+    },
+];
+
+const appConfig = useAppConfig();
+const socials = appConfig.socials;
 </script>
 
 <template>
-    <UFooter :links="[]">
+    <UFooter>
         <template #left>
-            <img src="/images/logo-200x200.png" alt="FiveNet Logo" title="FiveNet" class="mr-1 h-auto w-8" />
-
             <I18nT keypath="copyright">
                 <template #year>
                     {{ year }}
@@ -14,21 +28,10 @@ const year = new Date().getFullYear();
             </I18nT>
         </template>
 
+        <UNavigationMenu :items="smallLinks" variant="link" />
+
         <template #right>
-            <UButton
-                icon="i-simple-icons-github"
-                color="neutral"
-                variant="ghost"
-                to="https://github.com/fivenet-app/fivenet"
-                target="_blank"
-            />
-            <UButton
-                icon="i-simple-icons-discord"
-                color="neutral"
-                variant="ghost"
-                to="https://discord.gg/ASRPPr8CeT"
-                target="_blank"
-            />
+            <UButton v-for="social in socials" :key="social.title" square color="neutral" variant="ghost" v-bind="social" />
         </template>
     </UFooter>
 </template>

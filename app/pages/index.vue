@@ -9,7 +9,6 @@ if (!page.value) {
 
 definePageMeta({
     layout: 'landing',
-    requiresAuth: false,
     showCookieOptions: true,
 });
 

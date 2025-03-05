@@ -38,4 +38,18 @@ export default defineAppConfig({
     footer: {
         colorMode: false,
     },
+    socials: [
+        {
+            title: 'GitHub',
+            icon: 'i-simple-icons-github',
+            to: 'https://github.com/fivenet-app',
+            target: '_blank',
+        },
+        {
+            title: 'Discord',
+            icon: 'i-simple-icons-discord',
+            to: 'https://discord.gg/ASRPPr8CeT',
+            target: '_blank',
+        },
+    ],
 });

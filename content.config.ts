@@ -53,6 +53,16 @@ export const collections = {
         schema: z.object({
             title: z.string().nonempty(),
             description: z.string().nonempty(),
+            links: z
+                .array(
+                    z.object({
+                        label: z.string(),
+                        icon: z.string(),
+                        to: z.string(),
+                        target: z.string().optional(),
+                    }),
+                )
+                .optional(),
         }),
     }),
     index: defineCollection({

@@ -110,6 +110,12 @@ export default defineNuxtConfig({
     },
 
     content: {
+        preview: {
+           api: 'https://api.nuxt.studio',
+        },
+    },
+
+    content: {
         build: {
             markdown: {
                 highlight: {

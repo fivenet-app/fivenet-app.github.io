@@ -9,7 +9,7 @@ const { header } = useAppConfig();
 </script>
 
 <template>
-    <UHeader :ui="{ center: 'flex-1' }" to="/">
+    <UHeader to="/">
         <UContentSearchButton label="Search..." variant="outline" class="w-full">
             <template #trailing>
                 <div class="ms-auto flex items-center gap-0.5">

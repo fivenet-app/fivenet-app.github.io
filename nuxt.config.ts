@@ -23,15 +23,6 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2024-07-11',
 
-    hooks: {
-        // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
-        'components:extend': (components) => {
-            const globals = components.filter((c) => ['UButton', 'UIcon'].includes(c.pascalName));
-
-            globals.forEach((c) => (c.global = true));
-        },
-    },
-
     app: {
         baseURL: '/',
         head: {

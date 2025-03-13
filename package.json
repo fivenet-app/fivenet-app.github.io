@@ -20,7 +20,7 @@
     "@nuxt/content": "3.3.0",
     "@nuxt/ui-pro": "3.0.0",
     "emoji-blast": "0.10.2",
-    "mermaid": "11.4.1",
+    "mermaid": "11.5.0",
     "vue-countup-v3": "1.4.2"
   },
   "devDependencies": {

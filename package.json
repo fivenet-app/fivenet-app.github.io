@@ -20,7 +20,7 @@
     "@nuxt/content": "3.4.0",
     "@nuxt/ui-pro": "3.0.1",
     "emoji-blast": "0.10.2",
-    "mermaid": "11.5.0",
+    "mermaid": "11.6.0",
     "vue-countup-v3": "1.4.2"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@pinia/nuxt": "0.10.1",
     "eslint": "9.23.0",
     "eslint-config-prettier": "10.1.1",
-    "eslint-plugin-prettier": "5.2.4",
+    "eslint-plugin-prettier": "5.2.5",
     "eslint-plugin-vue": "10.0.0",
     "nuxt": "3.16.1",
     "pinia-plugin-persistedstate": "4.2.0",

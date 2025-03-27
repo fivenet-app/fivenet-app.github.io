@@ -12,8 +12,8 @@ importers:
         specifier: 1.2.2
         version: 1.2.2
       '@iconify-json/lucide':
-        specifier: 1.2.32
-        version: 1.2.32
+        specifier: 1.2.33
+        version: 1.2.33
       '@iconify-json/mdi':
         specifier: 1.2.3
         version: 1.2.3
@@ -714,8 +714,8 @@ packages:
   '@iconify-json/flagpack@1.2.2':
     resolution: {integrity: sha512-L9C906tqC0yxLTNE5Jez54hiMQhlfRR9lr8YZJJcIrJayBm5LxUZvfHbyFrH5AggLutVomXze4tIZk7hh9+kCg==}
 
-  '@iconify-json/lucide@1.2.32':
-    resolution: {integrity: sha512-M5efeHQJhlT8FkAXjW+xGu5/lHUt5VBSjd/u9XxmQy6RGXLRCRi0PcUBosAuKALRT15j+U8dN4eWiDhDZjTbSw==}
+  '@iconify-json/lucide@1.2.33':
+    resolution: {integrity: sha512-2Ty+rI0tRHJEbM6J48G40ONvCPrcFC3o4PpAqOXZ3X+Uz2vMzrGj6tl2XHToZ64nc6lg+fC3WhkJebyyQxLVcw==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -7002,7 +7002,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.32':
+  '@iconify-json/lucide@1.2.33':
     dependencies:
       '@iconify/types': 2.0.0
 

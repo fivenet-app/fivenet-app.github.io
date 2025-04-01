@@ -138,6 +138,15 @@ export default defineNuxtConfig({
         },
         preview: {
             api: 'https://api.nuxt.studio',
-         },
+        },
+    },
+
+    routeRules: {
+        '/getting-started/installation/hosted': {
+            redirect: {
+                to: '/getting-started/installation/cloud',
+                statusCode: 301,
+            },
+        },
     },
 });

@@ -40,10 +40,10 @@ useSeoMeta({
                     <ProseP>Alexander Trost</ProseP>
 
                     <ProseH3>Registernummer</ProseH3>
-                    <ProseP>UG ist noch in Gründung</ProseP>
+                    <ProseP>HRB 754117</ProseP>
 
                     <ProseH3>Registergericht</ProseH3>
-                    <ProseP>UG ist noch in Gründung</ProseP>
+                    <ProseP>Amtsgericht Mannheim</ProseP>
 
                     <ProseH3>Umsatzsteueridentifikationsnummer gemäß § 27a Umsatzsteuergesetz</ProseH3>
                     <ProseP>UG ist noch in Gründung</ProseP>

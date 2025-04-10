@@ -15,7 +15,7 @@ useSeoMeta({
         <UPage>
             <UPageHeader
                 title="Imprint of ZerBytes UG (haftungsbeschränkt)"
-                description="This service/website is operator by ZerBytes UG (haftungsbeschränkt). Information pursuant to Sect. 5 German Telemedia Act (TMG)"
+                description="This service/website is operated by ZerBytes UG (haftungsbeschränkt). Information pursuant to Sect. 5 German Telemedia Act (TMG)"
             />
 
             <UPageBody>

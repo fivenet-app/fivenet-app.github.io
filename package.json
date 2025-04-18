@@ -30,7 +30,7 @@
     "@nuxt/image": "1.10.0",
     "@nuxtjs/i18n": "9.5.3",
     "@pinia/nuxt": "0.11.0",
-    "eslint": "9.24.0",
+    "eslint": "9.25.0",
     "eslint-config-prettier": "10.1.2",
     "eslint-plugin-prettier": "5.2.6",
     "eslint-plugin-vue": "10.0.0",

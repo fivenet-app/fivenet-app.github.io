@@ -228,7 +228,17 @@ const cta = {
                     :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]', footer: 'mt-0' }"
                 >
                     <template #footer>
-                        <UUser v-bind="testimonial.user" size="lg" />
+                        <UUser v-bind="testimonial.user" size="lg">
+                            <template #avatar>
+                                <img
+                                    :src="testimonial.user.avatar.src"
+                                    :alt="testimonial.user.name"
+                                    height="36px"
+                                    width="36px"
+                                    class="rounded-full"
+                                />
+                            </template>
+                        </UUser>
                     </template>
                 </UPageCard>
             </UPageColumns>

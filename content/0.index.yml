@@ -18,18 +18,6 @@ hero:
       to: /pricing
       size: xl
 
-logos:
-  icons:
-    - image: "modernv.png"
-      alt: "ModernV"
-      to: "https://modernv.net/"
-    - image: "mysticv.png"
-      alt: "MysticV"
-      to: "https://discord.gg/mysticv"
-    - image: "strokee-roleplay.png"
-      alt: "Strokee Roleplay"
-      to: "https://discord.gg/strokee"
-
 sections:
   - title: Ready to be used [In-Game]{.text-(--ui-primary)}
     description: FiveNet plugins are available for FiveM servers at the moment. Using a FiveNet Cloud instance is the fastest way to get you started with the in-game tablet.

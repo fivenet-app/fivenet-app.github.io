@@ -4,6 +4,7 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false,
     telemetry: false,
 
     modules: [

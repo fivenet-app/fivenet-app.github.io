@@ -12,8 +12,8 @@ importers:
         specifier: 1.2.2
         version: 1.2.2
       '@iconify-json/lucide':
-        specifier: 1.2.42
-        version: 1.2.42
+        specifier: 1.2.43
+        version: 1.2.43
       '@iconify-json/mdi':
         specifier: 1.2.3
         version: 1.2.3
@@ -23,6 +23,9 @@ importers:
       '@iconify-json/simple-icons':
         specifier: 1.2.34
         version: 1.2.34
+      '@mermaid-js/layout-elk':
+        specifier: ^0.1.7
+        version: 0.1.7(mermaid@11.6.0)
       '@nuxt/content':
         specifier: 3.5.1
         version: 3.5.1(@libsql/client@0.14.0)(magicast@0.3.5)(typescript@5.8.3)
@@ -856,8 +859,8 @@ packages:
   '@iconify-json/flagpack@1.2.2':
     resolution: {integrity: sha512-L9C906tqC0yxLTNE5Jez54hiMQhlfRR9lr8YZJJcIrJayBm5LxUZvfHbyFrH5AggLutVomXze4tIZk7hh9+kCg==}
 
-  '@iconify-json/lucide@1.2.42':
-    resolution: {integrity: sha512-exkRygF4yd6e5q966TXJQc/b+MAu3iQb8LeExCjl2JoP4/RlpudkYpg1AIZVCVCjAiElDYmVJYDWiJXPLkFN/g==}
+  '@iconify-json/lucide@1.2.43':
+    resolution: {integrity: sha512-DIOGQ2gWVpbVQ/C4n77PxeK2h/7OYxKVtCr0E1CXZIMQp8KEL0kcAegP42dteIY3V9FYGn1KN3I8uOIY6SeNRQ==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -1218,6 +1221,11 @@ packages:
     resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
     engines: {node: '>=18'}
     hasBin: true
+
+  '@mermaid-js/layout-elk@0.1.7':
+    resolution: {integrity: sha512-G3AJ2jMaCAqky2CT3z/sf3pK5UuS3tne98GsXDl3PkKByCmPmOYmJPf+6oX5PUlV3HNWWHuSgtZ9NU/CZDSuHQ==}
+    peerDependencies:
+      mermaid: ^11.0.0
 
   '@mermaid-js/parser@0.4.0':
     resolution: {integrity: sha512-wla8XOWvQAwuqy+gxiZqY+c7FokraOTHRWMsbB4AgRx9Sy7zKslNyejy7E+a77qHfey5GXw/ik3IXv/NHMJgaA==}
@@ -3614,6 +3622,9 @@ packages:
 
   electron-to-chromium@1.5.151:
     resolution: {integrity: sha512-Rl6uugut2l9sLojjS4H4SAr3A4IgACMLgpuEMPYCVcKydzfyPrn5absNRju38IhQOf/NwjJY8OGWjlteqYeBCA==}
+
+  elkjs@0.9.3:
+    resolution: {integrity: sha512-f/ZeWvW/BCXbhGEf1Ujp29EASo/lk1FDnETgNKwJrsVvGZhUWCZyg3xLJjAsxfOmt8KjswHmI5EwCQcPMpOYhQ==}
 
   embla-carousel-auto-height@8.6.0:
     resolution: {integrity: sha512-/HrJQOEM6aol/oF33gd2QlINcXy3e19fJWvHDuHWp2bpyTa+2dm9tVVJak30m2Qy6QyQ6Fc8DkImtv7pxWOJUQ==}
@@ -7882,7 +7893,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.2.42':
+  '@iconify-json/lucide@1.2.43':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -8250,6 +8261,12 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@mermaid-js/layout-elk@0.1.7(mermaid@11.6.0)':
+    dependencies:
+      d3: 7.9.0
+      elkjs: 0.9.3
+      mermaid: 11.6.0
 
   '@mermaid-js/parser@0.4.0':
     dependencies:
@@ -11320,6 +11337,8 @@ snapshots:
   electron-to-chromium@1.5.102: {}
 
   electron-to-chromium@1.5.151: {}
+
+  elkjs@0.9.3: {}
 
   embla-carousel-auto-height@8.6.0(embla-carousel@8.6.0):
     dependencies:

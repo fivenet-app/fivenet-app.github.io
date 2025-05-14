@@ -144,6 +144,10 @@ export default defineNuxtConfig({
         },
     },
 
+    image: {
+        provider: 'none',
+    },
+
     routeRules: {
         '/getting-started/installation/hosted': {
             redirect: {

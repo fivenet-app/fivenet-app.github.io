@@ -1,1 +1,0 @@
-import{x as t,f as a,o as s,p as n,q as r,K as p}from"./BZdZoeA3.js";const c=t({__name:"ProseButton",props:{label:{default:void 0},color:{default:"primary"},size:{default:"lg"},icon:{default:void 0}},setup(l){return(o,u)=>{const e=p;return s(),a(e,n(r(o.$props)),null,16)}}}),i=Object.assign(c,{__name:"ProseButton"});export{i as default};

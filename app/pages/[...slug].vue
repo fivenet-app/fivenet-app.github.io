@@ -51,7 +51,7 @@ const links = computed(() =>
 </script>
 
 <template>
-    <UPage v-if="page">
+    <UPage v-if="page" :ui="{ center: 'lg:col-span-7', right: 'lg:col-span-3' }">
         <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
         <UPageBody>

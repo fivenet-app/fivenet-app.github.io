@@ -10,8 +10,8 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
         <AppHeader />
 
         <UMain>
-            <UContainer>
-                <UPage>
+            <UContainer class="max-w-[90rem]">
+                <UPage :ui="{ root: 'lg:grid-cols-12', left: 'lg:col-span-3', center: 'lg:col-span-9' }">
                     <template #left>
                         <UPageAside>
                             <template #top>

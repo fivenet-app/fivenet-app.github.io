@@ -6,7 +6,7 @@ Templates can be used to make creating documents easier.
 
 ::callout{icon="i-mdi-info-slab-circle"}
 Golang HTML templating is used.
-In addition to the base [Golang html/template functions](https://pkg.go.dev/html/template), the [`sprig` template functions](https://masterminds.github.io/sprig/) are available for convience.
+In addition to the base [Golang html/template functions](https://pkg.go.dev/html/template), the [`sprig` template functions](https://masterminds.github.io/sprig/) are available for convenience.
 ::
 
 Points to watch out when creating a template:
@@ -31,7 +31,7 @@ A template must render out to valid HTML.
   - `.CategoryId`
   - `.Category`- `.Name`
     - `.Description`
-- `.Users` - List of citizens/ users that are in the user's clipboard.
+- `.Users` - List of citizens/users that are in the user's clipboard.
   - See [User Info Structure](#user-info-structure).
 - `.Vehicles` - List of vehicles that are in the user's clipboard.
   - `Plate`
@@ -45,16 +45,16 @@ A template must render out to valid HTML.
 
 - `.UserId`
 - `.Identifier`
-- `.Job`\- - Preferrably use `jobLabel`.
-- `.JobLabel`\*
-- `.JobGrade`\- - Preferrably use `jobGradeLabel`.
-- `.JobGradeLabel`\*
+- `.Job` - Preferably use `jobLabel`.
+- `.JobLabel`*
+- `.JobGrade` - Preferably use `jobGradeLabel`.
+- `.JobGradeLabel`*
 - `.Firstname`
 - `.Lastname`
 - `.Dateofbirth` - In `DD.MM.YYYY` format.
 - `.PhoneNumber` - Optional, might not always be included.
 
-(\*these fields are only available on the `.activeChar` variable)
+(*these fields are only available on the `.activeChar` variable)
 
 ## Snippets
 
@@ -64,7 +64,7 @@ A template must render out to valid HTML.
 {{ .ActiveChar.Firstname }}, {{ .ActiveChar.Lastname }}
 ```
 
-### Get first Citizen
+### Get First Citizen
 
 Get the first user in the list (first in the user's clipboard):
 
@@ -72,7 +72,7 @@ Get the first user in the list (first in the user's clipboard):
 {{- $citizen := first .Users -}}
 ```
 
-Example access citizen info:
+Example to access citizen info:
 
 ```templ
 {{ $citizen.Firstname }}, {{ $citizen.Lastname }} ({{ $citizen.Dateofbirth }})
@@ -86,21 +86,40 @@ Example access citizen info:
 
 To learn more about different date and time formats, check out [the Golang `time` package documentation here](https://pkg.go.dev/time#pkg-constants).
 
-### Showing a Timestamp (e.g., `CreatedAt`)
+### Current Date
+
+```templ
+{{ now | date "02.01.2006" }}
+```
+
+To learn more about different date and time formats, check out [the Golang `time` package documentation here](https://pkg.go.dev/time#pkg-constants).
+
+### Showing a Timestamp (e.g., `CreatedAt` field)
 
 ```templ
 {{ .CreatedAt | date "02.01.2006 15:04" }}
 ```
 
-### Checkbox
+### Checkbox List
 
 ```html
-<label contenteditable="false"><input type="checkbox"><span> Yes </span></label>
+<ul data-type="taskList">
+    <li data-checked="false" data-type="taskItem">
+        <label><input type="checkbox"><span></span></label><div><p>Your first text goes here</p></div>
+        <label><input type="checkbox"><span></span></label><div><p>Your second text goes here</p></div>
+    </li>
+</ul>
+```
+
+#### Checkbox List Item
+
+```html
+<label><input type="checkbox"><span></span></label><div><p>Your text goes here</p></div>
 ```
 
 ## Examples
 
-### Displaying a list of Vehicles
+### Displaying a List of Vehicles
 
 ```templ
 {{ if not .Vehicles }}

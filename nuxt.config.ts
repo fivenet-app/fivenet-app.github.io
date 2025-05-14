@@ -133,6 +133,8 @@ export default defineNuxtConfig({
                         'yml',
                         'console',
                         'templ',
+                        'diff',
+                        'lua',
                     ],
                 },
             },

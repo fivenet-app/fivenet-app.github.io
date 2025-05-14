@@ -19,8 +19,12 @@ useSeoMeta({
     description: 'We are sorry but this page could not be found.',
 });
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'));
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
+const { locale } = useI18n();
+
+const collection = ('content_' + locale.value) as keyof Collections;
+
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation(collection));
+const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections(collection), {
     server: false,
 });
 

@@ -1,11 +1,50 @@
 <script setup lang="ts">
 const { finalizePendingLocaleChange, t } = useI18n();
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'));
+const { locale } = useI18n();
 
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-    server: false,
-});
+const { data: navigation } = await useAsyncData(
+    'navigation',
+    async () => {
+        const collection = ('content_' + locale.value) as keyof Collections;
+        try {
+            const content = await queryCollectionNavigation(collection).first();
+            if (content) {
+                return content;
+            }
+        } catch {
+            // No need to handle the error
+        }
+
+        // Fallback to default locale if content is missing in non-default locale
+        return await queryCollectionNavigation('content_en');
+    },
+    {
+        watch: [locale],
+    },
+);
+
+const { data: files } = useLazyAsyncData(
+    'search',
+    async () => {
+        const collection = ('content_' + locale.value) as keyof Collections;
+        try {
+            const content = await queryCollectionSearchSections(collection).first();
+            if (content) {
+                return content;
+            }
+        } catch {
+            // No need to handle the error
+        }
+
+        // Fallback to default locale if content is missing in non-default locale
+        return await queryCollectionSearchSections('content_en');
+    },
+    {
+        watch: [locale],
+        server: false,
+    },
+);
 
 useHead({
     htmlAttrs: {
@@ -35,24 +74,6 @@ useSeoMeta({
 const onBeforeEnter = async () => {
     await finalizePendingLocaleChange();
 };
-
-/*
-const route = useRoute();
-const toast = useToast();
-
-onMounted(() => {
-    if (route.query.locale_switched === undefined) {
-        return;
-    }
-
-    toast.add({
-        title: t("notifications.language_switched.title"),
-        description: t("notifications.language_switched.content"),
-        color: "success",
-        timeout: 1750,
-    });
-});
-*/
 
 provide('navigation', navigation);
 </script>

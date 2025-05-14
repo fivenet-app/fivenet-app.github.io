@@ -2,7 +2,28 @@
 import CountUp from 'vue-countup-v3';
 import '~/assets/css/herofull-pattern.css';
 
-const { data: page } = await useAsyncData('index', () => queryCollection('index').first());
+const { t, locale } = useI18n();
+
+const { data: page } = await useAsyncData(
+    'index',
+    async () => {
+        const collection = ('index_' + locale.value) as keyof Collections;
+        try {
+            const content = await queryCollection(collection).first();
+            if (content) {
+                return content;
+            }
+        } catch {
+            // No need to handle the error
+        }
+
+        // Fallback to default locale if content is missing in non-default locale
+        return await queryCollection('index_en').first();
+    },
+    {
+        watch: [locale],
+    },
+);
 if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
@@ -17,8 +38,6 @@ useSeoMeta({
     description: 'FiveNet project website and documentation.',
     ogDescription: 'FiveNet project website and documentation.',
 });
-
-const { t } = useI18n();
 
 const appVersion = APP_VERSION.split('-')[0];
 

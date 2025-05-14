@@ -1,24 +1,46 @@
 <script setup lang="ts">
 import { findPageHeadline } from '#ui-pro/utils/content';
-import type { ContentNavigationItem } from '@nuxt/content';
+import type { Collections, ContentNavigationItem } from '@nuxt/content';
+import { withLeadingSlash } from 'ufo';
 
 definePageMeta({
     layout: 'docs',
 });
 
-const { t } = useI18n();
-
 const route = useRoute();
+const { t, locale, localeProperties } = useI18n();
+const slug = computed(() => withLeadingSlash(String(route.path)));
+
 const { toc } = useAppConfig();
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
 
-const { data: page } = await useAsyncData(route.path, () => queryCollection('docs').path(route.path).first());
+const { data: page } = await useAsyncData(
+    route.path,
+    async () => {
+        const collection = ('content_' + locale.value) as keyof Collections;
+        try {
+            const content = await queryCollection(collection).path(slug.value).first();
+            if (content) {
+                return content;
+            }
+        } catch {
+            // No need to handle the error
+        }
+
+        // Fallback to default locale if content is missing in non-default locale
+        return await queryCollection('content_en').path(slug.value).first();
+    },
+    {
+        watch: [locale],
+    },
+);
 if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-    return queryCollectionItemSurroundings('docs', route.path, {
+    const collection = ('content_' + locale.value) as keyof Collections;
+    return queryCollectionItemSurroundings(collection, route.path, {
         fields: ['description'],
     });
 });
@@ -55,7 +77,7 @@ const links = computed(() =>
         <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
         <UPageBody>
-            <ContentRenderer v-if="page" :value="page" />
+            <ContentRenderer v-if="page" :dir="localeProperties?.dir ?? 'ltr'" :value="page" />
 
             <USeparator v-if="surround?.length" />
 

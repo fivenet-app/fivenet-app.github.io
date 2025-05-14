@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content';
-//import LanguageSwitcherModal from "./LanguageSwitcherModal.vue";
+import LanguageSwitcherModal from './LanguageSwitcherModal.vue';
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
 
-//const modal = useModal();
+const overlay = useOverlay();
+
+const languageSwitcherModal = overlay.create(LanguageSwitcherModal, {});
+
 const { header } = useAppConfig();
 </script>
 
@@ -30,14 +33,12 @@ const { header } = useAppConfig();
         <template #right>
             <UContentSearchButton class="lg:hidden" />
 
-            <!--
             <UButton
                 :label="$t('common.language')"
                 icon="i-mdi-translate"
                 color="neutral"
-                @click="modal.open(LanguageSwitcherModal, {})"
+                @click="languageSwitcherModal.open()"
             />
-            -->
 
             <UColorModeButton />
 

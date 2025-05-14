@@ -44,11 +44,12 @@ const sectionSchema = z.object({
 });
 
 export const collections = {
-    docs: defineCollection({
+    content_en: defineCollection({
         type: 'page',
         source: {
-            include: '**',
-            exclude: ['0.index.yml'],
+            include: 'en/**',
+            exclude: ['en/0.index.yml'],
+            prefix: '',
         },
         schema: z.object({
             title: z.string().nonempty(),
@@ -65,8 +66,9 @@ export const collections = {
                 .optional(),
         }),
     }),
-    index: defineCollection({
-        source: '0.index.yml',
+
+    index_en: defineCollection({
+        source: 'en/0.index.yml',
         type: 'data',
         schema: z.object({
             title: z.string().nonempty(),

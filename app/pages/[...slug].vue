@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { findPageHeadline } from '#ui-pro/utils/content';
-import type { Collections, ContentNavigationItem } from '@nuxt/content';
+import type { ContentDeCollectionItem, ContentEnCollectionItem, ContentNavigationItem, PageCollections } from '@nuxt/content';
 import { withLeadingSlash } from 'ufo';
 
 definePageMeta({
@@ -9,16 +9,32 @@ definePageMeta({
 
 const route = useRoute();
 const { t, locale, localeProperties } = useI18n();
-const slug = computed(() => withLeadingSlash(String(route.path)));
+const slug = computed(() => withLeadingSlash(route.path).replace(/^\/en\//, '/'));
+const pageLocale = computed(() => {
+    const path = withLeadingSlash(route.path);
+    if (/^\/en\//.test(path)) {
+        return 'en';
+    }
+
+    return path.split('/')[1] ?? locale.value;
+});
 
 const { toc } = useAppConfig();
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
 
-const { data: page } = await useAsyncData(
-    route.path,
+const { data: page } = await useAsyncData<ContentEnCollectionItem | ContentDeCollectionItem>(
+    `page-${slug.value}`,
     async () => {
-        const collection = ('content_' + locale.value) as keyof Collections;
+        const collection = ('content_' + pageLocale.value) as keyof PageCollections;
         try {
+            console.log(
+                'files',
+                slug.value,
+                route.path,
+                collection,
+                pageLocale.value ?? locale.value,
+                await queryCollection(collection).path(slug.value).first(),
+            );
             const content = await queryCollection(collection).path(slug.value).first();
             if (content) {
                 return content;
@@ -38,12 +54,30 @@ if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
 }
 
-const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-    const collection = ('content_' + locale.value) as keyof Collections;
-    return queryCollectionItemSurroundings(collection, route.path, {
-        fields: ['description'],
-    });
-});
+const { data: surround } = await useAsyncData(
+    `${route.path}-surround`,
+    async () => {
+        const collection = ('content_' + pageLocale.value) as keyof PageCollections;
+        try {
+            const content = await queryCollectionItemSurroundings(collection, route.path, {
+                fields: ['description'],
+            });
+            if (content) {
+                return content;
+            }
+        } catch {
+            // No need to handle the error
+        }
+
+        // Fallback to default locale if content is missing in non-default locale
+        return await queryCollectionItemSurroundings('content_en', route.path, {
+            fields: ['description'],
+        });
+    },
+    {
+        watch: [locale],
+    },
+);
 
 useSeoMeta({
     title: page.value.title,
@@ -77,7 +111,7 @@ const links = computed(() =>
         <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
 
         <UPageBody>
-            <ContentRenderer v-if="page" :dir="localeProperties?.dir ?? 'ltr'" :value="page" />
+            <ContentRenderer v-if="page" ref="contentRendererRef" :dir="localeProperties?.dir ?? 'ltr'" :value="page" />
 
             <USeparator v-if="surround?.length" />
 

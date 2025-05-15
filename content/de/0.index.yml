@@ -1,0 +1,126 @@
+title: FiveNet
+beschreibung: FiveNet ist Ihr einfacher Weg, um FiveNet für Ihre Rollenspiel-Community bereitzustellen.
+navigation: false
+hero:
+  title: Erste Schritte mit [FiveNet Cloud]{.text-(--ui-primary)}
+  beschreibung: FiveNet Cloud ist Ihr schneller Weg, um eine gehostete FiveNet-Instanz für Ihre Community schnell einsatzbereit zu machen. Wir kümmern uns um den Betrieb und die Aktualisierung Ihrer FiveNet-Instanz.
+  links:
+    - label: Demo
+      icon: i-mdi-lightning-bolt
+      size: xl
+      color: neutral
+      variant: subtle
+      to: https://fivenet.app/getting-started/demo
+      target: _blank
+    - label: Loslegen
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /pricing
+      size: xl
+
+sections:
+  - title: Bereit zur Nutzung [In-Game]{.text-(--ui-primary)}
+    beschreibung: FiveNet-Plugins sind derzeit für FiveM-Server verfügbar. Die Nutzung einer FiveNet-Cloud-Instanz ist der schnellste Weg, um mit dem In-Game-Tablet zu starten.
+    id: features
+    #orientation: horizontal
+    #image:
+    #  src: '/images/screenshots/ingame-tablet.png'
+    #  alt: 'FiveNet Tablet FiveM In-Game Screenshot'
+    features:
+      - name: Schnelle Einrichtung
+        beschreibung: Ihre FiveNet-Cloud-Instanz ist in wenigen Sekunden einsatzbereit.
+        icon: i-lucide-rocket
+      - name: HTTPS-Verschlüsselung
+        beschreibung: Jede FiveNet-Cloud-Instanz ist sicher über HTTPS und ihre eigene Subdomain erreichbar.
+        icon: i-lucide-lock
+      - name: Einfach erweiterbar
+        beschreibung: Der Plugin-Code ist leicht erweiterbar, sodass Ihre Entwickler ihn in das Framework und die Plugins Ihres Servers integrieren können (z. B. Bußgelder, Standortverfolgung).
+        icon: i-lucide-cog
+features:
+  title: Funktionen, die uns auszeichnen
+  beschreibung: Unsere Plattform kombiniert Zuverlässigkeit auf Unternehmensniveau mit entwicklerfreundlichen Funktionen und bietet alles, was Sie zum Erstellen und Skalieren Ihrer Anwendungen benötigen.
+  items:
+    - title: Entwicklererfahrung
+      beschreibung: Umfassende Dokumentation, leistungsstarke CLI-Tools und intuitive APIs, die die Entwicklung zum Vergnügen machen.
+      icon: i-lucide-cog
+    - title: Unternehmensbereit
+      beschreibung: SOC 2 Typ II zertifiziert, DSGVO-konform, mit 24/7-Unterstützung und dedizierten Erfolgsteams.
+      icon: i-lucide-check
+    - title: Fortschrittliche Sicherheit
+      beschreibung: Multi-Faktor-Authentifizierung, rollenbasierte Zugriffskontrolle und Prüfprotokolle schützen Ihre Daten.
+      icon: i-lucide-lock
+
+stats:
+  - key: users_registered
+    number: 2703
+    icon: i-ph-user
+  - key: documents_created
+    number: 37647
+    icon: i-ph-file-doc
+  - key: dispatches_created
+    number: 345320
+    icon: i-ph-siren
+  - key: citizens_total
+    number: 46413
+    icon: i-ph-users-four
+  - key: citizen_activity
+    number: 116162
+    icon: i-ph-activity
+  - key: timeclock_tracked
+    number: 477810
+    type: unit
+    unit: 'common.time_ago.year'
+    icon: i-ph-timer
+
+testimonials:
+  #headline: ''
+  title: Schließen Sie sich anderen [Rollenspiel-Servern]{.text-(--ui-primary)} an, die bereits FiveNet nutzen
+  beschreibung: Sehen Sie, wie andere Rollenspiel-Server ihre Rollenspiel-Erfahrung mit FiveNet transformieren.
+  items:
+    - quote: ''
+      user:
+        name: 'ModernV'
+        beschreibung: 'FiveM Rollenspiel-Server'
+        target: _blank
+        avatar:
+          src: '/images/communities/modernv.png'
+        to: 'https://modernv.net'
+    - quote: ''
+      user:
+        name: 'MysticV'
+        beschreibung: 'FiveM Rollenspiel-Server'
+        target: _blank
+        avatar:
+          src: '/images/communities/mysticv.png'
+    - quote: ''
+      user:
+        name: 'Strokee Roleplay'
+        beschreibung: 'FiveM Rollenspiel-Server'
+        target: _blank
+        avatar:
+          src: '/images/communities/strokee-roleplay.png'
+
+faq:
+  title: Häufig gestellte Fragen
+  beschreibung: "Im Folgenden finden Sie Antworten auf einige der häufigsten Fragen zu FiveNet."
+  items:
+    - label: "Was ist FiveNet?"
+      content: "FiveNet ist eine umfassende Suite von Anwendungen, die das Rollenspiel auf FiveM-Servern verbessern soll. Es bietet Werkzeuge für z. B. Ihre Polizeidienststelle, um Bürger und Fahrzeuge zu durchsuchen, ein Dispositionssystem zur Bearbeitung von Notfällen, Dokumente und viele weitere Funktionen."
+    - label: "Für wen ist FiveNet?"
+      content: "FiveNet ist perfekt für FiveM-Rollenspiel-Server, die eine florierende Rollenspiel-Umgebung schaffen möchten."
+    - label: "Ist FiveNet kostenlos?"
+      content: "Ja, FiveNet ist ein Open-Source-Projekt, das unter der Apache 2.0-Lizenz lizenziert ist, was bedeutet, dass jeder FiveNet nach Belieben nutzen und betreiben kann."
+    - label: "Ist FiveNet exklusiv für ModernV?"
+      content: "Nein, FiveNet ist ein Open-Source-Projekt, das unter der Apache 2.0-Lizenz lizenziert ist."
+    - label: "Ist FiveNet mit meinem FiveM-Server kompatibel?"
+      content: "Der Plugin-Teil von FiveNet ist mit der neuesten Version von FiveM kompatibel und bietet über die Konfiguration Kompatibilität mit den ESX- und QBCore-Frameworks."
+    - label: "Wie richte ich FiveNet ein?"
+      content: "Sie können der Anleitung zum Einstieg in der Dokumentation folgen, um FiveNet selbst zu hosten, oder sich für das FiveNet-Cloud-Angebot anmelden. Mit dem FiveNet-Cloud-Angebot hosten wir Ihren FiveNet-Server und halten ihn mit den neuesten Funktionen und Fehlerbehebungen auf dem neuesten Stand, sobald diese veröffentlicht werden."
+    - label: "Brauche ich technische Kenntnisse, um FiveNet zu nutzen?"
+      content: "Wenn Sie FiveNet selbst hosten möchten, benötigen Sie grundlegende Linux- und Docker-Kenntnisse, um FiveNet reibungslos betreiben zu können. Im Falle des FiveNet-Cloud-Angebots kümmern wir uns um alles und Sie müssen nur den FiveNet-Plugin-Code in die Plugins Ihres Servers integrieren."
+    - label: "Welche Support-Optionen gibt es?"
+      content: "Wir bieten die Dokumentation mit Schritt-für-Schritt-Anleitungen für die Community und Discord-Chat-basierten Support für FiveNet-Cloud-Nutzer."
+
+cta:
+  title: Holen Sie sich noch heute Ihre eigene [FiveNet Cloud]{.text-(--ui-primary)}-Instanz
+  beschreibung: Besuchen Sie die Preisseite von FiveNet Cloud, um loszulegen, oder wenn Sie die Installationsmethoden-Dokumentation selbst hosten möchten.

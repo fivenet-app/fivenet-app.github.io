@@ -1,17 +1,21 @@
 <script lang="ts" setup>
+import type { Collections, IndexDeCollectionItem, IndexEnCollectionItem } from '@nuxt/content';
+import type { ButtonProps } from '@nuxt/ui';
 import CountUp from 'vue-countup-v3';
 import '~/assets/css/herofull-pattern.css';
 
 const { t, locale } = useI18n();
 
-const { data: page } = await useAsyncData(
+const localePath = useLocalePath();
+
+const { data: page } = await useAsyncData<IndexEnCollectionItem | IndexDeCollectionItem>(
     'index',
     async () => {
         const collection = ('index_' + locale.value) as keyof Collections;
         try {
             const content = await queryCollection(collection).first();
             if (content) {
-                return content;
+                return content as IndexEnCollectionItem | IndexDeCollectionItem;
             }
         } catch {
             // No need to handle the error
@@ -41,23 +45,23 @@ useSeoMeta({
 
 const appVersion = APP_VERSION.split('-')[0];
 
-const links = [
+const links = computed<ButtonProps[]>(() => [
     {
         label: t('common.demo'),
         icon: 'i-mdi-lightning-bolt',
         size: 'lg',
         color: 'neutral',
-        to: '/getting-started/demo',
+        to: localePath('/getting-started/demo'),
     },
     {
         label: t('common.docs'),
         icon: 'i-mdi-book-open-variant-outline',
         size: 'lg',
-        to: '/getting-started',
+        to: localePath('/getting-started'),
     },
-];
+]);
 
-const features = {
+const features = computed(() => ({
     title: t('docs.features.title'),
     description: undefined,
     links: [
@@ -73,7 +77,7 @@ const features = {
             label: t('cta.links.explore.label'),
             trailingIcon: 'i-mdi-arrow-right',
             color: 'neutral',
-            to: '/getting-started',
+            to: localePath('/getting-started'),
             size: 'lg',
         },
     ],
@@ -82,55 +86,55 @@ const features = {
             title: t('docs.features.items.citizens.title'),
             description: t('docs.features.items.citizens.description'),
             icon: 'i-mdi-account-multiple-outline',
-            to: '/user-guides/citizens',
+            to: localePath('/user-guides/citizens'),
         },
         {
             title: t('docs.features.items.vehicles.title'),
             description: t('docs.features.items.vehicles.description'),
             icon: 'i-mdi-car-outline',
-            to: '/user-guides/vehicles',
+            to: localePath('/user-guides/vehicles'),
         },
         {
             title: t('docs.features.items.documents.title'),
             description: t('docs.features.items.documents.description'),
             icon: 'i-mdi-file-document-box-multiple-outline',
-            to: '/user-guides/documents',
+            to: localePath('/user-guides/documents'),
         },
         {
             title: t('docs.features.items.jobs.title'),
             description: t('docs.features.items.jobs.description'),
             icon: 'i-mdi-briefcase-outline',
-            to: '/user-guides/jobs',
+            to: localePath('/user-guides/jobs'),
         },
         {
             title: t('docs.features.items.calendar.title'),
             description: t('docs.features.items.calendar.description'),
             icon: 'i-mdi-calendar-outline',
-            to: '/user-guides/calendar',
+            to: localePath('/user-guides/calendar'),
         },
         {
             title: t('docs.features.items.mailer.title'),
             description: t('docs.features.items.mailer.description'),
             icon: 'i-mdi-email',
-            to: '/user-guides/mailer',
+            to: localePath('/user-guides/mailer'),
         },
         {
             title: t('docs.features.items.livemap.title'),
             description: t('docs.features.items.livemap.description'),
             icon: 'i-mdi-map-outline',
-            to: '/user-guides/livemap',
+            to: localePath('/user-guides/livemap'),
         },
         {
             title: t('docs.features.items.centrum.title'),
             description: t('docs.features.items.centrum.description'),
             icon: 'i-mdi-car-emergency',
-            to: '/user-guides/centrum',
+            to: localePath('/user-guides/centrum'),
         },
         {
             title: t('docs.features.items.i18n.title'),
             description: t('docs.features.items.i18n.description'),
             icon: 'i-mdi-language',
-            to: '/user-guides/i18n',
+            to: localePath('/user-guides/i18n'),
         },
         {
             title: t('docs.features.items.nuxt3_ui.title'),
@@ -145,7 +149,7 @@ const features = {
             to: 'https://github.com/fivenet-app/fivenet',
         },
     ],
-};
+}));
 
 const cta = {
     title: t('cta.title'),
@@ -306,7 +310,7 @@ const cta = {
         </UPageSection>
 
         <UPageSection>
-            <UPageCTA :title="cta.title" :links="features.links" class="bg-gray-100/50 dark:bg-gray-800/50" />
+            <UPageCTA :title="cta.title" :links="features.links as ButtonProps[]" class="bg-gray-100/50 dark:bg-gray-800/50" />
         </UPageSection>
     </div>
 </template>

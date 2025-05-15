@@ -124,13 +124,3 @@ faq:
 cta:
   title: Get your own [FiveNet Cloud]{.text-(--ui-primary)} instance today
   description: Checkout the FiveNet Cloud pricing page to get started or if you want to self-host the installation methods documentation.
-  links:
-    - label: Subscribe now
-      to: '/pricing'
-      target: _blank
-      icon: i-lucide-shopping-cart
-    - label: Self Host
-      to: 'https://fivenet.app/getting-started/installation/methods'
-      trailingIcon: i-lucide-circle-help
-      target: _blank
-      variant: subtle

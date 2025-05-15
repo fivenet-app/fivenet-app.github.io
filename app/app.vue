@@ -1,15 +1,20 @@
 <script setup lang="ts">
-const { finalizePendingLocaleChange, t } = useI18n();
+import type { PageCollections } from '@nuxt/content';
 
-const { locale } = useI18n();
+const { finalizePendingLocaleChange, t, locale, locales } = useI18n();
+
+const localePath = useLocalePath();
 
 const { data: navigation } = await useAsyncData(
     'navigation',
     async () => {
-        const collection = ('content_' + locale.value) as keyof Collections;
+        const collection = ('content_' + locale.value) as keyof PageCollections;
         try {
-            const content = await queryCollectionNavigation(collection).first();
+            const content = await queryCollectionNavigation(collection);
             if (content) {
+                if (locale.value !== 'en') {
+                    return content[0].children ?? content;
+                }
                 return content;
             }
         } catch {
@@ -27,9 +32,9 @@ const { data: navigation } = await useAsyncData(
 const { data: files } = useLazyAsyncData(
     'search',
     async () => {
-        const collection = ('content_' + locale.value) as keyof Collections;
+        const collection = ('content_' + locale.value) as keyof PageCollections;
         try {
-            const content = await queryCollectionSearchSections(collection).first();
+            const content = await queryCollectionSearchSections(collection);
             if (content) {
                 return content;
             }
@@ -75,11 +80,45 @@ const onBeforeEnter = async () => {
     await finalizePendingLocaleChange();
 };
 
+async function clickListener(event: MouseEvent): Promise<void> {
+    if (!event.srcElement) {
+        return;
+    }
+
+    const element = event.srcElement as HTMLElement;
+    if (element.tagName.toLowerCase() !== 'a' && !element.hasAttribute('href')) {
+        return;
+    }
+    const href = element.getAttribute('href');
+    if (!href?.startsWith('/')) {
+        return;
+    }
+
+    event.preventDefault();
+    await navigateTo(localePath(href));
+}
+
+onMounted(async () => {
+    if (!import.meta.client) {
+        return;
+    }
+
+    window.addEventListener('click', clickListener);
+});
+
+onBeforeUnmount(async () => {
+    if (!import.meta.client) {
+        return;
+    }
+
+    window.removeEventListener('click', clickListener);
+});
+
 provide('navigation', navigation);
 </script>
 
 <template>
-    <UApp>
+    <UApp :locale="locales[locale]">
         <NuxtLoadingIndicator color="repeating-linear-gradient(to right, #55dde0 0%, #34cdfe 50%, #7161ef 100%)" />
 
         <UMain>

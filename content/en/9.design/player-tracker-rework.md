@@ -15,8 +15,10 @@ title: Player Tracker Rework
 - Use Nats key value store for sharing the state.
 
 ::mermaid
+```mermaid
 sequenceDiagram
 Worker->>+Database: Retrieve current User Locations
 Worker->>NATS KV: Update locations in KV
 Server->>NATS KV: Access location info
+```
 ::

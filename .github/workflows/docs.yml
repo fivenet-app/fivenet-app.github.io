@@ -63,7 +63,7 @@ jobs:
           NUXT_UI_PRO_LICENSE: "${{ secrets.NUXT_UI_PRO_LICENSE }}"
           NUXT_PUBLIC_STUDIO_TOKENS: "${{ secrets.NUXT_PUBLIC_STUDIO_TOKENS }}"
         run: |
-          cp -f fivenet/gen/grpc-api.md content/8.development/3.grpc-api.md
+          cp -f fivenet/gen/grpc-api.md content/en/8.development/3.grpc-api.md
           pnpm generate
 
       - name: Deploy

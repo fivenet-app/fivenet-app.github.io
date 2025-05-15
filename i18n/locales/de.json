@@ -2,9 +2,14 @@
     "pages": {
         "index": {
             "welcome": "Willkommen bei FiveNet!",
-            "subtext": "Von der Suche in der Bürger- und Fahrzeugdatenbank des Staates über das Ausfüllen von Dokumenten für Untersuchungen, Gerichtsverfahren und einer Karte Ihrer Kollegen und Einsätze. All das und mehr ist (weitestgehend) in diesem Netzwerk, dem FiveNet, bereit.",
-            "whats_new_in": "Siehe die Neuerungen in Version {version}",
-            "logos": "Von großen  RP-Communities genutzt"
+            "description": "Eine vollständige Suite von Funktionen, um das Rollenspiel Ihrer Community auf die nächste Stufe zu heben, alles in einem \"Netzwerk\", FiveNet.",
+            "headline": "Verbessern Sie das Rollenspiel Ihrer Community",
+            "whats_new_in": "Sehen Sie, was neu ist in {version}",
+            "logos": "Genutzt von großartigen RP-Communities",
+            "what_is": {
+                "title": "Was ist FiveNet?",
+                "description": "FiveNet ist ein Open-Source-Projekt mit mehreren Funktionen, die das Rollenspiel Ihrer Community verbessern. Von der Suche in der Bürger- und Fahrzeugdatenbank des Staates über das Ausfüllen von Dokumenten für polizeiliche Ermittlungen, Gerichtsverfahren und einer Livemap Ihrer Kollegen und Einsätze. Ein spezielles Plugin für FiveM-Server ist verfügbar, das das In-Game-Tablet aktiviert."
+            }
         },
         "notfound": {
             "go_back": "Zurück zur Startseite"
@@ -14,7 +19,7 @@
     "common": {
         "home": "Startseite",
         "docs": "Dokumentation",
-        "toc": "Table of Contents",
+        "toc": "Inhaltsverzeichnis",
         "community": "Community",
         "language": "Sprache",
         "close": "Schließen",
@@ -41,19 +46,20 @@
             "hour": "Stunde | Stunden",
             "minute": "Minute | Minuten",
             "second": "Sekunde | Sekunden"
-        }
+        },
+        "demo": "Demo"
     },
     "notifications": {
         "language_switched": {
             "title": "Sprache gewechselt",
-            "content": "Sprache wurde zu {name} gewechselt."
+            "content": "Die Sprache wurde zu {name} gewechselt."
         }
     },
     "docs": {
         "toc": {
             "bottom": {
-                "edit": "Editier die Seite",
-                "star": "Star on GitHub"
+                "edit": "Diese Seite bearbeiten",
+                "star": "Star auf GitHub"
             }
         },
         "hero": {
@@ -64,20 +70,20 @@
             "title": "Funktionalitäten von FiveNet",
             "items": {
                 "citizens": {
-                    "title": "Search Citizens",
+                    "title": "Bürger suchen",
                     "description": "Suche und finde Informationen über Bürger, einschließlich grundlegender Informationen, Lizenzen und zugehörigen Dokumenten."
                 },
                 "vehicles": {
-                    "title": "Fahrzeug-Datenbank",
+                    "title": "Fahrzeugregister",
                     "description": "Suche und finde Informationen zu Fahrzeugen."
                 },
                 "documents": {
-                    "title": "Dokumenten-Management",
+                    "title": "Dokumentenmanagement",
                     "description": "Suche, erstelle und verwalte Dokumente, entweder mit Vorlagen oder von Grund auf neu."
                 },
                 "jobs": {
-                    "title": "Mitarbeiterübersicht",
-                    "description": "Infos über deinen Job und Mitarbeitermanagement (e.g., Führungsregister, Stempeluhr)."
+                    "title": "Jobs",
+                    "description": "Infos über deinen Job und Mitarbeitermanagement (z. B. Führungsregister, Stempeluhr)."
                 },
                 "calendar": {
                     "title": "Kalender",
@@ -89,19 +95,23 @@
                 },
                 "centrum": {
                     "title": "Leitstelle",
-                    "description": "Leitstelle, für das Zuweisen von Einsätze."
+                    "description": "Leitstelle, für das Zuweisen von Einsätzen an Kollegen, das Verwalten von Einheiten und Einsätzen."
                 },
                 "i18n": {
-                    "title": "Mehrsprachiges UI",
-                    "description": "Mehrere Sprachen für die UI verfügbar."
+                    "title": "Mehrsprachige Benutzeroberfläche",
+                    "description": "Mehrere Sprachen für die Benutzeroberfläche verfügbar."
                 },
                 "nuxt3_ui": {
                     "title": "Nuxt 3 + Nuxt UI Pro",
-                    "description": "Powered by Nuxt 3 und Nuxt UI Pro, für optimale Leistung."
+                    "description": "Angetrieben von Nuxt 3 und Nuxt UI Pro für optimale Leistung."
                 },
                 "open_source": {
                     "title": "Open Source",
-                    "description": "FiveNet's Code ist lizensiert unter der Apache 2.0 Lizenz."
+                    "description": "Der Code von FiveNet ist unter der Apache 2.0-Lizenz lizenziert."
+                },
+                "mailer": {
+                    "title": "E-Mails",
+                    "description": "Schreiben Sie E-Mails an Kollegen und Bürger für eine schnelle Kommunikation."
                 }
             }
         }
@@ -110,17 +120,18 @@
         "CookieControl": {
             "title": "Wir nutzen Cookies!",
             "subtitle": "Der Hauptzweck unserer Cookies besteht darin, für analytische Zwecke Navigationen auf der Website zu tracken.",
-            "description": "Der beste Weg die Website Daten zu entfernen, ist es die Browser-eigene \"Website Daten löschen\"-Funktion zu nutzen."
+            "description": "Der beste Weg, die Website-Daten zu entfernen, ist es, die Browser-eigene \"Website-Daten löschen\"-Funktion zu nutzen."
         },
         "language_switcher": {
             "title": "Sprache wechseln"
         },
         "stats": {
             "title": "FiveNet in Zahlen",
+            "description": "Statistiken, die über die FiveNet-Instanzen gesammelt wurden, die vom FiveNet-Cloud-Team betrieben werden.",
             "stats": {
                 "users_registered": "Benutzer registriert",
                 "documents_created": "Dokumente erstellt",
-                "dispatches_created": "Notrufe abgesetzt",
+                "dispatches_created": "Einsätze gesendet",
                 "citizen_activity": "Bürgeraktivitäten protokolliert",
                 "timeclock_tracked": "Dienstzeit erfasst",
                 "citizens_total": "Bürgerakten geführt"
@@ -128,13 +139,13 @@
         }
     },
     "cta": {
-        "title": "Erkunde FiveNets Community und Dokumentation",
+        "title": "Erkunde die Community und Dokumentation von FiveNet",
         "links": {
             "discord": {
-                "label": "Trete unserem Discord bei"
+                "label": "Treten Sie unserem Discord bei"
             },
             "explore": {
-                "label": "Entdecke FiveNet"
+                "label": "Dokumentation erkunden"
             }
         }
     }

@@ -42,19 +42,23 @@ Similarily structured to documents access levels.
 ### Flow - Request needed
 
 ::mermaid
+```mermaid
 sequenceDiagram
 User->>+Qualification: Send Request
 Approver-->Qualification: Approve Request
 User-->Exam: Take exam
 User->>Exam: Submit exam response
 Approver->>Exam: Create Result
+```
 ::
 
 ### Flow - Enabled
 
 ::mermaid
+```mermaid
 sequenceDiagram
 User-->Exam: Take exam
 User->>Exam: Submit exam response
 Approver->>Exam: Create Result
+```
 ::

@@ -44,6 +44,7 @@ const sectionSchema = z.object({
 });
 
 export const collections = {
+    // English collections
     content_en: defineCollection({
         type: 'page',
         source: {
@@ -69,6 +70,93 @@ export const collections = {
 
     index_en: defineCollection({
         source: 'en/0.index.yml',
+        type: 'data',
+        schema: z.object({
+            title: z.string().nonempty(),
+            description: z.string().nonempty(),
+            hero: sectionSchema.extend({
+                headline: z.object({
+                    label: z.string().nonempty(),
+                    to: z.string().nonempty(),
+                    icon: z.string().nonempty(),
+                }),
+                links: z.array(linkSchema),
+            }),
+            sections: z.array(
+                sectionSchema.extend({
+                    id: z.string().nonempty(),
+                    orientation: orientationEnum.optional(),
+                    features: z.array(featureItemSchema),
+                    links: z.array(linkSchema),
+                    reverse: z.boolean().optional(),
+                }),
+            ),
+            features: sectionSchema.extend({
+                items: z.array(featureItemSchema),
+            }),
+            testimonials: sectionSchema.extend({
+                items: z.array(
+                    z.object({
+                        quote: z.string().nonempty(),
+                        user: z.object({
+                            name: z.string().nonempty(),
+                            description: z.string().nonempty(),
+                            to: z.string().nonempty(),
+                            target: z.string().nonempty(),
+                            avatar: imageSchema,
+                        }),
+                    }),
+                ),
+            }),
+            cta: sectionSchema.extend({
+                links: z.array(linkSchema),
+            }),
+            stats: z.array(
+                z.object({
+                    key: z.string(),
+                    number: z.number(),
+                    icon: z.string(),
+                    type: z.string().optional(),
+                    unit: z.string().optional(),
+                }),
+            ),
+            faq: z.object({
+                ...baseSchema,
+                items: z.array(
+                    z.object({
+                        label: z.string(),
+                        content: z.string(),
+                    }),
+                ),
+            }),
+        }),
+    }),
+
+    // German collections
+    content_de: defineCollection({
+        type: 'page',
+        source: {
+            include: 'de/**',
+            exclude: ['de/0.index.yml'],
+            prefix: 'de/',
+        },
+        schema: z.object({
+            title: z.string().nonempty(),
+            description: z.string().nonempty(),
+            links: z
+                .array(
+                    z.object({
+                        label: z.string(),
+                        icon: z.string(),
+                        to: z.string(),
+                        target: z.string().optional(),
+                    }),
+                )
+                .optional(),
+        }),
+    }),
+    index_de: defineCollection({
+        source: 'de/0.index.yml',
         type: 'data',
         schema: z.object({
             title: z.string().nonempty(),

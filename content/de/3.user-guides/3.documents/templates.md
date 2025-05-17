@@ -100,7 +100,21 @@ Weitere Informationen zu verschiedenen Datums- und Zeitformaten finden Sie in de
 {{ .CreatedAt | date "02.01.2006 15:04" }}
 ```
 
-### Checkbox-Liste
+### Checkboxen/Aufgabenliste
+
+#### Inline-Checkbox
+
+```html
+<span data-checked="false" data-type="checkboxStandalone"><label><input type="checkbox"> </label></span>
+```
+
+Beispielverwendung:
+
+```html
+<p>Checkbox inline <span data-checked="false" data-type="checkboxStandalone"><label><input type="checkbox"> </label></span>with text</p>
+```
+
+#### "Task List"/Aufgabenliste
 
 ```html
 <ul data-type="taskList">
@@ -111,7 +125,7 @@ Weitere Informationen zu verschiedenen Datums- und Zeitformaten finden Sie in de
 </ul>
 ```
 
-#### Checkbox-Listenelement
+##### Checkbox-Listenelement
 
 ```html
 <label><input type="checkbox"><span></span></label><div><p>Ihr Text kommt hier hin</p></div>

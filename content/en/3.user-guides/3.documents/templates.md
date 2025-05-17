@@ -15,7 +15,7 @@ Points to watch out when creating a template:
 - Use `<br>` for new lines.
 
 ::callout{icon="i-mdi-warning-circle" color="warning"}
-A template must render out to valid HTML.
+A template must render out to valid HTML, otherwise it might not work/render as expected.
 ::
 
 ## Available Variables
@@ -100,7 +100,21 @@ To learn more about different date and time formats, check out [the Golang `time
 {{ .CreatedAt | date "02.01.2006 15:04" }}
 ```
 
-### Checkbox List
+### Checkboxes
+
+#### Inline-Checkbox
+
+```html
+<span data-checked="false" data-type="checkboxStandalone"><label><input type="checkbox"> </label></span>
+```
+
+Example usage:
+
+```html
+<p>Checkbox inline <span data-checked="false" data-type="checkboxStandalone"><label><input type="checkbox"> </label></span>with text</p>
+```
+
+#### Task List (Checkboxes List)
 
 ```html
 <ul data-type="taskList">
@@ -111,7 +125,7 @@ To learn more about different date and time formats, check out [the Golang `time
 </ul>
 ```
 
-#### Checkbox List Item
+##### Checkbox List Item
 
 ```html
 <label><input type="checkbox"><span></span></label><div><p>Your text goes here</p></div>

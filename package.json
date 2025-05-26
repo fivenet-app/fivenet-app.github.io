@@ -16,7 +16,7 @@
     "@iconify-json/lucide": "1.2.44",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/ph": "1.2.2",
-    "@iconify-json/simple-icons": "1.2.34",
+    "@iconify-json/simple-icons": "1.2.35",
     "@mermaid-js/layout-elk": "^0.1.7",
     "@nuxt/content": "3.5.1",
     "@nuxt/ui-pro": "3.1.2",
@@ -25,8 +25,8 @@
     "vue-countup-v3": "1.4.2"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.4.0",
-    "@nuxt/eslint-config": "1.4.0",
+    "@nuxt/eslint": "1.4.1",
+    "@nuxt/eslint-config": "1.4.1",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/image": "1.10.0",
     "@nuxtjs/i18n": "9.5.4",
@@ -40,7 +40,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-organize-imports": "4.1.0",
     "prettier-plugin-tailwindcss": "0.6.11",
-    "sharp": "0.34.1",
+    "sharp": "0.34.2",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "2.2.10"
   },

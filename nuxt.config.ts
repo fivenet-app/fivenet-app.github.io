@@ -99,6 +99,9 @@ export default defineNuxtConfig({
             strictMessage: false,
         },
         parallelPlugin: true,
+        bundle: {
+            optimizeTranslationDirective: false,
+        },
     },
 
     piniaPluginPersistedstate: {

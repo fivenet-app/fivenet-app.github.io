@@ -27,14 +27,6 @@ const { data: page } = await useAsyncData<ContentEnCollectionItem | ContentDeCol
     async () => {
         const collection = ('content_' + pageLocale.value) as keyof PageCollections;
         try {
-            console.log(
-                'files',
-                slug.value,
-                route.path,
-                collection,
-                pageLocale.value ?? locale.value,
-                await queryCollection(collection).path(slug.value).first(),
-            );
             const content = await queryCollection(collection).path(slug.value).first();
             if (content) {
                 return content;

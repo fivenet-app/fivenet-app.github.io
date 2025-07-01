@@ -18,7 +18,8 @@ const slots = useSlots();
 
 const mermaidSyntax = computed(() => {
     // Trick to force re-render when the slot content changes (for preview inside studio)
-    rerenderCounter.value;
+    // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+    rerenderCounter.value++;
 
     const defaultSlot = slots.default?.()[0];
     if (!defaultSlot) {
@@ -73,7 +74,14 @@ async function render() {
 
     el.value.classList.add('mermaid');
     rendered.value = true;
-    await mermaid.run({ nodes: [el.value], theme: 'dark' });
+    mermaid.initialize({
+        theme: 'neutral',
+        startOnLoad: false,
+        themeVariables: {
+            darkMode: true,
+        },
+    });
+    await mermaid.run({ nodes: [el.value] });
 }
 
 onBeforeUpdate(() => {
@@ -84,33 +92,47 @@ onMounted(() => render());
 </script>
 
 <style>
-.mermaid rect {
-    stroke: #6195ff !important;
-    fill: #fff !important;
-}
+.mermaid {
+    rect {
+        stroke: #6195ff !important;
+        fill: #fff !important;
+    }
 
-.mermaid .current-doc.node .label {
-    color: #fff !important;
-}
+    .current-doc.node .label {
+        color: #fff !important;
+    }
 
-.mermaid line {
-    stroke: #6195ff !important;
-}
+    line {
+        stroke: #6195ff !important;
+    }
 
-[data-theme='dark'] .mermaid .flowchart-link {
-    stroke: #fff !important;
-}
+    .flowchart-link {
+        stroke: #fff !important;
+    }
 
-[data-theme='dark'] .mermaid .messageText {
-    fill: #fff !important;
-}
+    .messageText {
+        fill: #fff !important;
+    }
 
-[data-theme='dark'] .mermaid marker {
-    fill: #fff !important;
-    color: #fff !important;
-}
+    marker {
+        fill: #fff !important;
+        color: #fff !important;
+    }
 
-[data-theme='dark'] .mermaid line {
-    stroke: #fff !important;
+    line {
+        stroke: #fff !important;
+    }
+
+    text.actor {
+        color: #000 !important;
+    }
+
+    .actor-line {
+        stroke: #99a1af !important;
+    }
+
+    .messageLine0 {
+        stroke: #99a1af !important;
+    }
 }
 </style>

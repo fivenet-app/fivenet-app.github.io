@@ -91,14 +91,7 @@ testimonials:
         beschreibung: 'FiveM Rollenspiel-Server'
         target: _blank
         avatar:
-          src: '/images/communities/mysticv.png'
-    - quote: ''
-      user:
-        name: 'Strokee Roleplay'
-        beschreibung: 'FiveM Rollenspiel-Server'
-        target: _blank
-        avatar:
-          src: '/images/communities/strokee-roleplay.png'
+          src: '/images/communities/mysticv.webp'
 
 faq:
   title: Häufig gestellte Fragen

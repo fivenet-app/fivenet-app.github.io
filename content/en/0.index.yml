@@ -91,7 +91,7 @@ testimonials:
         description: 'FiveM Roleplay Server'
         target: _blank
         avatar:
-          src: '/images/communities/mysticv.png'
+          src: '/images/communities/mysticv.webp'
     - quote: ''
       user:
         name: 'Strokee Roleplay'

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const title = 'Imprint';
+const title = 'Impressum / Imprint';
 
 definePageMeta({
     layout: 'landing',
@@ -14,20 +14,23 @@ useSeoMeta({
     <UContainer>
         <UPage>
             <UPageHeader
-                title="Imprint of ZerBytes UG (haftungsbeschränkt)"
+                title="Impressum / Imprint"
                 description="This service/website is operated by ZerBytes UG (haftungsbeschränkt). Information pursuant to Sect. 5 German Telemedia Act (TMG)"
             />
 
             <UPageBody>
                 <div class="prose prose-gray dark:prose-invert max-w-none">
-                    <ProseH3>ZerBytes UG (haftungsbeschränkt)</ProseH3>
+                    <ProseH3>Diensteanbieter im Sinne des § 5 TMG / Imprint Provider in accordance with § 5 TMG</ProseH3>
                     <ProseP>
-                        Kämpfelbachstr. 3<br />
-                        75196 Remchingen<br />
-                        Germany
+                        <address>
+                            ZerBytes UG (haftungsbeschränkt)<br />
+                            Kämpfelbachstr. 3<br />
+                            75196 Remchingen<br />
+                            Germany
+                        </address>
                     </ProseP>
 
-                    <ProseH2>Contact / Kontakt</ProseH2>
+                    <ProseH3>Kontaktinformationen / Contact Information:</ProseH3>
                     <ProseUl>
                         <ProseLi> <ProseStrong>E-Mail:</ProseStrong> info@zerbytes.net </ProseLi>
                         <ProseLi>
@@ -36,20 +39,39 @@ useSeoMeta({
                         </ProseLi>
                     </ProseUl>
 
-                    <ProseH3>Vertretungsberechtigter Geschäftsführer</ProseH3>
-                    <ProseP>Alexander Trost</ProseP>
+                    <ProseP>
+                        <b>Bevollmächtigte Vertreter / Authorized Representative:</b>
+                        <ProseUl>
+                            <ProseLi>Alexander Trost</ProseLi>
+                        </ProseUl>
+                    </ProseP>
 
-                    <ProseH3>Registernummer</ProseH3>
-                    <ProseP>HRB 754117</ProseP>
+                    <ProseP>
+                        <div>
+                            <b>Eingetragener Sitz:</b>
+                            Germany
+                        </div>
 
-                    <ProseH3>Registergericht</ProseH3>
-                    <ProseP>Amtsgericht Mannheim</ProseP>
+                        <div>
+                            <b>Registergericht:</b>
+                            Amtsgericht Mannheim
+                        </div>
 
-                    <ProseH3>Umsatzsteueridentifikationsnummer gemäß § 27a Umsatzsteuergesetz</ProseH3>
-                    <ProseP>UG ist noch in Gründung</ProseP>
+                        <div>
+                            <b>Handelsregisternummer:</b>
+                            HRB 754117
+                        </div>
 
-                    <ProseH3>Wirtschafts-ID</ProseH3>
-                    <ProseP>UG ist noch in Gründung</ProseP>
+                        <div>
+                            <b>Umsatzsteuer-ID (USt-IdNr.):</b>
+                            DE454833204
+                        </div>
+
+                        <div>
+                            <b>Wirtschafts-ID:</b>
+                            UG ist noch in Gründung
+                        </div>
+                    </ProseP>
                 </div>
             </UPageBody>
         </UPage>

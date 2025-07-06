@@ -137,16 +137,5 @@
                 "citizens_total": "Citizen files maintained"
             }
         }
-    },
-    "cta": {
-        "title": "Explore FiveNet's Community and Documentation",
-        "links": {
-            "discord": {
-                "label": "Join Our Discord"
-            },
-            "explore": {
-                "label": "Explore Documentation"
-            }
-        }
     }
 }

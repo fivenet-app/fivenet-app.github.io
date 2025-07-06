@@ -27,47 +27,50 @@ sections:
     #  src: '/images/screenshots/ingame-tablet.png'
     #  alt: 'FiveNet Tablet FiveM in-game Screenshot'
     features:
-      - name: Quick Setup
-        description: Your FiveNet Cloud instance will be ready in a few seconds.
-        icon: i-lucide-rocket
-      - name: HTTPS Encryption
-        description: Each FiveNet Cloud instance will be securely reachable via HTTPS and its own subdomain.
-        icon: i-lucide-lock
+      - name: Open Source
+        description: FiveNet's plugins are available on GitHub licensed under the Apache 2.0 license.
+        icon: i-simple-icons-git
       - name: Easily extendable
         description: The plugin code is easily extendable by your developers to integrate with your servers framework and plugins (e.g., fines, location tracking).
         icon: i-lucide-cog
+      - name: Quick Setup
+        description: Your FiveNet Cloud instance will be ready in a few seconds.
+        icon: i-lucide-rocket
+    cta:
+      title: 'Ready to get started?'
+      description: 'Checkout the plugin code on GitHub and start integrating it into your server today.'
+      links:
+        - label: GitHub Repository
+          icon: i-simple-icons-github
+          to: https://github.com/fivenet-app/plugins
+          external: true
+          size: xl
+          color: neutral
+          variant: subtle
+
 features:
-  title: Features That Set Us Apart
-  description: Our platform combines enterprise-grade reliability with developer-friendly features, providing everything you need to build and scale your applications.
-  items:
-    - title: Developer Experience
-      description: Comprehensive documentation, powerful CLI tools, and intuitive APIs that make development a joy.
-      icon: i-lucide-cog
-    - title: Enterprise Ready
-      description: SOC 2 Type II certified, GDPR compliant, with 24/7 enterprise support and dedicated success managers.
-      icon: i-lucide-check
-    - title: Advanced Security
-      description: Multi-factor authentication, role-based access control, and audit logs keep your data protected.
-      icon: i-lucide-lock
+  title: ''
+  description: ''
+  items: []
 
 stats:
   - key: users_registered
-    number: 2703
+    number: 3590
     icon: i-ph-user
   - key: documents_created
-    number: 37647
+    number: 57885
     icon: i-ph-file-doc
   - key: dispatches_created
-    number: 345320
+    number: 790640
     icon: i-ph-siren
   - key: citizens_total
-    number: 46413
+    number: 62194
     icon: i-ph-users-four
   - key: citizen_activity
-    number: 116162
+    number: 424408
     icon: i-ph-activity
   - key: timeclock_tracked
-    number: 477810
+    number: 645043
     type: unit
     unit: 'common.time_ago.year'
     icon: i-ph-timer
@@ -92,13 +95,6 @@ testimonials:
         target: _blank
         avatar:
           src: '/images/communities/mysticv.webp'
-    - quote: ''
-      user:
-        name: 'Strokee Roleplay'
-        description: 'FiveM Roleplay Server'
-        target: _blank
-        avatar:
-          src: '/images/communities/strokee-roleplay.png'
 
 faq:
   title: Frequently asked questions
@@ -122,5 +118,18 @@ faq:
       content: "We offer the documentation with step-by-step guides for the community, and Discord chat based support for FiveNet Cloud users."
 
 cta:
-  title: Get your own [FiveNet Cloud]{.text-(--ui-primary)} instance today
-  description: Checkout the FiveNet Cloud pricing page to get started or if you want to self-host the installation methods documentation.
+  title: Join the [Community]{.text-(--ui-primary)} today
+  description: Checkout the documentation to learn more about installing, configuring and using FiveNet.
+  links:
+    - label: 'Join Our Discord'
+      icon: i-simple-icons-discord
+      to: https://discord.gg/ASRPPr8CeT
+      target: _blank
+      size: xl
+      color: neutral
+      variant: subtle
+    - label: Get started
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /en/getting-started
+      size: xl

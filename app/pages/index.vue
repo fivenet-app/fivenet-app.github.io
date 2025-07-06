@@ -64,23 +64,6 @@ const links = computed<ButtonProps[]>(() => [
 const features = computed(() => ({
     title: t('docs.features.title'),
     description: undefined,
-    links: [
-        {
-            label: t('cta.links.discord.label'),
-            icon: 'i-simple-icons-discord',
-            color: 'primary',
-            to: 'https://discord.gg/ASRPPr8CeT',
-            external: true,
-            size: 'lg',
-        },
-        {
-            label: t('cta.links.explore.label'),
-            trailingIcon: 'i-mdi-arrow-right',
-            color: 'neutral',
-            to: localePath('/getting-started'),
-            size: 'lg',
-        },
-    ],
     items: [
         {
             title: t('docs.features.items.citizens.title'),
@@ -150,10 +133,6 @@ const features = computed(() => ({
         },
     ],
 }));
-
-const cta = {
-    title: t('cta.title'),
-};
 </script>
 
 <template>
@@ -230,19 +209,25 @@ const cta = {
             </template>
 
             <ImagePlaceholder v-if="section?.image" :src="section?.image?.src" :alt="section?.image?.alt" />
+
+            <UPageCTA
+                v-if="section?.cta"
+                v-bind="section.cta"
+                :ui="{ root: 'mx-auto max-w-2xl', container: 'px-2 py-6 sm:px-4 sm:py-6 lg:px-4 lg:py-6 gap-4 sm:gap-4' }"
+            />
         </UPageSection>
 
         <UPageSection
+            v-if="page.testimonials"
             id="testimonials"
             :headline="page.testimonials.headline"
-            :title="$t('pages.index.logos')"
             :description="page.testimonials.description"
         >
             <template #title>
                 <MDC :value="page.testimonials.title" />
             </template>
 
-            <UPageColumns class="xl:columns-4">
+            <UPageColumns :class="page.testimonials.items.length <= 2 ? 'md:columns-2 lg:columns-2' : 'xl:columns-4'">
                 <UPageCard
                     v-for="(testimonial, index) in page.testimonials.items"
                     :key="index"
@@ -251,17 +236,7 @@ const cta = {
                     :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]', footer: 'mt-0' }"
                 >
                     <template #footer>
-                        <UUser v-bind="testimonial.user" size="lg">
-                            <template #avatar>
-                                <img
-                                    :src="testimonial.user.avatar.src"
-                                    :alt="testimonial.user.name"
-                                    height="36px"
-                                    width="36px"
-                                    class="rounded-full"
-                                />
-                            </template>
-                        </UUser>
+                        <UUser v-bind="testimonial.user" size="lg" />
                     </template>
                 </UPageCard>
             </UPageColumns>
@@ -309,8 +284,18 @@ const cta = {
             <UPageAccordion multiple :items="page.faq.items" class="mx-auto max-w-4xl" />
         </UPageSection>
 
-        <UPageSection>
-            <UPageCTA :title="cta.title" :links="features.links as ButtonProps[]" class="bg-gray-100/50 dark:bg-gray-800/50" />
-        </UPageSection>
+        <USeparator />
+
+        <UPageCTA v-if="page.cta" v-bind="page.cta" variant="naked" class="overflow-hidden">
+            <template #title>
+                <MDC :value="page.cta.title" />
+            </template>
+
+            <div
+                class="dark:bg-(--ui-primary) sm:size-50 absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px]"
+            />
+
+            <StarsBg />
+        </UPageCTA>
     </div>
 </template>

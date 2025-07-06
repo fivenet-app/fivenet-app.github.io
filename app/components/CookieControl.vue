@@ -38,9 +38,9 @@ const open = ref(cookiesState.value === null);
                 <p>The main purpose of our cookies is to have a basic user tracking for analytical purposes.</p>
 
                 <UButtonGroup class="inline-flex w-full flex-1">
-                    <UButton variant="link" block class="flex-1" to="/privacy" :external="true"> Privacy Policy </UButton>
+                    <UButton variant="link" block class="flex-1" to="/legal/privacy" :external="true"> Privacy Policy </UButton>
 
-                    <UButton variant="link" block class="flex-1" to="/imprint" :external="true"> Imprint </UButton>
+                    <UButton variant="link" block class="flex-1" to="/legal/imprint" :external="true"> Imprint </UButton>
                 </UButtonGroup>
 
                 <p class="text-xs">
@@ -81,6 +81,6 @@ const open = ref(cookiesState.value === null);
             </template>
         </UCard>
 
-        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed bottom-10 right-6" @click="open = true" />
+        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed bottom-32 right-6" @click="open = true" />
     </div>
 </template>

@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/ui-pro',
         '@nuxt/content',
+        '@nuxtjs/mdc',
         '@nuxt/eslint',
         '@nuxt/fonts',
         '@nuxt/image',

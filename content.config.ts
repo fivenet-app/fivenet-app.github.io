@@ -19,6 +19,7 @@ const linkSchema = z.object({
     target: z.string().optional(),
     color: colorEnum.optional(),
     variant: variantEnum.optional(),
+    external: z.boolean().optional(),
 });
 
 const imageSchema = z.object({
@@ -41,6 +42,13 @@ const sectionSchema = z.object({
         src: z.string().optional(),
         alt: z.string().optional(),
     }),
+    cta: z
+        .object({
+            title: z.string().optional(),
+            description: z.string().optional(),
+            links: z.array(linkSchema).optional(),
+        })
+        .optional(),
 });
 
 export const collections = {

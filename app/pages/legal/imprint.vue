@@ -1,10 +1,6 @@
 <script lang="ts" setup>
 const title = 'Impressum / Imprint';
 
-definePageMeta({
-    layout: 'landing',
-});
-
 useSeoMeta({
     title,
 });
@@ -14,7 +10,7 @@ useSeoMeta({
     <UContainer>
         <UPage>
             <UPageHeader
-                title="Impressum / Imprint"
+                title="Imprint / Impressum"
                 description="This service/website is operated by ZerBytes UG (haftungsbeschränkt). Information pursuant to Sect. 5 German Telemedia Act (TMG)"
             />
 

@@ -6,11 +6,11 @@ const { t } = useI18n();
 const smallLinks = [
     {
         label: t('common.privacy_policy'),
-        to: '/privacy',
+        to: '/legal/privacy',
     },
     {
         label: t('common.imprint'),
-        to: '/imprint',
+        to: '/legal/imprint',
     },
 ];
 

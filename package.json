@@ -43,7 +43,7 @@
     "prettier-plugin-tailwindcss": "0.6.13",
     "sharp": "0.34.2",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "2.2.10"
+    "vue-tsc": "3.0.1"
   },
   "resolutions": {
     "debug": "4.4.1"

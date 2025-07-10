@@ -33,6 +33,10 @@ useSeoMeta({
                             <ProseStrong>Internet:</ProseStrong>
                             <ProseA href="https://zerbytes.net"> https://zerbytes.net </ProseA>
                         </ProseLi>
+                        <ProseLi>
+                            <ProseStrong>Telefon (only for <b>customer support</b>):</ProseStrong>
+                            <ProseA href="tel:+4972327321028"> +49 7232 7321028 </ProseA>
+                        </ProseLi>
                     </ProseUl>
 
                     <ProseP>
@@ -65,7 +69,7 @@ useSeoMeta({
 
                         <div>
                             <b>Wirtschafts-ID:</b>
-                            UG ist noch in Gründung
+                            DE454833204-00001
                         </div>
                     </ProseP>
                 </div>

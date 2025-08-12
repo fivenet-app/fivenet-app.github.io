@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "5.5.4",
     "eslint-plugin-vue": "10.4.0",
     "nuxt": "4.0.3",
-    "pinia-plugin-persistedstate": "4.4.1",
+    "pinia-plugin-persistedstate": "4.5.0",
     "prettier": "3.6.2",
     "prettier-plugin-organize-imports": "4.2.0",
     "prettier-plugin-tailwindcss": "0.6.14",

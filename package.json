@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.6",
-    "@iconify-json/lucide": "1.2.67",
+    "@iconify-json/lucide": "1.2.68",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/ph": "1.2.2",
-    "@iconify-json/simple-icons": "1.2.51",
+    "@iconify-json/simple-icons": "1.2.52",
     "@mermaid-js/layout-elk": "0.2.0",
     "@nuxt/content": "3.7.0",
     "@nuxt/ui-pro": "3.3.3",
@@ -47,9 +47,9 @@
   },
   "resolutions": {
     "@intlify/shared": "11.1.12",
-    "debug": "4.4.1"
+    "debug": "4.4.3"
   },
-  "packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67",
+  "packageManager": "pnpm@10.16.1+sha512.0e155aa2629db8672b49e8475da6226aa4bdea85fdcdfdc15350874946d4f3c91faaf64cbdc4a5d1ab8002f473d5c3fcedcd197989cf0390f9badd3c04678706",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@intlify/vue-i18n-bridge",

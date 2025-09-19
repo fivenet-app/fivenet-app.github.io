@@ -55,6 +55,7 @@
       "@intlify/vue-i18n-bridge",
       "@tailwindcss/oxide",
       "better-sqlite3",
+      "esbuild",
       "sharp"
     ]
   }

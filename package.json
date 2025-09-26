@@ -19,7 +19,7 @@
     "@iconify-json/simple-icons": "1.2.53",
     "@mermaid-js/layout-elk": "0.2.0",
     "@nuxt/content": "3.7.1",
-    "@nuxt/ui-pro": "3.3.4",
+    "@nuxt/ui-pro": "3.3.5",
     "better-sqlite3": "12.4.1",
     "emoji-blast": "0.10.2",
     "mermaid": "11.12.0",

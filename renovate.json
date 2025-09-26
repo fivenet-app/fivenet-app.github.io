@@ -2,6 +2,9 @@
   "extends": [
     "github>nuxt/renovate-config-nuxt"
   ],
+  "schedule": [
+    "at any time"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],

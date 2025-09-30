@@ -81,6 +81,6 @@ const open = ref(cookiesState.value === null);
             </template>
         </UCard>
 
-        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed bottom-32 right-6" @click="open = true" />
+        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed bottom-32 right-6 z-50" @click="open = true" />
     </div>
 </template>

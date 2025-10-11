@@ -57,7 +57,8 @@
       "@tailwindcss/oxide",
       "better-sqlite3",
       "esbuild",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ],
     "ignoredBuiltDependencies": [
       "vue-demi"

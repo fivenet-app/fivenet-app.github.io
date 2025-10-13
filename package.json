@@ -21,7 +21,7 @@
     "@nuxt/content": "3.7.1",
     "@nuxt/ui-pro": "3.3.6",
     "better-sqlite3": "12.4.1",
-    "emoji-blast": "0.10.2",
+    "emoji-blast": "0.11.0",
     "mermaid": "11.12.0",
     "vue-countup-v3": "1.4.2"
   },

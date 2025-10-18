@@ -51,7 +51,7 @@ export default defineNuxtSchema({
                             type: 'icon',
                             title: 'Hash',
                             description: 'Icon for hash anchors.',
-                            icon: 'i-ph-hash',
+                            icon: 'i-lucide-hash',
                             default: 'i-lucide-hash',
                         }),
                     },

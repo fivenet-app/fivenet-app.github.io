@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     css: ['~/assets/css/main.css'],
 
     icon: {
-        collections: ['ph', 'lucide', 'mdi', 'simple-icons', 'flagpack'],
+        collections: ['lucide', 'mdi', 'simple-icons', 'flagpack'],
         serverBundle: 'local',
     },
 

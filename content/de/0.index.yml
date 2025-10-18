@@ -56,24 +56,24 @@ features:
 stats:
   - key: users_registered
     number: 3590
-    icon: i-ph-user
+    icon: i-lucide-circle-user
   - key: documents_created
     number: 57885
-    icon: i-ph-file-doc
+    icon: i-lucide-file-text
   - key: dispatches_created
     number: 790640
-    icon: i-ph-siren
+    icon: i-lucide-siren
   - key: citizens_total
     number: 62194
-    icon: i-ph-users-four
+    icon: i-lucide-users
   - key: citizen_activity
     number: 424408
-    icon: i-ph-activity
+    icon: i-lucide-activity
   - key: timeclock_tracked
     number: 645043
     type: unit
     unit: 'common.time_ago.year'
-    icon: i-ph-timer
+    icon: i-lucide-timer
 
 testimonials:
   #headline: ''

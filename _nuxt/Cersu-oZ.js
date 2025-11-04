@@ -1,0 +1,1 @@
+import{e as r,i as n,p as s,c,o as p,r as i,q as u}from"./DIOrr5va.js";const m={base:"my-1.5 ps-1.5 leading-7 [&>ul]:my-0"},_={__name:"ProseLi",props:{class:{type:null,required:!1}},setup(e){const a=e,o=r(),l=n(()=>s({extend:s(m),...o.uiPro?.prose?.li||{}}));return(t,d)=>(p(),c("li",{class:u(l.value({class:a.class}))},[i(t.$slots,"default")],2))}};export{_ as default};

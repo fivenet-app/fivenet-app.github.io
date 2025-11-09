@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.6",
-    "@iconify-json/lucide": "1.2.72",
+    "@iconify-json/lucide": "1.2.73",
     "@iconify-json/mdi": "1.2.3",
-    "@iconify-json/simple-icons": "1.2.57",
+    "@iconify-json/simple-icons": "1.2.58",
     "@mermaid-js/layout-elk": "0.2.0",
     "@nuxt/content": "3.8.0",
     "@nuxt/ui-pro": "3.3.7",

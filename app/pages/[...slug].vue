@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { findPageHeadline } from '#ui-pro/utils/content';
+import { findPageHeadline } from '@nuxt/content/utils'
 import type { ContentDeCollectionItem, ContentEnCollectionItem, ContentNavigationItem, PageCollections } from '@nuxt/content';
 import { withLeadingSlash } from 'ufo';
 

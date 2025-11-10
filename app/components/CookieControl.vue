@@ -37,11 +37,11 @@ const open = ref(cookiesState.value === null);
             <div class="flex w-full flex-col gap-2">
                 <p>The main purpose of our cookies is to have a basic user tracking for analytical purposes.</p>
 
-                <UButtonGroup class="inline-flex w-full flex-1">
+                <UFieldGroup class="inline-flex w-full flex-1">
                     <UButton variant="link" block class="flex-1" to="/legal/privacy" :external="true"> Privacy Policy </UButton>
 
                     <UButton variant="link" block class="flex-1" to="/legal/imprint" :external="true"> Imprint </UButton>
-                </UButtonGroup>
+                </UFieldGroup>
 
                 <p class="text-xs">
                     The best way to remove this websites data is to use the clear website data function of your browser.
@@ -49,7 +49,7 @@ const open = ref(cookiesState.value === null);
             </div>
 
             <template #footer>
-                <UButtonGroup class="inline-flex w-full">
+                <UFieldGroup class="inline-flex w-full">
                     <UButton color="neutral" block class="flex-1" @click="open = false"> Close </UButton>
 
                     <UButton
@@ -77,7 +77,7 @@ const open = ref(cookiesState.value === null);
                     >
                         Accept
                     </UButton>
-                </UButtonGroup>
+                </UFieldGroup>
             </template>
         </UCard>
 

@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     telemetry: false,
 
     modules: [
-        '@nuxt/ui-pro',
+        '@nuxt/ui',
         '@nuxt/content',
         '@nuxtjs/mdc',
         '@nuxt/eslint',

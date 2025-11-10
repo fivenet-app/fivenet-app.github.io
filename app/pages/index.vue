@@ -281,7 +281,7 @@ const features = computed(() => ({
             :description="page.faq.description"
             class="scroll-mt-[var(--header-height)]"
         >
-            <UPageAccordion multiple :items="page.faq.items" class="mx-auto max-w-4xl" />
+            <UAccordion multiple :items="page.faq.items" class="mx-auto max-w-4xl" :unmount-on-hide="false" :ui="{ trigger: 'text-base', body: 'text-base text-muted' }" />
         </UPageSection>
 
         <USeparator />

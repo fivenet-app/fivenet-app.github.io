@@ -1,1 +1,0 @@
-import{s as r,b as e,a,S as s}from"./B40-Lipo.js";import{_ as i}from"./CLCCTzrx.js";import"./CUzxmy5w.js";import"./3LL5Rq55.js";import"./ChYRHvjy.js";import"./D66ZS4Bx.js";import"./Cpj98o6Y.js";var n={parser:a,get db(){return new s(2)},renderer:e,styles:r,init:i(t=>{t.state||(t.state={}),t.state.arrowMarkerAbsolute=t.arrowMarkerAbsolute},"init")};export{n as diagram};

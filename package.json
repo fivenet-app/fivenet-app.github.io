@@ -34,7 +34,7 @@
     "eslint": "9.39.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
-    "eslint-plugin-vue": "10.6.0",
+    "eslint-plugin-vue": "10.6.1",
     "nuxt": "4.2.1",
     "pinia-plugin-persistedstate": "4.7.1",
     "prettier": "3.6.2",
@@ -45,7 +45,7 @@
     "vue-tsc": "3.1.5"
   },
   "resolutions": {
-    "@intlify/shared": "11.2.1",
+    "@intlify/shared": "11.2.2",
     "debug": "4.4.3"
   },
   "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",

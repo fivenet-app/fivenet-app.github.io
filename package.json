@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.6",
-    "@iconify-json/lucide": "1.2.75",
+    "@iconify-json/lucide": "1.2.76",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.60",
     "@mermaid-js/layout-elk": "0.2.0",
@@ -37,7 +37,7 @@
     "eslint-plugin-vue": "10.6.1",
     "nuxt": "4.2.1",
     "pinia-plugin-persistedstate": "4.7.1",
-    "prettier": "3.6.2",
+    "prettier": "3.7.1",
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-tailwindcss": "0.7.1",
     "sharp": "0.34.5",
@@ -48,7 +48,7 @@
     "@intlify/shared": "11.2.2",
     "debug": "4.4.3"
   },
-  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@intlify/vue-i18n-bridge",

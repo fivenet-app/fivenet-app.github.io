@@ -42,7 +42,7 @@
     "prettier-plugin-tailwindcss": "0.7.2",
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "3.1.6"
+    "vue-tsc": "3.1.7"
   },
   "resolutions": {
     "@intlify/shared": "11.2.2",

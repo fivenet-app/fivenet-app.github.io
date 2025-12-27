@@ -9,7 +9,7 @@ export default defineNuxtSchema({
             fields: {
                 icons: group({
                     title: 'Icons',
-                    description: 'Manage icons used in UI Pro.',
+                    description: 'Manage icons used in UI.',
                     icon: 'i-mdi-application-settings-outline',
                     fields: {
                         search: field({

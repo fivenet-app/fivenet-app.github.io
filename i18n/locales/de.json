@@ -102,8 +102,8 @@
                     "description": "Mehrere Sprachen für die Benutzeroberfläche verfügbar."
                 },
                 "nuxt3_ui": {
-                    "title": "Nuxt 3 + Nuxt UI Pro",
-                    "description": "Angetrieben von Nuxt 3 und Nuxt UI Pro für optimale Leistung."
+                    "title": "Nuxt 4 + Nuxt UI",
+                    "description": "Angetrieben von Nuxt 4 und Nuxt UI für optimale Leistung."
                 },
                 "open_source": {
                     "title": "Open Source",

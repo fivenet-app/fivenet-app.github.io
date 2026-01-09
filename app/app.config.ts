@@ -21,7 +21,7 @@ export default defineAppConfig({
         links: [
             {
                 icon: 'i-simple-icons-github',
-                to: 'https://github.com/fivenet-app/fivenet-app.github.io/tree/main',
+                to: 'https://github.com/fivenet-app/fivenet',
                 target: '_blank',
                 'aria-label': 'GitHub',
             },

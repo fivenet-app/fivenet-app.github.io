@@ -94,7 +94,7 @@ Weitere Informationen zu verschiedenen Datums- und Zeitformaten finden Sie in de
 
 Weitere Informationen zu verschiedenen Datums- und Zeitformaten finden Sie in der [Golang `time`-Paketdokumentation hier](https://pkg.go.dev/time#pkg-constants).
 
-### Zeitstempel anzeigen (z. B. `CreatedAt`-Feld)
+### Zeitstempel anzeigen (z.B. `CreatedAt`-Feld)
 
 ```templ
 {{ .CreatedAt | date "02.01.2006 15:04" }}

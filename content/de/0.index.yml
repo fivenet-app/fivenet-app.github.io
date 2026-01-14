@@ -31,7 +31,7 @@ sections:
         description: Die FiveNet-Plugins sind auf GitHub unter der Apache 2.0-Lizenz verfügbar.
         icon: i-simple-icons-git
       - name: Einfach erweiterbar
-        description: Der Plugincode kann von Ihren Entwicklern leicht erweitert werden, um mit dem Framework und den Plugins Ihres Servers zu integrieren (z. B. Bußgelder, Standortverfolgung).
+        description: Der Plugincode kann von Ihren Entwicklern leicht erweitert werden, um mit dem Framework und den Plugins Ihres Servers zu integrieren (z.B. Bußgelder, Standortverfolgung).
         icon: i-lucide-cog
       - name: Schnelle Einrichtung
         description: Ihre FiveNet Cloud-Instanz ist in wenigen Sekunden einsatzbereit.
@@ -101,7 +101,7 @@ faq:
   description: "Im Folgenden finden Sie Antworten auf einige der häufigsten Fragen zu FiveNet."
   items:
     - label: "Was ist FiveNet?"
-      content: "FiveNet ist eine umfassende Suite von Anwendungen, die das Rollenspiel auf FiveM-Servern verbessern soll. Es bietet Werkzeuge für z. B. Ihre Polizeidienststelle, um Bürger und Fahrzeuge zu durchsuchen, ein Dispositionssystem zur Bearbeitung von Notfällen, Dokumente und viele weitere Funktionen."
+      content: "FiveNet ist eine umfassende Suite von Anwendungen, die das Rollenspiel auf FiveM-Servern verbessern soll. Es bietet Werkzeuge für z.B. Ihre Polizeidienststelle, um Bürger und Fahrzeuge zu durchsuchen, ein Dispositionssystem zur Bearbeitung von Notfällen, Dokumente und viele weitere Funktionen."
     - label: "Für wen ist FiveNet?"
       content: "FiveNet ist perfekt für FiveM-Rollenspiel-Server, die eine florierende Rollenspiel-Umgebung schaffen möchten."
     - label: "Ist FiveNet kostenlos?"

@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.7",
-    "@iconify-json/lucide": "1.2.85",
+    "@iconify-json/lucide": "1.2.86",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.66",
     "@mermaid-js/layout-elk": "0.2.0",
     "@nuxt/content": "3.11.0",
     "@nuxt/ui": "4.3.0",
-    "better-sqlite3": "12.6.0",
+    "better-sqlite3": "12.6.2",
     "emoji-blast": "0.11.0",
     "mermaid": "11.12.2",
     "vue-countup-v3": "1.4.2"

@@ -2,6 +2,8 @@
 title: Qualifications
 ---
 
+**Status**: Implemented
+
 ## What is a Qualifications?
 
 - An access level protected entity with a "public" (as in "anyone can see") facing name and description.

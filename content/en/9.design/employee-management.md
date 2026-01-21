@@ -2,6 +2,8 @@
 title: Employee Management
 ---
 
+**Status**: Implemented
+
 ## Goals
 
 - On-Duty Time Tracker

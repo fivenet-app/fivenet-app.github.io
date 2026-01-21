@@ -2,7 +2,7 @@
 title: DB Sync
 ---
 
-# DB Sync
+**Status**: Implemented
 
 ## Goal
 

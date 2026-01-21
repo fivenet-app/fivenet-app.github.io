@@ -2,6 +2,8 @@
 title: Player Tracker Rework
 ---
 
+**Status**: Implemented
+
 ## Current Functionality
 
 - Storing Livemap Marker (for "live" positions)

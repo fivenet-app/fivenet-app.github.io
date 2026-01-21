@@ -2,6 +2,8 @@
 title: Dispatch Center
 ---
 
+**Status**: Implemented
+
 ## Dispatch Center
 
 - Two views (only for their own job; no job list attribute):

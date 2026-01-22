@@ -33,6 +33,7 @@ title: Improving Data Separation and Management for Users and Citizens
     - Ability to edit "citizens" in the FiveNet database (preferably with a way to reset back to "original" (from gameserver) state).
     - Ability to delete "citizens" from the FiveNet database (without "deleting" them from the gameserver database).
 - Improve performance of account to citizens lookup by not having to use `WHERE `identifier` LIKE '%_IDENTIFIER_HERE_'` queries.
+    - An `user` entry will be linked to the account ID directly instead of having to search for it via the identifier pattern matching.
 
 ## Solutions
 

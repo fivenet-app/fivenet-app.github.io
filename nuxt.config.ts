@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     telemetry: false,
 
     modules: [
-      '@nuxthub/core',
       '@nuxt/ui',
       '@nuxt/content',
       '@nuxtjs/mdc',
@@ -26,6 +25,7 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2025-12-20',
 
+    /*
     hub: {
         db: {
             dialect: 'sqlite',
@@ -36,6 +36,7 @@ export default defineNuxtConfig({
             },
         },
     },
+    */
 
     app: {
         baseURL: '/',
@@ -77,7 +78,7 @@ export default defineNuxtConfig({
     },
 
     nitro: {
-        preset: 'cloudflare_module',
+        preset: 'github_pages',
         prerender: {
             routes: ['/'],
         },

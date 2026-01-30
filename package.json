@@ -31,7 +31,7 @@
     "@nuxt/eslint-config": "1.13.0",
     "@nuxt/fonts": "0.13.0",
     "@nuxt/image": "2.0.0",
-    "@nuxthub/core": "0.10.5",
+    "@nuxthub/core": "0.10.6",
     "@nuxtjs/i18n": "10.2.1",
     "@pinia/nuxt": "0.11.3",
     "@types/node": "^25.1.0",
@@ -46,7 +46,8 @@
     "prettier-plugin-tailwindcss": "0.7.2",
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "3.2.4"
+    "vue-tsc": "3.2.4",
+    "wrangler": "4.61.1"
   },
   "resolutions": {
     "@intlify/shared": "11.2.8",
@@ -61,7 +62,8 @@
       "better-sqlite3",
       "esbuild",
       "sharp",
-      "unrs-resolver"
+      "unrs-resolver",
+      "workerd"
     ],
     "ignoredBuiltDependencies": [
       "vue-demi"

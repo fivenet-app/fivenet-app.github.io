@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     telemetry: false,
 
     modules: [
+      '@nuxthub/core',
       '@nuxt/ui',
       '@nuxt/content',
       '@nuxtjs/mdc',
@@ -17,20 +18,20 @@ export default defineNuxtConfig({
       '@nuxtjs/i18n',
       '@pinia/nuxt',
       'pinia-plugin-persistedstate/nuxt',
-      '@nuxthub/core',
     ],
 
     future: {
         compatibilityVersion: 4,
     },
 
-    compatibilityDate: '2024-07-11',
+    compatibilityDate: '2025-12-20',
 
     hub: {
         db: {
             dialect: 'sqlite',
             driver: 'd1',
             connection: {
+                database: 'fivenet-app-github-io',
                 databaseId: '881bf0ec-c4c3-48c3-a46c-adf5a752a7fc',
             },
         },
@@ -48,11 +49,13 @@ export default defineNuxtConfig({
             meta: [{ name: 'darkreader-lock', content: '' }],
         },
     },
+
     css: ['~/assets/css/main.css'],
 
     icon: {
-        collections: ['lucide', 'mdi', 'simple-icons', 'flagpack'],
-        serverBundle: 'local',
+        serverBundle: {
+            collections: ['lucide', 'mdi', 'simple-icons', 'flagpack'],
+        }
     },
 
     fonts: {
@@ -74,9 +77,22 @@ export default defineNuxtConfig({
     },
 
     nitro: {
-        preset: 'cloudflare-worker',
+        preset: 'cloudflare_module',
         prerender: {
             routes: ['/'],
+        },
+
+        cloudflare: {
+            deployConfig: true,
+            nodeCompat: true,
+            wrangler: {
+                routes: [
+                    {
+                    "pattern": "fivenet.app",
+                    "custom_domain": true
+                    },
+                ],
+            },
         },
     },
 

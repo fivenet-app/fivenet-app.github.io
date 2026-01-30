@@ -4,19 +4,20 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: false,
+    ssr: true,
     telemetry: false,
 
     modules: [
-        '@nuxt/ui',
-        '@nuxt/content',
-        '@nuxtjs/mdc',
-        '@nuxt/eslint',
-        '@nuxt/fonts',
-        '@nuxt/image',
-        '@nuxtjs/i18n',
-        '@pinia/nuxt',
-        'pinia-plugin-persistedstate/nuxt',
+      '@nuxt/ui',
+      '@nuxt/content',
+      '@nuxtjs/mdc',
+      '@nuxt/eslint',
+      '@nuxt/fonts',
+      '@nuxt/image',
+      '@nuxtjs/i18n',
+      '@pinia/nuxt',
+      'pinia-plugin-persistedstate/nuxt',
+      '@nuxthub/core',
     ],
 
     future: {
@@ -24,6 +25,16 @@ export default defineNuxtConfig({
     },
 
     compatibilityDate: '2024-07-11',
+
+    hub: {
+        db: {
+            dialect: 'sqlite',
+            driver: 'd1',
+            connection: {
+                databaseId: '881bf0ec-c4c3-48c3-a46c-adf5a752a7fc',
+            },
+        },
+    },
 
     app: {
         baseURL: '/',
@@ -94,7 +105,6 @@ export default defineNuxtConfig({
                 icon: 'i-flagpack-de',
             },
         ],
-        lazy: true,
         defaultLocale: 'en',
         defaultDirection: 'ltr',
         baseUrl: '',
@@ -103,9 +113,6 @@ export default defineNuxtConfig({
             strictMessage: false,
         },
         parallelPlugin: true,
-        bundle: {
-            optimizeTranslationDirective: false,
-        },
     },
 
     piniaPluginPersistedstate: {

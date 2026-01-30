@@ -62,3 +62,10 @@ jobs:
         run: |
           cp -f fivenet/gen/grpc-api.md content/en/8.development/3.grpc-api.md
           pnpm generate
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.output/public/
+          cname: fivenet.app

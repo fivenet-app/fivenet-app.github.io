@@ -9,13 +9,15 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.7",
     "@iconify-json/lucide": "1.2.87",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.68",
+    "@libsql/client": "^0.17.0",
     "@mermaid-js/layout-elk": "0.2.0",
     "@nuxt/content": "3.11.0",
     "@nuxt/ui": "4.4.0",

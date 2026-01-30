@@ -88,8 +88,8 @@ export default defineNuxtConfig({
             wrangler: {
                 routes: [
                     {
-                    "pattern": "fivenet.app",
-                    "custom_domain": true
+                        "pattern": "fivenet.app",
+                        "custom_domain": true
                     },
                 ],
             },

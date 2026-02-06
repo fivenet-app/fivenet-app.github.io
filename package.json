@@ -34,7 +34,7 @@
     "@nuxt/eslint-config": "1.13.0",
     "@nuxt/fonts": "0.13.0",
     "@nuxt/image": "2.0.0",
-    "@nuxtjs/i18n": "10.2.1",
+    "@nuxtjs/i18n": "10.2.3",
     "@pinia/nuxt": "0.11.3",
     "@types/node": "^25.2.1",
     "eslint": "9.39.2",

@@ -1,1 +1,0 @@
-import{e as c,o as l,c as n,r as p,z as u,i as d,B as e}from"./_PmoxDtE.js";const i={base:"bg-muted"},h={__name:"ProseThead",props:{class:{type:null,required:!1}},setup(s){const a=s,t=c(),o=d(()=>e({extend:e(i),...t.ui?.prose?.thead||{}}));return(r,m)=>(l(),n("thead",{class:u(o.value({class:a.class}))},[p(r.$slots,"default")],2))}};export{h as default};

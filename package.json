@@ -30,8 +30,8 @@
     "zod-to-json-schema": "^3.25.1"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.13.0",
-    "@nuxt/eslint-config": "1.13.0",
+    "@nuxt/eslint": "1.14.0",
+    "@nuxt/eslint-config": "1.14.0",
     "@nuxt/fonts": "0.13.0",
     "@nuxt/image": "2.0.0",
     "@nuxtjs/i18n": "10.2.3",

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.7",
-    "@iconify-json/lucide": "1.2.89",
+    "@iconify-json/lucide": "1.2.90",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.70",
     "@libsql/client": "^0.17.0",
@@ -30,8 +30,8 @@
     "zod-to-json-schema": "^3.25.1"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.14.0",
-    "@nuxt/eslint-config": "1.14.0",
+    "@nuxt/eslint": "1.15.1",
+    "@nuxt/eslint-config": "1.15.1",
     "@nuxt/fonts": "0.13.0",
     "@nuxt/image": "2.0.0",
     "@nuxtjs/i18n": "10.2.3",
@@ -49,7 +49,7 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.4",
-    "wrangler": "4.63.0"
+    "wrangler": "4.64.0"
   },
   "resolutions": {
     "@intlify/shared": "11.2.8",

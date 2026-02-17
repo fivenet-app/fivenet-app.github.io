@@ -24,7 +24,7 @@
     "drizzle-kit": "^0.31.9",
     "drizzle-orm": "^0.45.1",
     "emoji-blast": "0.11.0",
-    "mermaid": "11.12.2",
+    "mermaid": "11.12.3",
     "vue-countup-v3": "1.4.2",
     "zod": "^4.3.6",
     "zod-to-json-schema": "^3.25.1"
@@ -49,13 +49,13 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.4",
-    "wrangler": "4.65.0"
+    "wrangler": "4.66.0"
   },
   "resolutions": {
     "@intlify/shared": "11.2.8",
     "debug": "4.4.3"
   },
-  "packageManager": "pnpm@10.29.3+sha512.498e1fb4cca5aa06c1dcf2611e6fafc50972ffe7189998c409e90de74566444298ffe43e6cd2acdc775ba1aa7cc5e092a8b7054c811ba8c5770f84693d33d2dc",
+  "packageManager": "pnpm@10.30.0+sha512.2b5753de015d480eeb88f5b5b61e0051f05b4301808a82ec8b840c9d2adf7748eb352c83f5c1593ca703ff1017295bc3fdd3119abb9686efc96b9fcb18200937",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@intlify/vue-i18n-bridge",

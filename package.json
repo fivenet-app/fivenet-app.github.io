@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.7",
-    "@iconify-json/lucide": "1.2.91",
+    "@iconify-json/lucide": "1.2.92",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.71",
     "@libsql/client": "^0.17.0",

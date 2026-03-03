@@ -16,7 +16,7 @@ const open = ref(cookiesState.value === null);
         >
             <template #header>
                 <div class="flex items-center justify-between">
-                    <h3 class="text-2xl font-semibold leading-6">
+                    <h3 class="text-2xl leading-6 font-semibold">
                         We use cookies!
 
                         <span
@@ -81,6 +81,6 @@ const open = ref(cookiesState.value === null);
             </template>
         </UCard>
 
-        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed bottom-32 right-6 z-50" @click="open = true" />
+        <UButton icon="i-mdi-cookie-cog" size="xl" class="fixed right-6 bottom-32 z-50" @click="open = true" />
     </div>
 </template>

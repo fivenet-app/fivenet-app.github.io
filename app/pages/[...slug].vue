@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { findPageHeadline } from '@nuxt/content/utils'
 import type { ContentDeCollectionItem, ContentEnCollectionItem, ContentNavigationItem, PageCollections } from '@nuxt/content';
+import { findPageHeadline } from '@nuxt/content/utils';
 import { withLeadingSlash } from 'ufo';
 
 definePageMeta({
@@ -8,15 +8,19 @@ definePageMeta({
 });
 
 const route = useRoute();
-const { t, locale, localeProperties } = useI18n();
+const { t, locale, locales, localeProperties } = useI18n();
 const slug = computed(() => withLeadingSlash(route.path).replace(/^\/en\//, '/'));
+
 const pageLocale = computed(() => {
     const path = withLeadingSlash(route.path);
-    if (/^\/en\//.test(path)) {
-        return 'en';
+    if (/^\/en\//.test(path)) return 'en';
+
+    const l = path.split('/')[1] ?? locale.value;
+    if (locales.value.find((loc) => (typeof loc === 'string' ? loc === l : loc.code === l))) {
+        return l;
     }
 
-    return path.split('/')[1] ?? locale.value;
+    return 'en';
 });
 
 const { toc } = useAppConfig();
@@ -85,7 +89,7 @@ const links = computed(() =>
         toc?.bottom?.edit && {
             icon: 'i-mdi-pencil-box',
             label: t('docs.toc.bottom.edit'),
-            to: `${toc.bottom.edit}/${page?.value?.stem}.${page?.value?.extension}`,
+            to: `${toc.bottom.edit}/${pageLocale.value === 'en' ? pageLocale.value + '/' : ''}${page?.value?.stem}.${page?.value?.extension}`,
             target: '_blank',
         },
         {

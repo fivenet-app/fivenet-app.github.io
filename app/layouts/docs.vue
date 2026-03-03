@@ -24,6 +24,7 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
                                     </template>
                                 </UContentSearchButton>
                             </template>
+
                             <UContentNavigation :navigation="navigation" highlight />
                         </UPageAside>
                     </template>

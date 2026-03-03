@@ -149,7 +149,7 @@ const features = computed(() => ({
 
             <template #top>
                 <div
-                    class="dark:bg-(--ui-primary) absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80"
+                    class="absolute left-1/2 size-60 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[300px] sm:size-80 dark:bg-(--ui-primary)"
                 />
 
                 <StarsBg />
@@ -281,7 +281,13 @@ const features = computed(() => ({
             :description="page.faq.description"
             class="scroll-mt-[var(--header-height)]"
         >
-            <UAccordion multiple :items="page.faq.items" class="mx-auto max-w-4xl" :unmount-on-hide="false" :ui="{ trigger: 'text-base', body: 'text-base text-muted' }" />
+            <UAccordion
+                multiple
+                :items="page.faq.items"
+                class="mx-auto max-w-4xl"
+                :unmount-on-hide="false"
+                :ui="{ trigger: 'text-base', body: 'text-base text-muted' }"
+            />
         </UPageSection>
 
         <USeparator />
@@ -292,7 +298,7 @@ const features = computed(() => ({
             </template>
 
             <div
-                class="dark:bg-(--ui-primary) sm:size-50 absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px]"
+                class="absolute left-1/2 size-40 -translate-x-1/2 -translate-y-80 transform rounded-full blur-[250px] sm:size-50 dark:bg-(--ui-primary)"
             />
 
             <StarsBg />

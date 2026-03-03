@@ -81,18 +81,13 @@ const onBeforeEnter = async () => {
 };
 
 async function clickListener(event: MouseEvent): Promise<void> {
-    if (!event.srcElement) {
-        return;
-    }
+    if (!event.target) return;
 
-    const element = event.srcElement as HTMLElement;
-    if (element.tagName.toLowerCase() !== 'a' && !element.hasAttribute('href')) {
-        return;
-    }
+    const element = event.target as HTMLElement;
+    if (element.tagName.toLowerCase() !== 'a' && !element.hasAttribute('href')) return;
+
     const href = element.getAttribute('href');
-    if (!href?.startsWith('/')) {
-        return;
-    }
+    if (!href?.startsWith('/')) return;
 
     event.preventDefault();
     await navigateTo(localePath(href));

@@ -37,7 +37,7 @@
     "@nuxt/image": "2.0.0",
     "@nuxtjs/i18n": "10.2.3",
     "@pinia/nuxt": "0.11.3",
-    "@types/node": "^25.3.3",
+    "@types/node": "^25.3.4",
     "eslint": "10.0.2",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
@@ -50,7 +50,7 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.5",
-    "wrangler": "4.70.0"
+    "wrangler": "4.71.0"
   },
   "resolutions": {
     "@intlify/shared": "11.2.8",

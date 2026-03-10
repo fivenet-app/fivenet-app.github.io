@@ -16,7 +16,7 @@
     "@iconify-json/flagpack": "1.2.7",
     "@iconify-json/lucide": "1.2.96",
     "@iconify-json/mdi": "1.2.3",
-    "@iconify-json/simple-icons": "1.2.72",
+    "@iconify-json/simple-icons": "1.2.73",
     "@libsql/client": "^0.17.0",
     "@mermaid-js/layout-elk": "0.2.1",
     "@nuxt/content": "3.12.0",

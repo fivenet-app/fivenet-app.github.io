@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@iconify-json/flagpack": "1.2.7",
-    "@iconify-json/lucide": "1.2.99",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.75",
     "@libsql/client": "^0.17.2",
@@ -31,6 +30,7 @@
     "zod-to-json-schema": "^3.25.1"
   },
   "devDependencies": {
+    "@chevrotain/regexp-to-ast": "^12.0.0",
     "@nuxt/eslint": "1.15.2",
     "@nuxt/eslint-config": "1.15.2",
     "@nuxt/fonts": "0.14.0",
@@ -50,13 +50,13 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.6",
-    "wrangler": "4.77.0"
+    "wrangler": "4.76.0"
   },
   "resolutions": {
     "@intlify/shared": "11.3.0",
     "debug": "4.4.3"
   },
-  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@intlify/vue-i18n-bridge",

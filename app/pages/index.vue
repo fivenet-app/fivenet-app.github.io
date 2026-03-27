@@ -159,7 +159,7 @@ const features = computed(() => ({
 
             <div class="relative">
                 <UPageCard variant="subtle" class="rounded-2xl">
-                    <img src="/images/screenshots/overview.png" alt="FiveNet App Overview" />
+                    <img src="/images/screenshots/overview.webp" alt="FiveNet App Overview" />
                 </UPageCard>
             </div>
         </UPageHero>
@@ -186,7 +186,7 @@ const features = computed(() => ({
                 />
             </template>
 
-            <ImagePlaceholder src="/images/screenshots/ingame-tablet.png" alt="FiveNet FiveM in-game Tablet" />
+            <ImagePlaceholder src="/images/screenshots/ingame-tablet.webp" alt="FiveNet FiveM in-game Tablet" />
         </UPageSection>
 
         <UPageSection :title="features.title" :description="features.description ?? undefined" class="!pt-0">

@@ -24,7 +24,7 @@ const { header } = useAppConfig();
 
         <template #left>
             <ULink class="inline-flex items-center gap-2" to="/">
-                <img src="/images/logo-200x200.png" class="size-10" />
+                <img src="/images/logo-200x200.webp" class="size-10" />
 
                 <span class="text-xl font-semibold text-gray-900 dark:text-white">FiveNet</span>
             </ULink>

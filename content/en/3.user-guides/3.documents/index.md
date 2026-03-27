@@ -2,7 +2,7 @@
 title: Documents
 ---
 
-![Feature Documents](/images/screenshots/features-documents.png)
+![Feature Documents](/images/screenshots/features-documents.webp)
 
 ## Features
 

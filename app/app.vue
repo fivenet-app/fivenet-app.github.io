@@ -71,8 +71,8 @@ useSeoMeta({
         return title ? `${title} - FiveNet` : 'FiveNet';
     },
     ogSiteName: 'FiveNet',
-    ogImage: '/social-card.png',
-    twitterImage: '/social-card.png',
+    ogImage: '/social-card.webp',
+    twitterImage: '/social-card.webp',
     twitterCard: 'summary_large_image',
 });
 

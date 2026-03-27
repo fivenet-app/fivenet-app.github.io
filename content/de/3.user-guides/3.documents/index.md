@@ -2,7 +2,7 @@
 title: Dokumente
 ---
 
-![Feature Dokumente](/images/screenshots/features-documents.png)
+![Feature Dokumente](/images/screenshots/features-documents.webp)
 
 ## Funktionen
 

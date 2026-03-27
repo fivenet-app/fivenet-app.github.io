@@ -8,15 +8,15 @@ export default defineNuxtConfig({
     telemetry: false,
 
     modules: [
-      '@nuxt/ui',
-      '@nuxt/content',
-      '@nuxtjs/mdc',
-      '@nuxt/eslint',
-      '@nuxt/fonts',
-      '@nuxt/image',
-      '@nuxtjs/i18n',
-      '@pinia/nuxt',
-      'pinia-plugin-persistedstate/nuxt',
+        '@nuxt/ui',
+        '@nuxt/content',
+        '@nuxtjs/mdc',
+        '@nuxt/eslint',
+        '@nuxt/fonts',
+        '@nuxt/image',
+        '@nuxtjs/i18n',
+        '@pinia/nuxt',
+        'pinia-plugin-persistedstate/nuxt',
     ],
 
     future: {
@@ -55,8 +55,8 @@ export default defineNuxtConfig({
 
     icon: {
         serverBundle: {
-            collections: ['lucide', 'mdi', 'simple-icons', 'flagpack'],
-        }
+            collections: ['mdi', 'simple-icons', 'flagpack'],
+        },
     },
 
     fonts: {
@@ -74,6 +74,9 @@ export default defineNuxtConfig({
     vite: {
         define: {
             APP_VERSION: `"${appVersion}"`,
+        },
+        optimizeDeps: {
+            include: ['@vue/devtools-core', '@vue/devtools-kit', 'emoji-blast', 'mermaid', '@mermaid-js/layout-elk'],
         },
     },
 

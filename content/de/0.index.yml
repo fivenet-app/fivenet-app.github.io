@@ -13,7 +13,7 @@ hero:
       to: https://fivenet.app/getting-started/demo
       target: _blank
     - label: Loslegen
-      icon: i-lucide-arrow-right
+      icon: i-mdi-arrow-right
       trailing: true
       to: /pricing
       size: xl
@@ -24,7 +24,7 @@ sections:
     id: features
     #orientation: horizontal
     #image:
-    #  src: '/images/screenshots/ingame-tablet.png'
+    #  src: '/images/screenshots/ingame-tablet.webp'
     #  alt: 'FiveNet Tablet FiveM In-Game Screenshot'
     features:
       - name: Open Source
@@ -32,10 +32,10 @@ sections:
         icon: i-simple-icons-git
       - name: Einfach erweiterbar
         description: Der Plugincode kann von Ihren Entwicklern leicht erweitert werden, um mit dem Framework und den Plugins Ihres Servers zu integrieren (z.B. Bußgelder, Standortverfolgung).
-        icon: i-lucide-cog
+        icon: i-mdi-cog
       - name: Schnelle Einrichtung
         description: Ihre FiveNet Cloud-Instanz ist in wenigen Sekunden einsatzbereit.
-        icon: i-lucide-rocket
+        icon: i-mdi-rocket
     cta:
       title: 'Bereit, loszulegen?'
       description: 'Sehen Sie sich den Plugincode auf GitHub an und integrieren Sie ihn noch heute in Ihren Server.'
@@ -56,24 +56,24 @@ features:
 stats:
   - key: users_registered
     number: 3590
-    icon: i-lucide-circle-user
+    icon: i-mdi-account-circle
   - key: documents_created
     number: 57885
-    icon: i-lucide-file-text
+    icon: i-mdi-file-document
   - key: dispatches_created
     number: 790640
-    icon: i-lucide-siren
+    icon: i-mdi-alarm-light
   - key: citizens_total
     number: 62194
-    icon: i-lucide-users
+    icon: i-mdi-account-group
   - key: citizen_activity
     number: 424408
-    icon: i-lucide-activity
+    icon: i-mdi-chart-line
   - key: timeclock_tracked
     number: 645043
     type: unit
     unit: 'common.time_ago.year'
-    icon: i-lucide-timer
+    icon: i-mdi-timer-outline
 
 testimonials:
   #headline: ''
@@ -86,7 +86,7 @@ testimonials:
         description: 'FiveM Rollenspiel-Server'
         target: _blank
         avatar:
-          src: '/images/communities/modernv.png'
+          src: '/images/communities/modernv.webp'
         to: 'https://modernv.net'
     - quote: ''
       user:
@@ -129,7 +129,7 @@ cta:
       color: neutral
       variant: subtle
     - label: Jetzt starten
-      icon: i-lucide-arrow-right
+      icon: i-mdi-arrow-right
       trailing: true
       to: /de/getting-started
       size: xl

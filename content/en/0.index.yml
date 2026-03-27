@@ -13,7 +13,7 @@ hero:
       to: https://fivenet.app/getting-started/demo
       target: _blank
     - label: Get started
-      icon: i-lucide-arrow-right
+      icon: i-mdi-arrow-right
       trailing: true
       to: /pricing
       size: xl
@@ -24,7 +24,7 @@ sections:
     id: features
     #orientation: horizontal
     #image:
-    #  src: '/images/screenshots/ingame-tablet.png'
+    #  src: '/images/screenshots/ingame-tablet.webp'
     #  alt: 'FiveNet Tablet FiveM in-game Screenshot'
     features:
       - name: Open Source
@@ -32,10 +32,10 @@ sections:
         icon: i-simple-icons-git
       - name: Easily extendable
         description: The plugin code is easily extendable by your developers to integrate with your servers framework and plugins (e.g., fines, location tracking).
-        icon: i-lucide-cog
+        icon: i-mdi-cog
       - name: Quick Setup
         description: Your FiveNet Cloud instance will be ready in a few seconds.
-        icon: i-lucide-rocket
+        icon: i-mdi-rocket
     cta:
       title: 'Ready to get started?'
       description: 'Checkout the plugin code on GitHub and start integrating it into your server today.'
@@ -56,24 +56,24 @@ features:
 stats:
   - key: users_registered
     number: 3590
-    icon: i-lucide-circle-user
+    icon: i-mdi-account-circle
   - key: documents_created
     number: 57885
-    icon: i-lucide-file-text
+    icon: i-mdi-file-document
   - key: dispatches_created
     number: 790640
-    icon: i-lucide-siren
+    icon: i-mdi-alarm-light
   - key: citizens_total
     number: 62194
-    icon: i-lucide-users
+    icon: i-mdi-account-group
   - key: citizen_activity
     number: 424408
-    icon: i-lucide-activity
+    icon: i-mdi-chart-line
   - key: timeclock_tracked
     number: 645043
     type: unit
     unit: 'common.time_ago.year'
-    icon: i-lucide-timer
+    icon: i-mdi-timer-outline
 
 testimonials:
   #headline: ''
@@ -86,7 +86,7 @@ testimonials:
         description: 'FiveM Roleplay Server'
         target: _blank
         avatar:
-          src: '/images/communities/modernv.png'
+          src: '/images/communities/modernv.webp'
         to: 'https://modernv.net'
     - quote: ''
       user:
@@ -129,7 +129,7 @@ cta:
       color: neutral
       variant: subtle
     - label: Get started
-      icon: i-lucide-arrow-right
+      icon: i-mdi-arrow-right
       trailing: true
       to: /en/getting-started
       size: xl

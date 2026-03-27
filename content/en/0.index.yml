@@ -2,7 +2,7 @@ title: FiveNet
 description: FiveNet is your easy way to have FiveNet ready for your roleplay gaming community.
 navigation: false
 hero:
-  title: Get Started with [FiveNet Cloud]{.text-(--ui-primary)}
+  title: Get Started with [FiveNet Cloud]{.text-primary}
   description: FiveNet Cloud is your quick way to get a hosted FiveNet instance up'n'running quick for your community. We'll take care of running and updating your FiveNet instance.
   links:
     - label: Demo
@@ -19,7 +19,7 @@ hero:
       size: xl
 
 sections:
-  - title: Ready to be used [In-Game]{.text-(--ui-primary)}
+  - title: Ready to be used [In-Game]{.text-primary}
     description: FiveNet plugins are available for FiveM servers at the moment. Using a FiveNet Cloud instance is the fastest way to get you started with the in-game tablet.
     id: features
     #orientation: horizontal
@@ -77,7 +77,7 @@ stats:
 
 testimonials:
   #headline: ''
-  title: Join other [roleplay servers]{.text-(--ui-primary)} already using FiveNet
+  title: Join other [roleplay servers]{.text-primary} already using FiveNet
   description: See how other roleplay servers are transforming their roleplay experience with FiveNet.
   items:
     - quote: ''
@@ -118,7 +118,7 @@ faq:
       content: "We offer the documentation with step-by-step guides for the community, and Discord chat based support for FiveNet Cloud users."
 
 cta:
-  title: Join the [Community]{.text-(--ui-primary)} today
+  title: Join the [Community]{.text-primary} today
   description: Checkout the documentation to learn more about installing, configuring and using FiveNet.
   links:
     - label: 'Join Our Discord'

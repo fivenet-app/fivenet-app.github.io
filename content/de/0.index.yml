@@ -2,7 +2,7 @@ title: FiveNet
 description: FiveNet ist Ihr einfacher Weg, um FiveNet für Ihre Rollenspiel-Community bereitzustellen.
 navigation: false
 hero:
-  title: Erste Schritte mit [FiveNet Cloud]{.text-(--ui-primary)}
+  title: Erste Schritte mit [FiveNet Cloud]{.text-primary}
   description: FiveNet Cloud ist Ihr schneller Weg, um eine gehostete FiveNet-Instanz für Ihre Community schnell einsatzbereit zu machen. Wir kümmern uns um den Betrieb und die Aktualisierung Ihrer FiveNet-Instanz.
   links:
     - label: Demo
@@ -19,7 +19,7 @@ hero:
       size: xl
 
 sections:
-  - title: Bereit zur Nutzung [In-Game]{.text-(--ui-primary)}
+  - title: Bereit zur Nutzung [In-Game]{.text-primary}
     description: FiveNet-Plugins sind derzeit für FiveM-Server verfügbar. Die Nutzung einer FiveNet-Cloud-Instanz ist der schnellste Weg, um mit dem In-Game-Tablet zu starten.
     id: features
     #orientation: horizontal
@@ -77,7 +77,7 @@ stats:
 
 testimonials:
   #headline: ''
-  title: Schließen Sie sich anderen [Rollenspiel-Servern]{.text-(--ui-primary)} an, die bereits FiveNet nutzen
+  title: Schließen Sie sich anderen [Rollenspiel-Servern]{.text-primary} an, die bereits FiveNet nutzen
   description: Sehen Sie, wie andere Rollenspiel-Server ihre Rollenspiel-Erfahrung mit FiveNet transformieren.
   items:
     - quote: ''
@@ -118,7 +118,7 @@ faq:
       content: "Wir bieten die Dokumentation mit Schritt-für-Schritt-Anleitungen für die Community und Discord-Chat-basierten Support für FiveNet-Cloud-Nutzer."
 
 cta:
-  title: Treten Sie noch heute der [Community]{.text-(--ui-primary)} bei
+  title: Treten Sie noch heute der [Community]{.text-primary} bei
   description: Lesen Sie die Dokumentation, um mehr über die Installation, Konfiguration und Nutzung von FiveNet zu erfahren.
   links:
     - label: 'Treten Sie unserem Discord bei'

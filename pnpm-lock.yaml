@@ -22,7 +22,7 @@ importers:
         specifier: 1.2.75
         version: 1.2.75
       '@libsql/client':
-        specifier: ^0.17.2
+        specifier: 0.17.2
         version: 0.17.2
       '@mermaid-js/layout-elk':
         specifier: 0.2.1
@@ -37,10 +37,10 @@ importers:
         specifier: 12.8.0
         version: 12.8.0
       drizzle-kit:
-        specifier: ^0.31.10
+        specifier: 0.31.10
         version: 0.31.10
       drizzle-orm:
-        specifier: ^0.45.1
+        specifier: 0.45.1
         version: 0.45.1(@libsql/client@0.17.2)(better-sqlite3@12.8.0)
       emoji-blast:
         specifier: 0.11.0
@@ -52,14 +52,14 @@ importers:
         specifier: 1.4.2
         version: 1.4.2(vue@3.5.30(typescript@5.9.3))
       zod:
-        specifier: ^4.3.6
+        specifier: 4.3.6
         version: 4.3.6
       zod-to-json-schema:
-        specifier: ^3.25.1
-        version: 3.25.1(zod@4.3.6)
+        specifier: 3.25.2
+        version: 3.25.2(zod@4.3.6)
     devDependencies:
       '@chevrotain/regexp-to-ast':
-        specifier: ^12.0.0
+        specifier: 12.0.0
         version: 12.0.0
       '@nuxt/eslint':
         specifier: 1.15.2
@@ -80,7 +80,7 @@ importers:
         specifier: 0.11.3
         version: 0.11.3(magicast@0.5.2)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))
       '@types/node':
-        specifier: ^25.5.0
+        specifier: 25.5.0
         version: 25.5.0
       eslint:
         specifier: 10.1.0
@@ -7844,10 +7844,10 @@ packages:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
 
-  zod-to-json-schema@3.25.1:
-    resolution: {integrity: sha512-pM/SU9d3YAggzi6MtR4h7ruuQlqKtad8e9S0fmxcMi+ueAK5Korys/aWcV9LIIHTVbj01NdzxcnXSN+O74ZIVA==}
+  zod-to-json-schema@3.25.2:
+    resolution: {integrity: sha512-O/PgfnpT1xKSDeQYSCfRI5Gy3hPf91mKVDuYLUHZJMiDFptvP41MSnWofm8dnCm0256ZNfZIM7DSzuSMAFnjHA==}
     peerDependencies:
-      zod: ^3.25 || ^4
+      zod: ^3.25.28 || ^4
 
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
@@ -9032,7 +9032,7 @@ snapshots:
       unist-util-visit: 5.1.0
       unplugin: 2.3.11
       zod: 3.25.76
-      zod-to-json-schema: 3.25.1(zod@3.25.76)
+      zod-to-json-schema: 3.25.2(zod@3.25.76)
     optionalDependencies:
       '@libsql/client': 0.17.2
       better-sqlite3: 12.8.0
@@ -16282,11 +16282,11 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.7.0
 
-  zod-to-json-schema@3.25.1(zod@3.25.76):
+  zod-to-json-schema@3.25.2(zod@3.25.76):
     dependencies:
       zod: 3.25.76
 
-  zod-to-json-schema@3.25.1(zod@4.3.6):
+  zod-to-json-schema@3.25.2(zod@4.3.6):
     dependencies:
       zod: 4.3.6
 

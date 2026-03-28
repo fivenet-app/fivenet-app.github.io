@@ -2,7 +2,7 @@
 title: Improving Data Separation and Management for Users and Citizens
 ---
 
-**Status**: Draft
+**Status**: Implemented
 
 ## Glossary
 

@@ -25,6 +25,10 @@ export default defineNuxtConfig({
 
     compatibilityDate: '2025-12-20',
 
+    experimental: {
+        payloadExtraction: true,
+    },
+
     /*
     hub: {
         db: {

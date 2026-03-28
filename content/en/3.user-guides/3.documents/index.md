@@ -6,24 +6,24 @@ title: Documents
 
 ## Features
 
-The "Documents" feature allows users to efficiently manage and organize documents. Key functionalities include:
+The Documents feature helps users manage and organize records efficiently. Key capabilities include:
 
 - Searching and filtering documents based on various criteria.
-    - Searching by document name, category, or status.
-    - Document activity shows the history of document changes.
+  - Search by document name, category, or status.
+  - Document activity shows a history of changes.
 
 - Creating, editing, and deleting documents.
 
 - Adding comments to documents.
 
 - Document templates with requirements for citizens, vehicles, and documents:
-    - Creating and managing templates.
-    - Setting up requirements for selected entities to make templates more powerful than just text blocks.
+  - Create and manage templates.
+  - Define requirements for related entities to go beyond static text blocks.
 
 - Document categories for better organization:
-    - Creating and managing categories.
-    - Assigning documents to specific categories.
+  - Create and manage categories.
+  - Assign documents to specific categories.
 
 - Relating documents to citizens and referencing other documents within the system:
-    - Managing relationships for better organization.
-    - Creating references for improved context.
+  - Link related entities for clearer context.
+  - Reference other documents directly in records.

@@ -15,7 +15,7 @@
   "dependencies": {
     "@iconify-json/flagpack": "1.2.7",
     "@iconify-json/mdi": "1.2.3",
-    "@iconify-json/simple-icons": "1.2.75",
+    "@iconify-json/simple-icons": "1.2.76",
     "@libsql/client": "0.17.2",
     "@mermaid-js/layout-elk": "0.2.1",
     "@nuxt/content": "3.12.0",
@@ -50,7 +50,7 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.6",
-    "wrangler": "4.78.0"
+    "wrangler": "4.79.0"
   },
   "resolutions": {
     "@intlify/shared": "11.3.0",

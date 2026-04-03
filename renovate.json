@@ -15,5 +15,8 @@
       "automerge": true
     }
   ],
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "nix": {
+    "enabled": true
+  }
 }

@@ -50,7 +50,7 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.6",
-    "wrangler": "4.80.0"
+    "wrangler": "4.81.0"
   },
   "resolutions": {
     "@intlify/shared": "11.3.1",

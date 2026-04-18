@@ -38,7 +38,7 @@
     "@nuxtjs/i18n": "10.2.4",
     "@pinia/nuxt": "0.11.3",
     "@types/node": "25.6.0",
-    "eslint": "10.2.0",
+    "eslint": "10.2.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-vue": "10.8.0",

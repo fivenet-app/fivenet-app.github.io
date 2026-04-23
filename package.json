@@ -16,7 +16,7 @@
     "@iconify-json/flagpack": "1.2.7",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.79",
-    "@libsql/client": "0.17.2",
+    "@libsql/client": "0.17.3",
     "@mermaid-js/layout-elk": "0.2.1",
     "@nuxt/content": "3.13.0",
     "@nuxt/ui": "4.6.1",
@@ -46,7 +46,7 @@
     "pinia-plugin-persistedstate": "4.7.1",
     "prettier": "3.8.3",
     "prettier-plugin-organize-imports": "4.3.0",
-    "prettier-plugin-tailwindcss": "0.7.2",
+    "prettier-plugin-tailwindcss": "0.7.3",
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.7",
@@ -56,7 +56,7 @@
     "@intlify/shared": "11.3.2",
     "debug": "4.4.3"
   },
-  "packageManager": "pnpm@10.33.1+sha512.05ba3c1d5d1c18f68df06470d74055e62d41fc110a0c660db1b2dfb2785327f04cf0f68345d4609bc52089e7fa0343c31593b2f9594e2c5d5da426230acc9820",
+  "packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@intlify/vue-i18n-bridge",

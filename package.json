@@ -19,7 +19,7 @@
     "@libsql/client": "0.17.3",
     "@mermaid-js/layout-elk": "0.2.1",
     "@nuxt/content": "3.13.0",
-    "@nuxt/ui": "4.7.0",
+    "@nuxt/ui": "4.7.1",
     "better-sqlite3": "12.9.0",
     "drizzle-kit": "0.31.10",
     "drizzle-orm": "0.45.2",
@@ -50,7 +50,7 @@
     "sharp": "0.34.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.7",
-    "wrangler": "4.85.0"
+    "wrangler": "4.86.0"
   },
   "resolutions": {
     "@intlify/shared": "11.4.0",

@@ -26,8 +26,7 @@
     "emoji-blast": "0.11.0",
     "mermaid": "11.14.0",
     "vue-countup-v3": "1.4.2",
-    "zod": "4.3.6",
-    "zod-to-json-schema": "3.25.2"
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@chevrotain/regexp-to-ast": "12.0.0",
@@ -51,10 +50,6 @@
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.2.7",
     "wrangler": "4.86.0"
-  },
-  "resolutions": {
-    "@intlify/shared": "11.4.0",
-    "debug": "4.4.3"
   },
   "packageManager": "pnpm@10.33.2+sha512.a90faf6feeab71ad6c6e57f94e0fe1a12f5dcc22cd754db40ae9593eb6a3e0b6b12e3540218bb37ae083404b1f2ce6db2a4121e979829b4aff94b99f49da1cf8",
   "pnpm": {

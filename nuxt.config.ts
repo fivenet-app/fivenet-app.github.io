@@ -148,6 +148,12 @@ export default defineNuxtConfig({
         transpile: ['vue-countup-v3'],
     },
 
+    ui: {
+        theme: {
+            colors: ['blue', 'neutral'],
+        },
+    },
+
     content: {
         build: {
             markdown: {

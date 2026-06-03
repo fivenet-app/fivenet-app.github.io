@@ -3,7 +3,7 @@
   description = "Basic flake for FiveNet docs development";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=release-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=release-26.05";
   };
 
   outputs = { self, nixpkgs }:
@@ -21,9 +21,6 @@
 
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          # Workaround CGO issue https://nixos.wiki/wiki/Go#Using_cgo_on_NixOS
-          hardeningDisable = [ "fortify" ];
-
           packages = with pkgs; [
             # NodeJS stuff
             nodejs_22

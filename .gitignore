@@ -26,5 +26,6 @@ logs
 
 # VSC
 .history
+.codex
 
 .direnv/

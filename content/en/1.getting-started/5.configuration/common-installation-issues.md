@@ -14,7 +14,7 @@ This issue occurs when the collation of your database, tables, or columns is inc
 When configuring your database connection string (DSN), ensure that the collation parameter matches the server's collation. For example:
 
 ```text
-DB_USER:DB_PASS@tcp(DB_HOST:DB_PORT)/DB_NAME?collation=utf8mb4_general_ci&loc=Europe%2FBerlin
+DB_USER:DB_PASS@tcp(DB_HOST:DB_PORT)/DB_NAME?collation=utf8mb4_unicode_ci&loc=Europe%2FBerlin
 ```
 
-If the server uses `utf8mb4_general_ci`, but your DSN specifies `utf8mb4_unicode_ci`, this mismatch can cause issues. Update the DSN to use the correct collation parameter.
+If the server uses `utf8mb4_unicode_ci`, but your DSN specifies `utf8mb4_unicode_ci`, this mismatch can cause issues. Update the DSN to use the correct collation parameter.

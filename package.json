@@ -46,7 +46,7 @@
     "prettier": "3.9.4",
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-tailwindcss": "0.8.0",
-    "sharp": "0.35.2",
+    "sharp": "0.35.3",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.6",
     "wrangler": "4.106.0"

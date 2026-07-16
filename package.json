@@ -45,7 +45,7 @@
     "pinia-plugin-persistedstate": "4.7.1",
     "prettier": "3.9.5",
     "prettier-plugin-organize-imports": "4.3.0",
-    "prettier-plugin-tailwindcss": "0.8.0",
+    "prettier-plugin-tailwindcss": "0.8.1",
     "sharp": "0.35.3",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.7",

@@ -19,7 +19,7 @@
     "@libsql/client": "0.17.4",
     "@mermaid-js/layout-elk": "0.2.2",
     "@nuxt/content": "3.15.0",
-    "@nuxt/ui": "4.9.0",
+    "@nuxt/ui": "4.10.0",
     "better-sqlite3": "12.11.1",
     "drizzle-kit": "0.31.10",
     "drizzle-orm": "0.45.2",

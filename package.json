@@ -18,7 +18,7 @@
     "@iconify-json/simple-icons": "1.2.91",
     "@libsql/client": "0.17.4",
     "@mermaid-js/layout-elk": "0.2.2",
-    "@nuxt/content": "3.15.1",
+    "@nuxt/content": "3.15.2",
     "@nuxt/ui": "4.10.0",
     "better-sqlite3": "12.11.1",
     "drizzle-kit": "0.31.10",
@@ -48,7 +48,7 @@
     "prettier-plugin-tailwindcss": "0.8.1",
     "sharp": "0.35.3",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "3.3.7",
+    "vue-tsc": "3.3.8",
     "wrangler": "4.113.0"
   },
   "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e",

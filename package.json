@@ -20,7 +20,7 @@
     "@mermaid-js/layout-elk": "0.2.2",
     "@nuxt/content": "3.15.2",
     "@nuxt/ui": "4.10.0",
-    "better-sqlite3": "12.11.1",
+    "better-sqlite3": "13.0.1",
     "drizzle-kit": "0.31.10",
     "drizzle-orm": "0.45.2",
     "emoji-blast": "0.11.0",

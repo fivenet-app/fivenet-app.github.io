@@ -52,8 +52,8 @@ importers:
         version: 4.4.3
     devDependencies:
       '@chevrotain/regexp-to-ast':
-        specifier: 12.0.0
-        version: 12.0.0
+        specifier: 13.0.0
+        version: 13.0.0
       '@nuxt/eslint':
         specifier: 1.16.0
         version: 1.16.0(@typescript-eslint/utils@8.61.0(eslint@10.8.0(jiti@2.7.0))(typescript@5.9.3))(@vue/compiler-sfc@3.5.40)(crossws@0.4.5(srvx@0.11.15))(esbuild@0.28.1)(eslint@10.8.0(jiti@2.7.0))(magic-string@0.30.21)(magicast@0.5.2)(oxc-parser@0.139.0)(rollup@4.60.2)(typescript@5.9.3)(unplugin@3.3.0(esbuild@0.28.1)(rollup@4.60.2)(vite@7.3.3(@types/node@25.9.5)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.9.0)))(vite@7.3.3(@types/node@25.9.5)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.9.0))
@@ -290,8 +290,8 @@ packages:
     resolution: {integrity: sha512-VERIM64vtTP1C4mxQ5thVT9fK0apjPFobqybMtA1UdUujWka24ERHbRHFGmpbbhp73MhV+KSsHQH9C6uOTdEQA==}
     engines: {node: '>=18'}
 
-  '@chevrotain/regexp-to-ast@12.0.0':
-    resolution: {integrity: sha512-p+EW9MaJwgaHguhoqwOtx/FwuGr+DnNn857sXWOi/mClXIkPGl3rn7hGNWvo31HA3vyeQxjqe+H36yZJwYU8cA==}
+  '@chevrotain/regexp-to-ast@13.0.0':
+    resolution: {integrity: sha512-gNocnXyRowusJk4e78S5YXQfVknfldK6AGW0uI2cEZYZ3waqzDZ4KQZsMilSsg9nUC5Dc/odJzjlPCksAyYGeQ==}
 
   '@chevrotain/types@11.1.2':
     resolution: {integrity: sha512-U+HFai5+zmJCkK86QsaJtoITlboZHBqrVketcO2ROv865xfCMSFpELQoz1GkX5GzME8pTa+3kbKrZHQtI0gdbw==}
@@ -8723,7 +8723,7 @@ snapshots:
     dependencies:
       fontkitten: 1.0.3
 
-  '@chevrotain/regexp-to-ast@12.0.0': {}
+  '@chevrotain/regexp-to-ast@13.0.0': {}
 
   '@chevrotain/types@11.1.2': {}
 

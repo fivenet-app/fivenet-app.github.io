@@ -29,7 +29,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@chevrotain/regexp-to-ast": "13.1.0",
+    "@chevrotain/regexp-to-ast": "13.2.0",
     "@nuxt/eslint": "1.16.0",
     "@nuxt/eslint-config": "1.16.0",
     "@nuxt/fonts": "0.14.0",

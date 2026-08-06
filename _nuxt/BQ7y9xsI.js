@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./Dm7eFcz6.js","./aKtaBQYM.js","./CI1ENdm4.js","./HxWcSHC9.js","./1zh3NrGZ.js"])))=>i.map(i=>d[i]);
+import{t as e}from"./HclGiUj8.js";import{t}from"./CI1ENdm4.js";var n=t(async()=>await e(()=>import(`./Dm7eFcz6.js`),__vite__mapDeps([0,1,2,3,4]),import.meta.url),`loader`),r=[{name:`elk`,loader:n,algorithm:`elk.layered`},...[`elk.stress`,`elk.force`,`elk.mrtree`,`elk.sporeOverlap`].map(e=>({name:e,loader:n,algorithm:e}))];export{r as default};

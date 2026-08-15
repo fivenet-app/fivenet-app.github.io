@@ -30,6 +30,7 @@
             ripgrep
             sd
             libwebp
+            imagemagick
           ];
         };
       });

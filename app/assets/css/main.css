@@ -4,7 +4,7 @@
 @source '../../../content';
 
 @theme static {
-    --font-sans: 'DM Sans', sans-serif;
+    --font-sans: 'Public Sans', sans-serif;
 }
 
 .dark {

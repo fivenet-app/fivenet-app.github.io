@@ -63,10 +63,6 @@ export default defineNuxtConfig({
         },
     },
 
-    fonts: {
-        families: [{ name: 'DM Sans', weights: [100, 200, 300, 400, 500, 600, 700, 800, 900], global: true }],
-    },
-
     devtools: {
         enabled: true,
     },

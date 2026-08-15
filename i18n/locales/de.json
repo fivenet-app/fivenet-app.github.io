@@ -101,6 +101,10 @@
                     "title": "Mehrsprachige Benutzeroberfläche",
                     "description": "Mehrere Sprachen für die Benutzeroberfläche verfügbar."
                 },
+                "ios_client": {
+                    "title": "iOS-App",
+                    "description": "Eine von der Community getragene iOS-App für FiveNet, offen auf GitHub entwickelt."
+                },
                 "nuxt3_ui": {
                     "title": "Nuxt 4 + Nuxt UI",
                     "description": "Angetrieben von Nuxt 4 und Nuxt UI für optimale Leistung."

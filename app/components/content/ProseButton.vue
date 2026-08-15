@@ -1,11 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts" setup>
+import type { ButtonProps } from '@nuxt/ui';
+
 withDefaults(
     defineProps<{
-        label?: string;
-        color?: string;
-        size?: string;
-        icon?: string;
+        label?: ButtonProps['label'];
+        color?: ButtonProps['color'];
+        size?: ButtonProps['size'];
+        icon?: ButtonProps['icon'];
         external?: boolean | string;
         to?: string;
     }>(),

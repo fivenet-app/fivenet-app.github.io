@@ -82,7 +82,7 @@ useSeoMeta({
     ogDescription: page.value.description,
 });
 
-const headline = computed(() => findPageHeadline(navigation.value, page.value));
+const headline = computed(() => findPageHeadline(navigation.value, page.value.title));
 
 const links = computed(() =>
     [

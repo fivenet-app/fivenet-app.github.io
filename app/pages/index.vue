@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { Collections, IndexDeCollectionItem, IndexEnCollectionItem } from '@nuxt/content';
-import type { ButtonProps } from '@nuxt/ui';
+import type { ButtonProps, PageCardProps } from '@nuxt/ui';
 import CountUp from 'vue-countup-v3';
 import '~/assets/css/herofull-pattern.css';
 
@@ -120,6 +120,13 @@ const features = computed(() => ({
             to: localePath('/user-guides/i18n'),
         },
         {
+            title: t('docs.features.items.ios_client.title'),
+            description: t('docs.features.items.ios_client.description'),
+            icon: 'i-mdi-cellphone-iphone',
+            to: 'https://github.com/fivenet-app/app-ios',
+            highlight: true,
+        },
+        {
             title: t('docs.features.items.nuxt3_ui.title'),
             description: t('docs.features.items.nuxt3_ui.description'),
             icon: 'i-simple-icons-nuxtdotjs',
@@ -131,7 +138,7 @@ const features = computed(() => ({
             icon: 'i-simple-icons-git',
             to: 'https://github.com/fivenet-app/fivenet',
         },
-    ],
+    ] satisfies PageCardProps[],
 }));
 </script>
 

@@ -1,1 +1,0 @@
-import"./DBW0fXDq.js";import{n as e}from"./Dx3DXKdZ.js";export{e as createArchitectureServices};

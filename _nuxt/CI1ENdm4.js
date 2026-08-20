@@ -1,1 +1,0 @@
-var e=Object.defineProperty,t=(t,n)=>e(t,`name`,{value:n,configurable:!0});export{t};

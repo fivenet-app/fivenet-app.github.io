@@ -24,7 +24,7 @@
     "drizzle-kit": "0.31.10",
     "drizzle-orm": "0.45.2",
     "emoji-blast": "0.11.0",
-    "mermaid": "11.17.0",
+    "mermaid": "11.17.1",
     "vue-countup-v3": "1.4.2",
     "zod": "4.4.3"
   },
@@ -37,7 +37,7 @@
     "@nuxtjs/i18n": "10.6.0",
     "@pinia/nuxt": "1.0.2",
     "@types/node": "25.9.5",
-    "eslint": "10.9.0",
+    "eslint": "10.9.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
     "eslint-plugin-vue": "10.10.0",

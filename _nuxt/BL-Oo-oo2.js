@@ -51,7 +51,7 @@ Expecting `+j.join(`, `)+`, got '`+(this.terminals_[S]||S)+`'`:`Parse error on l
     fill: ${e.arrowheadColor};
   }
 
-  .edgePath .path {
+  .edgePaths .path {
     stroke: ${e.lineColor};
     stroke-width: 2.0px;
   }

@@ -18,7 +18,7 @@
     "@iconify-json/simple-icons": "1.2.93",
     "@libsql/client": "0.17.4",
     "@mermaid-js/layout-elk": "0.2.3",
-    "@nuxt/content": "3.15.2",
+    "@nuxt/content": "3.16.0",
     "@nuxt/ui": "4.11.0",
     "better-sqlite3": "13.0.3",
     "drizzle-kit": "0.31.10",

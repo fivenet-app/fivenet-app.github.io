@@ -180,7 +180,7 @@ const features = computed(() => ({
             <template #headline>
                 <UButton
                     color="neutral"
-                    :to="`${localePath('/changelog')}#${appVersion}`"
+                    :to="localePath('/changelog')"
                     :label="
                         $t('pages.index.whats_new_in', {
                             version: appVersion,

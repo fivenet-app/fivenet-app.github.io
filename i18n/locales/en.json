@@ -1,5 +1,12 @@
 {
     "pages": {
+        "changelog": {
+            "title": "Changelog",
+            "description": "The latest changes, improvements, and fixes in FiveNet.",
+            "latest": "Latest",
+            "prerelease": "Pre-release",
+            "view_all": "View all releases on GitHub"
+        },
         "index": {
             "welcome": "Welcome to FiveNet!",
             "description": "A full suite of features to take your communities roleplay to the next level, all in one \"Net\", FiveNet.",
@@ -19,6 +26,7 @@
     "common": {
         "home": "Home",
         "docs": "Documentation",
+        "changelog": "Changelog",
         "toc": "Table of Contents",
         "community": "Community",
         "language": "Language",

@@ -1,5 +1,12 @@
 {
     "pages": {
+        "changelog": {
+            "title": "Änderungsprotokoll",
+            "description": "Die neuesten Änderungen, Verbesserungen und Fehlerbehebungen in FiveNet.",
+            "latest": "Aktuell",
+            "prerelease": "Vorabversion",
+            "view_all": "Alle Releases auf GitHub ansehen"
+        },
         "index": {
             "welcome": "Willkommen bei FiveNet!",
             "description": "Eine vollständige Suite von Funktionen, um das Rollenspiel Ihrer Community auf die nächste Stufe zu heben, alles in einem \"Netzwerk\", FiveNet.",
@@ -19,6 +26,7 @@
     "common": {
         "home": "Startseite",
         "docs": "Dokumentation",
+        "changelog": "Änderungsprotokoll",
         "toc": "Inhaltsverzeichnis",
         "community": "Community",
         "language": "Sprache",

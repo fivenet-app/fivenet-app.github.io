@@ -3,6 +3,7 @@ import type { ContentNavigationItem } from '@nuxt/content';
 import LanguageSwitcherModal from './LanguageSwitcherModal.vue';
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
+const localePath = useLocalePath();
 
 const overlay = useOverlay();
 
@@ -32,6 +33,14 @@ const { header } = useAppConfig();
 
         <template #right>
             <UContentSearchButton class="lg:hidden" />
+
+            <UButton
+                :label="$t('common.changelog')"
+                icon="i-mdi-history"
+                color="neutral"
+                variant="ghost"
+                :to="localePath('/changelog')"
+            />
 
             <UButton
                 :label="$t('common.language')"

@@ -180,8 +180,7 @@ const features = computed(() => ({
             <template #headline>
                 <UButton
                     color="neutral"
-                    :to="`https://github.com/fivenet-app/fivenet/releases/tag/${appVersion}`"
-                    :external="true"
+                    :to="`${localePath('/changelog')}#${appVersion}`"
                     :label="
                         $t('pages.index.whats_new_in', {
                             version: appVersion,

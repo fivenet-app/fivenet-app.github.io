@@ -4,7 +4,7 @@ const appVersion: string = process.env.COMMIT_REF || 'COMMIT_REF';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: false,
+    ssr: true,
     telemetry: false,
 
     modules: [
@@ -55,11 +55,63 @@ export default defineNuxtConfig({
         },
     },
 
+    runtimeConfig: {
+        githubToken: process.env.GITHUB_TOKEN,
+    },
+
     css: ['~/assets/css/main.css'],
 
     icon: {
-        serverBundle: {
-            collections: ['mdi', 'simple-icons', 'flagpack'],
+        collections: ['mdi', 'simple-icons', 'flagpack'],
+        provider: 'iconify',
+        clientBundle: {
+            scan: true,
+            icons: [
+                // Nuxt UI Icons (from app.config.ts)
+                'mdi:arrow-down',
+                'mdi:arrow-left',
+                'mdi:arrow-right',
+                'mdi:arrow-up',
+                'mdi:alert-circle',
+                'mdi:check',
+                'mdi:chevron-double-left',
+                'mdi:chevron-double-right',
+                'mdi:chevron-down',
+                'mdi:chevron-left',
+                'mdi:chevron-right',
+                'mdi:chevron-up',
+                'mdi:close',
+                'mdi:content-copy',
+                'mdi:check-circle-outline',
+                'mdi:moon-waning-crescent',
+                'mdi:drag-vertical',
+                'mdi:dots-horizontal',
+                'mdi:close-circle',
+                'mdi:arrow-top-right',
+                'mdi:eye',
+                'mdi:eye-off',
+                'mdi:file-document',
+                'mdi:folder',
+                'mdi:folder-open',
+                'mdi:pound',
+                'mdi:information',
+                'mdi:white-balance-sunny',
+                'mdi:loading',
+                'mdi:menu',
+                'mdi:minus',
+                'mdi:menu-close',
+                'mdi:menu-open',
+                'mdi:plus',
+                'mdi:reload',
+                'mdi:magnify',
+                'mdi:star-outline',
+                'mdi:stop',
+                'mdi:check-circle',
+                'mdi:monitor',
+                'mdi:lightbulb-variant',
+                'mdi:upload',
+                'mdi:alert',
+            ],
         },
     },
 
@@ -83,7 +135,7 @@ export default defineNuxtConfig({
     nitro: {
         preset: 'github_pages',
         prerender: {
-            routes: ['/'],
+            routes: ['/', '/changelog', '/de/changelog'],
         },
 
         cloudflare: {
@@ -175,10 +227,15 @@ export default defineNuxtConfig({
                         'templ',
                         'diff',
                         'lua',
+                        'powershell',
                     ],
                 },
             },
         },
+    },
+
+    mdc: {
+        highlight: false,
     },
 
     image: {

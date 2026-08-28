@@ -10,6 +10,7 @@ definePageMeta({
 const route = useRoute();
 const { t, locale, locales, localeProperties } = useI18n();
 const slug = computed(() => withLeadingSlash(route.path).replace(/^\/en\//, '/'));
+const fallbackSlug = computed(() => withLeadingSlash(route.path).replace(/^\/(?:en|de)(?=\/|$)/, '') || '/');
 
 const pageLocale = computed(() => {
     const path = withLeadingSlash(route.path);
@@ -40,7 +41,7 @@ const { data: page } = await useAsyncData<ContentEnCollectionItem | ContentDeCol
         }
 
         // Fallback to default locale if content is missing in non-default locale
-        return await queryCollection('content_en').path(slug.value).first();
+        return await queryCollection('content_en').path(fallbackSlug.value).first();
     },
     {
         watch: [locale],
@@ -48,6 +49,10 @@ const { data: page } = await useAsyncData<ContentEnCollectionItem | ContentDeCol
 );
 if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
+}
+
+if (page.value.redirect) {
+    await navigateTo(page.value.redirect, { redirectCode: 301 });
 }
 
 const { data: surround } = await useAsyncData(
@@ -66,7 +71,7 @@ const { data: surround } = await useAsyncData(
         }
 
         // Fallback to default locale if content is missing in non-default locale
-        return await queryCollectionItemSurroundings('content_en', route.path, {
+        return await queryCollectionItemSurroundings('content_en', fallbackSlug.value, {
             fields: ['description'],
         });
     },

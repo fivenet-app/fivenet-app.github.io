@@ -15,7 +15,7 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
                     <template #left>
                         <UPageAside>
                             <template #top>
-                                <UContentSearchButton label="Search..." variant="outline" class="w-full">
+                                <UContentSearchButton variant="outline" class="w-full" :collapsed="false">
                                     <template #trailing>
                                         <div class="ms-auto flex items-center gap-0.5">
                                             <UKbd value="meta" />

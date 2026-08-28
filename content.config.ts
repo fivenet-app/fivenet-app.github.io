@@ -63,6 +63,7 @@ export const collections = {
         schema: z.object({
             title: z.string().nonempty(),
             description: z.string().nonempty(),
+            redirect: z.string().optional(),
             links: z
                 .array(
                     z.object({
@@ -151,6 +152,7 @@ export const collections = {
         schema: z.object({
             title: z.string().nonempty(),
             description: z.string().nonempty(),
+            redirect: z.string().optional(),
             links: z
                 .array(
                     z.object({

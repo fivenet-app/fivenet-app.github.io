@@ -28,7 +28,7 @@ importers:
         version: 3.16.0(@libsql/client@0.17.4)(@oxc-project/types@0.141.0)(@valibot/to-json-schema@1.7.1(valibot@1.4.2(typescript@5.9.3)))(better-sqlite3@13.0.3)(esbuild@0.28.1)(magic-string@1.2.2)(magicast@0.5.4)(oxc-parser@0.139.0)(rolldown@1.2.0)(rollup@4.60.2)(valibot@1.4.2(typescript@5.9.3))(vite@8.2.0(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.9.0))
       '@nuxt/ui':
         specifier: 4.11.0
-        version: 4.11.0(36d29b19264109cf778f4bad038f9703)
+        version: 4.11.0(9060d344b810888869807ce515c4d03e)
       better-sqlite3:
         specifier: 13.0.3
         version: 13.0.3
@@ -48,8 +48,8 @@ importers:
         specifier: 1.4.2
         version: 1.4.2(vue@3.5.40(typescript@5.9.3))
       zod:
-        specifier: 4.5.2
-        version: 4.5.2
+        specifier: 4.5.4
+        version: 4.5.4
     devDependencies:
       '@chevrotain/regexp-to-ast':
         specifier: 13.2.0
@@ -8076,8 +8076,8 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.5.2:
-    resolution: {integrity: sha512-XkYXCol10+ba/6F/cueWV+TezUeOqXW0hdeJt5CdXjTYeAgAQg5N03RQdJ80mhfFE72+pblvYMW4wy2Qp4Qbrg==}
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -8362,10 +8362,10 @@ snapshots:
 
   '@devframes/json-render@0.7.14(@devframes/hub@0.7.14(devframe@0.7.14(cac@7.0.0)(srvx@0.11.22)(typescript@5.9.3)))(devframe@0.7.14(cac@7.0.0)(srvx@0.11.22)(typescript@5.9.3))':
     dependencies:
-      '@json-render/core': 0.19.0(zod@4.5.2)
+      '@json-render/core': 0.19.0(zod@4.5.4)
       devframe: 0.7.14(cac@7.0.0)(srvx@0.11.22)(typescript@5.9.3)
       nostics: 1.2.0
-      zod: 4.5.2
+      zod: 4.5.4
     optionalDependencies:
       '@devframes/hub': 0.7.14(devframe@0.7.14(cac@7.0.0)(srvx@0.11.22)(typescript@5.9.3))
     optional: true
@@ -9232,9 +9232,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@json-render/core@0.19.0(zod@4.5.2)':
+  '@json-render/core@0.19.0(zod@4.5.4)':
     dependencies:
-      zod: 4.5.2
+      zod: 4.5.4
     optional: true
 
   '@kwsites/file-exists@1.1.1':
@@ -9941,7 +9941,7 @@ snapshots:
       rc9: 3.0.1
       std-env: 4.2.0
 
-  '@nuxt/ui@4.11.0(36d29b19264109cf778f4bad038f9703)':
+  '@nuxt/ui@4.11.0(9060d344b810888869807ce515c4d03e)':
     dependencies:
       '@floating-ui/dom': 1.8.0
       '@iconify/vue': 5.0.1(vue@3.5.40(typescript@5.9.3))
@@ -10012,7 +10012,7 @@ snapshots:
       '@internationalized/number': 3.6.6
       '@nuxt/content': 3.16.0(@libsql/client@0.17.4)(@oxc-project/types@0.141.0)(@valibot/to-json-schema@1.7.1(valibot@1.4.2(typescript@5.9.3)))(better-sqlite3@13.0.3)(esbuild@0.28.1)(magic-string@1.2.2)(magicast@0.5.4)(oxc-parser@0.139.0)(rolldown@1.2.0)(rollup@4.60.2)(valibot@1.4.2(typescript@5.9.3))(vite@8.2.0(@types/node@25.9.5)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.9.0))
       valibot: 1.4.2(typescript@5.9.3)
-      zod: 4.5.2
+      zod: 4.5.4
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -16822,6 +16822,6 @@ snapshots:
 
   zod@3.25.76: {}
 
-  zod@4.5.2: {}
+  zod@4.5.4: {}
 
   zwitch@2.0.4: {}

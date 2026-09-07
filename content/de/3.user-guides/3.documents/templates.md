@@ -8,7 +8,8 @@ In FiveNet verwenden Vorlagen **HTML** plus **Golang-Templating**, um dynamische
 ::callout{icon="i-mdi-info-slab-circle"}
 FiveNet unterstützt:
 - Basisfunktionen von [Golang `html/template`](https://pkg.go.dev/html/template)
-- Zusätzliche [`sprig`-Templatefunktionen](https://masterminds.github.io/sprig/)
+- Zusätzliche [`sprout`-Templatefunktionen](https://docs.atom.codes/sprout/registries/list-of-all-registries)
+    - Hinweis: Einige `sprout`-Funktionen sind in FiveNet-Vorlagen nicht verfügbar, wie z. B. `filesystem`, `network` und `regex`; dies ist keine vollständige Liste.
 ::
 
 ## So funktioniert das Rendering

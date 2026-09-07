@@ -8,7 +8,8 @@ In FiveNet, templates use **HTML** plus **Golang templating** to insert dynamic 
 ::callout{icon="i-mdi-info-slab-circle"}
 FiveNet supports:
 - Base [Golang `html/template` functions](https://pkg.go.dev/html/template)
-- Additional [`sprig` template functions](https://masterminds.github.io/sprig/)
+- Additional [`sprout` template functions](https://docs.atom.codes/sprout/registries/list-of-all-registries)
+    - Note: some `sprout` functions are unavailable in FiveNet templates, such as `filesystem`, `network`, and `regex`; this is not a complete list.
 ::
 
 ## How Rendering Works

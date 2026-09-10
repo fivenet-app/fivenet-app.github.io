@@ -7,7 +7,7 @@ description: Fehlerbehebung bei häufigen Installationsproblemen im Zusammenhang
 
 ### 1. Datenbankmigrationen schlagen aufgrund nicht übereinstimmender Fremdschlüssel-Kollationen fehl
 
-Dieses Problem tritt auf, wenn die Kollation Ihrer Datenbank, Tabellen oder Spalten inkonsistent ist. Um dies zu beheben, stellen Sie sicher, dass die Kollation über alle Tabellen hinweg konsistent ist. Weitere Informationen finden Sie in der Dokumentation zur [Datenbankeinrichtung](../reference/database-setup).
+Dieses Problem tritt auf, wenn die Kollation Ihrer Datenbank, Tabellen oder Spalten inkonsistent ist. Um dies zu beheben, stellen Sie sicher, dass die Kollation über alle Tabellen hinweg konsistent ist. Weitere Informationen finden Sie in der Dokumentation zur [Datenbankeinrichtung](/de/getting-started/reference/database-setup).
 
 ### 2. Falscher Kollationsparameter in der Datenbank-DSN
 

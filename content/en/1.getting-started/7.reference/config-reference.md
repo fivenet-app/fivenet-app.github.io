@@ -4,7 +4,7 @@ description: Reference for FiveNet configuration options and defaults.
 ---
 
 ::callout{icon="i-mdi-information-outline"}
-This page is a configuration reference, not a step-by-step installation guide. For the recommended setup sequence, start with [Configure FiveNet](configure).
+This page is a configuration reference, not a step-by-step installation guide. For the recommended setup sequence, start with [Configure FiveNet](/getting-started/configuration/configure).
 
 The page follows `config.example.yaml` and summarizes the settings most deployments may need to review.
 ::

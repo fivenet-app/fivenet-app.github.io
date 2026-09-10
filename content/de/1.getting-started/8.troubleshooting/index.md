@@ -14,4 +14,4 @@ to: /de/getting-started/troubleshooting/installation-issues
 Beheben Sie häufige Probleme mit Datenbankkollationen, DSNs und Migrationen.
 ::
 
-Für bereitstellungsspezifische Prüfungen finden Sie weitere Hinweise in den Abschnitten zur Überprüfung und Fehlerbehebung der Anleitungen für [Docker](../installation/container-docker) und [Kubernetes](../installation/kubernetes-helm).
+Für bereitstellungsspezifische Prüfungen finden Sie weitere Hinweise in den Abschnitten zur Überprüfung und Fehlerbehebung der Anleitungen für [Docker](/de/getting-started/installation/container-docker) und [Kubernetes](/de/getting-started/installation/kubernetes-helm).

@@ -14,4 +14,4 @@ to: /getting-started/troubleshooting/installation-issues
 Resolve common database collation, DSN, and migration issues.
 ::
 
-For deployment-specific checks, also see the verification and troubleshooting sections in the [Docker](../installation/container-docker) and [Kubernetes](../installation/kubernetes-helm) guides.
+For deployment-specific checks, also see the verification and troubleshooting sections in the [Docker](/getting-started/installation/container-docker) and [Kubernetes](/getting-started/installation/kubernetes-helm) guides.

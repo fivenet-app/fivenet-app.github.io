@@ -72,7 +72,7 @@ CREATE USER 'fivenet'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON `database_name`.* TO 'fivenet'@'%';
 ```
 
-For a separate DBSync source user, read-only access is usually enough. See [DBSync](../5.configuration/dbsync) for an example of a dedicated read-only user.
+For a separate DBSync source user, read-only access is usually enough. See [DBSync](/getting-started/configuration/dbsync) for an example of a dedicated read-only user.
 
 ## Recommended Tools
 

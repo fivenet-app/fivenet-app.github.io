@@ -72,7 +72,7 @@ CREATE USER 'fivenet'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON `datenbank_name`.* TO 'fivenet'@'%';
 ```
 
-Für einen separaten DBSync-Quellbenutzer reicht in der Regel Lesezugriff aus. Siehe [DBSync](../5.configuration/dbsync) für ein Beispiel eines dedizierten Nur-Lese-Benutzers.
+Für einen separaten DBSync-Quellbenutzer reicht in der Regel Lesezugriff aus. Siehe [DBSync](/de/getting-started/configuration/dbsync) für ein Beispiel eines dedizierten Nur-Lese-Benutzers.
 
 ## Empfohlene Werkzeuge
 

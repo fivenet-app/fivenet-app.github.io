@@ -4,7 +4,9 @@ description: Detaillierte Referenz für die wichtigsten FiveNet-Konfigurationsop
 ---
 
 ::callout{icon="i-mdi-information-outline"}
-Diese Seite orientiert sich an `config.example.yaml` und konzentriert sich auf die Einstellungen, die die meisten Installationen prüfen müssen.
+Diese Seite ist eine Konfigurationsreferenz und keine Schritt-für-Schritt-Installationsanleitung. Für die empfohlene Reihenfolge beginnen Sie mit [FiveNet konfigurieren](../configuration/configure).
+
+Die Seite orientiert sich an `config.example.yaml` und fasst die Einstellungen zusammen, die die meisten Installationen prüfen müssen.
 ::
 
 ## Speicherort der Konfigurationsdatei

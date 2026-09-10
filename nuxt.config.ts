@@ -29,6 +29,10 @@ export default defineNuxtConfig({
         payloadExtraction: true,
     },
 
+    fonts: {
+        provider: 'npm',
+    },
+
     /*
     hub: {
         db: {

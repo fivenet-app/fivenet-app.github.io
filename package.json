@@ -13,6 +13,7 @@
     "format": "pnpm prettier --write ./app/"
   },
   "dependencies": {
+    "@fontsource/public-sans": "^5.3.0",
     "@iconify-json/flagpack": "1.2.8",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.95",

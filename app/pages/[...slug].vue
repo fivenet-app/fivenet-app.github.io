@@ -9,6 +9,7 @@ definePageMeta({
 
 const route = useRoute();
 const { t, locale, locales, localeProperties } = useI18n();
+const localePath = useLocalePath();
 const slug = computed(() => withLeadingSlash(route.path).replace(/^\/en\//, '/'));
 const fallbackSlug = computed(() => withLeadingSlash(route.path).replace(/^\/(?:en|de)(?=\/|$)/, '') || '/');
 
@@ -52,7 +53,22 @@ if (!page.value) {
 }
 
 if (page.value.redirect) {
-    await navigateTo(page.value.redirect, { redirectCode: 301 });
+    const redirect = page.value.redirect;
+    const isExternalRedirect = /^(?:[a-z][a-z\d+.-]*:)?\/\//i.test(redirect);
+
+    if (isExternalRedirect) {
+        await navigateTo(redirect, { external: true, redirectCode: 301 });
+    } else {
+        // Redirects are stored in frontmatter and may use either a locale-prefixed
+        // path (for example, `/de/...`) or a locale-neutral path. Normalize both
+        // forms through Nuxt i18n so the destination matches the current page.
+        const localeNeutralRedirect = withLeadingSlash(redirect).replace(/^\/(?:en|de)(?=\/|$)/, '') || '/';
+        const localizedRedirect = localePath(localeNeutralRedirect, pageLocale.value as 'en' | 'de');
+
+        if (localizedRedirect !== route.path) {
+            await navigateTo(localizedRedirect, { redirectCode: 301 });
+        }
+    }
 }
 
 const { data: surround } = await useAsyncData(

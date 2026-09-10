@@ -1,1 +1,0 @@
-import"./CyfxaSxc2.js";import{n as e}from"./D5E2OYm72.js";export{e as createArchitectureServices};

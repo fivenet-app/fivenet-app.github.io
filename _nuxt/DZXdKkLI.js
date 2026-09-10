@@ -1,0 +1,1 @@
+import{i as e}from"./CCZsXycO.js";export{e as createArchitectureServices};

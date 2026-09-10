@@ -1,0 +1,79 @@
+---
+title: Database Setup
+---
+
+Understand the database defaults FiveNet expects and how to avoid common collation-related migration issues.
+
+## Charset and Collation
+
+Make sure the **charset** and **collation** of your database, tables, and columns are consistent.
+
+Collation mismatches are one of the most common reasons for FiveNet database migrations to fail, especially after moving databases between servers or importing older dumps.
+
+::callout
+Recommended collation: `utf8mb4_unicode_ci`
+Recommended charset: `utf8mb4`
+::
+
+## Check the Current Database Settings
+
+Use the following queries to inspect the current charset and collation:
+
+```sql
+USE `__YOUR_DATABASE_NAME_HERE__`;
+SHOW CREATE DATABASE `__YOUR_DATABASE_NAME_HERE__`;
+SHOW TABLE STATUS;
+```
+
+If you also want to inspect column-level collations, review the table definitions directly:
+
+```sql
+SHOW CREATE TABLE `__YOUR_TABLE_NAME_HERE__`;
+```
+
+## Fixing Collation Mismatches
+
+A useful guide for converting tables to `utf8mb4`/`utf8mb4_unicode_ci` in MySQL 5.5 can be found on the [Database Administrators Stack Exchange](https://dba.stackexchange.com/a/104866).
+
+Before running generated conversion queries, disable foreign key checks:
+
+```sql
+SET foreign_key_checks = 0;
+```
+
+After the conversion is complete, enable them again:
+
+```sql
+SET foreign_key_checks = 1;
+```
+
+::warning
+Disabling foreign key checks can lead to data integrity issues if not handled carefully. Proceed with caution.
+::
+
+## DSN Collation
+
+The collation in your FiveNet database DSN should match the collation used by your database server and tables.
+
+Example:
+
+```text
+DB_USER:DB_PASS@tcp(DB_HOST:DB_PORT)/DB_NAME?collation=utf8mb4_unicode_ci&parseTime=True&loc=Europe%2FBerlin
+```
+
+If your DSN uses a different collation than the actual database, migrations or queries may fail.
+
+## Creating a Database User
+
+Below are sample queries to create a database user named `fivenet` with full access to a specific database. Replace `password` and `database_name` with your actual values before using them.
+
+```sql
+CREATE USER 'fivenet'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON `database_name`.* TO 'fivenet'@'%';
+```
+
+For a separate DBSync source user, read-only access is usually enough. See [DBSync](../5.configuration/dbsync) for an example of a dedicated read-only user.
+
+## Recommended Tools
+
+[DBeaver](https://dbeaver.io/) is a good general-purpose database management tool if you prefer a GUI for inspecting schemas, collations, and data.

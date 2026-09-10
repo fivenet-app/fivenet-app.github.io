@@ -1,0 +1,198 @@
+---
+title: Command Flags
+---
+
+FiveNet command line interface (CLI) supports several flags that can be used to modify the behavior of the application when running various commands. Below is a comprehensive list of available flags and their descriptions.
+
+```console
+$ fivenet --help
+Usage: fivenet <command> [flags]
+
+Flags:
+  -h, --help                   Show context-sensitive help.
+  -v, --version                Print version information and quit
+      --config=STRING          Config file path ($FIVENET_CONFIG_FILE)
+      --start-timeout=180s     App start timeout duration ($FIVENET_START_TIMEOUT)
+      --skip-migrations        Disable the automatic DB migrations on startup ($FIVENET_SKIP_DB_MIGRATIONS).
+      --ignore-requirements    Ignore database and Nats requirements on startup ($FIVENET_IGNORE_REQUIREMENTS).
+
+Commands:
+  version [flags]
+    Print version information and quit.
+
+  server [flags]
+    Run FiveNet server.
+
+  worker [flags]
+    Run FiveNet worker.
+
+  discord [flags]
+    Run FiveNet Discord bot.
+
+  dbsync run
+    Run the DBSync service (default if not subcommand is specified)
+
+  dbsync start
+    Start the DBSync service via your OS's service manager
+
+  dbsync restart
+    Restart the DBSync service via your OS's service manager
+
+  dbsync status
+    Get the status of the DBSync service via your OS's service manager
+
+  dbsync stop
+    Stop the DBSync service via your OS's service manager
+
+  dbsync install
+    Install the DBSync service to your OS's service manager
+
+  dbsync uninstall
+    Uninstall the DBSync service from your OS's service manager
+
+  update [flags]
+    Check for updates and update the FiveNet binary.
+
+  tools db version
+    Display db migration version info
+
+  tools db up
+    Run any outstanding migrations
+
+  tools sync status [flags]
+    Check sync status
+
+  migrations htmltojson [flags]
+    Migrate documents, comments, etc., from (raw) HTML format to the legacy custom JSON format.
+
+  migrations filestore
+    Migrate files from the old database format to the new filestore format.
+
+  migrations statsbackfill --start=STRING [flags]
+    Backfill stats for documents.
+
+Run "fivenet <command> --help" for more information on a command.
+```
+
+## Server
+
+```console
+$ fivenet server --help
+Usage: fivenet server [flags]
+
+Run FiveNet server.
+
+Flags:
+  -h, --help                   Show context-sensitive help.
+  -v, --version                Print version information and quit
+      --config=STRING          Config file path ($FIVENET_CONFIG_FILE)
+      --start-timeout=180s     App start timeout duration ($FIVENET_START_TIMEOUT)
+      --skip-migrations        Disable the automatic DB migrations on startup ($FIVENET_SKIP_DB_MIGRATIONS).
+      --ignore-requirements    Ignore database and Nats requirements on startup ($FIVENET_IGNORE_REQUIREMENTS).
+
+      --module-cron-agent      Run the cron agent, should only be used for single container/binary deployments.
+```
+
+## Worker
+
+```console
+$ fivenet worker --help
+Usage: fivenet worker [flags]
+
+Run FiveNet worker.
+
+Flags:
+  -h, --help                       Show context-sensitive help.
+  -v, --version                    Print version information and quit
+      --config=STRING              Config file path ($FIVENET_CONFIG_FILE)
+      --start-timeout=180s         App start timeout duration ($FIVENET_START_TIMEOUT)
+      --skip-migrations            Disable the automatic DB migrations on startup ($FIVENET_SKIP_DB_MIGRATIONS).
+      --ignore-requirements        Ignore database and Nats requirements on startup ($FIVENET_IGNORE_REQUIREMENTS).
+
+      --module-centrum             Start Centrum bot and housekeeper module
+      --module-user-tracker        Start User tracker module
+      --module-housekeeper         Start Housekeepr modules
+      --module-user-info-poller    Start UserInfo poller module
+```
+
+## Discord Bot
+
+```console
+$ fivenet discord --help
+Usage: fivenet discord [flags]
+
+Run FiveNet Discord bot.
+
+Flags:
+  -h, --help                   Show context-sensitive help.
+  -v, --version                Print version information and quit
+      --config=STRING          Config file path ($FIVENET_CONFIG_FILE)
+      --start-timeout=180s     App start timeout duration ($FIVENET_START_TIMEOUT)
+      --skip-migrations        Disable the automatic DB migrations on startup ($FIVENET_SKIP_DB_MIGRATIONS).
+      --ignore-requirements    Ignore database and Nats requirements on startup ($FIVENET_IGNORE_REQUIREMENTS).
+
+      --module-cron-agent      Run the cron agent.
+```
+
+## DBSync
+
+```console
+$ fivenet dbsync --help
+Usage: fivenet dbsync <command> [flags]
+
+Run FiveNet database sync.
+
+Flags:
+  -h, --help                   Show context-sensitive help.
+  -v, --version                Print version information and quit
+      --config=STRING          Config file path ($FIVENET_CONFIG_FILE)
+      --start-timeout=180s     App start timeout duration ($FIVENET_START_TIMEOUT)
+      --skip-migrations        Disable the automatic DB migrations on startup ($FIVENET_SKIP_DB_MIGRATIONS).
+      --ignore-requirements    Ignore database and Nats requirements on startup ($FIVENET_IGNORE_REQUIREMENTS).
+
+Commands:
+  dbsync run
+    Run the DBSync service (default if not subcommand is specified)
+
+  dbsync start
+    Start the DBSync service via your OS's service manager
+
+  dbsync status
+    Get the status of the DBSync service via your OS's service manager
+
+  dbsync stop
+    Stop the DBSync service via your OS's service manager
+
+  dbsync install
+    Install the DBSync service to your OS's service manager
+
+  dbsync uninstall
+    Uninstall the DBSync service from your OS's service manager
+```
+
+## Tools
+
+```console
+$ fivenet tools --help
+Usage: fivenet tools <command> [flags]
+
+Run FiveNet tools/helpers.
+
+Flags:
+  -h, --help                   Show context-sensitive help.
+  -v, --version                Print version information and quit
+      --config=STRING          Config file path ($FIVENET_CONFIG_FILE)
+      --start-timeout=180s     App start timeout duration ($FIVENET_START_TIMEOUT)
+      --skip-migrations        Disable the automatic DB migrations on startup ($FIVENET_SKIP_DB_MIGRATIONS).
+      --ignore-requirements    Ignore database and Nats requirements on startup ($FIVENET_IGNORE_REQUIREMENTS).
+
+Commands:
+  tools db version
+    Display db migration version info
+
+  tools db up
+    Run any outstanding migrations
+
+  tools sync status [flags]
+    Check sync status
+```

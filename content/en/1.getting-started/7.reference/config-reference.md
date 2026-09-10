@@ -1,0 +1,678 @@
+---
+title: Config File Reference
+description: Reference for FiveNet configuration options and defaults.
+---
+
+::callout{icon="i-mdi-information-outline"}
+This page is a configuration reference, not a step-by-step installation guide. For the recommended setup sequence, start with [Configure FiveNet](configure).
+
+The page follows `config.example.yaml` and summarizes the settings most deployments may need to review.
+::
+
+## Config File Location
+
+By default, FiveNet looks for `config.yaml` in this order:
+
+1. `.` - The current working directory
+2. `/config` - Commonly used by containerized deployments
+
+::callout
+---
+color: secondary
+icon: i-mdi-file-document-outline
+to: https://github.com/fivenet-app/fivenet/blob/main/config.example.yaml
+---
+Use the example configuration file as the source of truth for comments, defaults, and all available options.
+::
+
+## Required Options
+
+These are the settings you should treat as mandatory for a working installation.
+
+::field{required name="http.publicURL" type="string"}
+The public URL of your FiveNet instance, for example `https://fivenet.example.com`.
+::
+
+::field{required name="http.sessions.cookieSecret" type="string"}
+Random secret used for session cookies. Generate it once and keep it stable. Use at least 24 characters.
+::
+
+::field{required name="http.sessions.domain" type="string"}
+The public domain or subdomain FiveNet runs on, for example `fivenet.example.com`.
+::
+
+::field{required name="database.dsn" type="string"}
+MySQL or MariaDB connection string.
+
+```text
+DB_USER:DB_PASS@tcp(DB_HOST:DB_PORT)/DB_NAME?collation=utf8mb4_unicode_ci&parseTime=True&loc=Europe%2FBerlin
+```
+
+Keep the parameters after `?`. In most cases, only the `loc=` timezone part should be changed.
+::
+
+::field{required name="nats.url" type="string"}
+NATS connection URL, including credentials if needed, for example `nats://USER:PASSWORD@localhost:4222`.
+
+JetStream must be enabled on the NATS server.
+::
+
+::field{required name="jwt.secret" type="string"}
+Secret used to sign user tokens. Generate it once and keep it stable. Use at least 24 characters.
+::
+
+::field{name="auth.configAdminGroups" type="string[]"}
+Groups that should receive config admin access in FiveNet.
+::
+
+::field{name="sync.enabled + sync.apiTokens" type="boolean + string[]"}
+Enable the Sync API and provide at least one token. This is required for the FiveNet plugin and DBSync.
+::
+
+## Core Settings
+
+::field{default="release" name="mode" type="string"}
+Controls whether FiveNet runs in `debug` or `release` mode.
+::
+
+::field{default="INFO" name="logLevel" type="string"}
+Default log level for the application.
+::
+
+::field{name="log"}
+  :::collapsible
+    ::::field{default="true" name="logToStderr" type="boolean"}
+    Send logs to stderr instead of stdout.
+    ::::
+
+    ::::field{default="false" name="logToFile" type="boolean"}
+    Write logs to a file instead of stdout.
+    ::::
+
+    ::::field{name="file"}
+      :::::collapsible
+        ::::::field{default="fivenet.log" name="path" type="string"}
+        Path to the log file.
+        ::::::
+
+        ::::::field{name="rotation"}
+          :::::::collapsible
+            ::::::::field{default="100" name="maxSize" type="number"}
+            Maximum log file size in megabytes before rotation.
+            ::::::::
+
+            ::::::::field{default="7" name="maxBackups" type="number"}
+            Maximum number of rotated log files to keep.
+            ::::::::
+
+            ::::::::field{default="14" name="maxAge" type="number"}
+            Maximum number of days to keep rotated log files.
+            ::::::::
+
+            ::::::::field{default="true" name="compress" type="boolean"}
+            Compress rotated log files with gzip.
+            ::::::::
+
+            ::::::::field{default="24h" name="rotationInterval" type="string"}
+            Interval for log rotation, for example `24h`.
+            ::::::::
+          :::::::
+        ::::::
+      :::::
+    ::::
+
+    ::::field{name="levelOverrides" type="map[string]string"}
+    Per-subsystem log level overrides such as `kvstore`, `locks`, `cron`, and `perms`.
+    ::::
+  :::
+::
+
+::field{name="secret" type="string"}
+App-wide encryption secret used to protect stored data. Keep this separate from `jwt.secret`.
+::
+
+::field{default="false" name="ignoreRequirements" type="boolean"}
+Skip database and NATS connectivity checks during startup. Use only when those services are intentionally unavailable.
+::
+
+::field{name="jwt"}
+  :::collapsible
+    ::::field{name="secret" type="string"}
+    JWT signing secret. Keep it separate from the root `secret` value.
+    ::::
+  :::
+::
+
+## HTTP
+
+::field{name="http"}
+  :::collapsible
+    ::::field{default=":8080" name="listen" type="string"}
+    Main HTTP listen address.
+    ::::
+
+    ::::field{default=":7070" name="adminListen" type="string"}
+    Admin listen address for metrics and debug endpoints. Bind this to localhost or disable it if you do not need it.
+    ::::
+
+    ::::field{required name="publicURL" type="string"}
+    Canonical public base URL for your FiveNet instance, including scheme and host.
+    ::::
+
+    ::::field{required name="origins" type="string[]"}
+    Allowed browser origins for the frontend and API. Add each origin explicitly.
+    ::::
+
+    ::::field{required name="trustedProxies" type="string[]"}
+    Trusted reverse proxy IPs or CIDR ranges that may forward client headers.
+    ::::
+
+    ::::field{required name="sessions"}
+      :::::collapsible
+        ::::::field{required name="cookieSecret" type="string"}
+        Secret used to sign and encrypt session cookies.
+        ::::::
+
+        ::::::field{required name="domain" type="string"}
+        Cookie domain for session cookies.
+        ::::::
+      :::::
+    ::::
+  :::
+::
+
+## Database
+
+::field{name="database"}
+  :::collapsible
+    ::::field{required name="dsn" type="string"}
+    MySQL or MariaDB DSN. The example file includes the recommended `collation` and `loc` settings.
+    ::::
+
+    ::::field{default="32" name="maxOpenConns" type="number"}
+    Maximum number of open database connections.
+    ::::
+
+    ::::field{default="5" name="maxIdleConns" type="number"}
+    Maximum number of idle database connections.
+    ::::
+
+    ::::field{default="15m" name="connMaxIdleTime" type="string"}
+    Maximum amount of time a connection may remain idle.
+    ::::
+
+    ::::field{default="60m" name="connMaxLifetime" type="string"}
+    Maximum lifetime of a connection.
+    ::::
+
+    ::::field{default="false" name="disableLocking" type="boolean"}
+    Disable database locking behavior.
+    ::::
+
+    ::::field{default="false" name="skipMigrations" type="boolean"}
+    Skip database migrations on startup.
+    ::::
+
+    ::::field{name="custom"}
+      :::::collapsible
+        ::::::field{name="columns" type="map"}
+        Override database column names. Set a column to `"-"` to disable it.
+        ::::::
+
+        ::::::field{name="conditions" type="map"}
+        Additional database condition overrides.
+        ::::::
+      :::::
+    ::::
+  :::
+::
+
+## NATS
+
+::field{name="nats"}
+  :::collapsible
+    ::::field{name="url" type="string"}
+    NATS connection URL, including credentials if needed.
+    ::::
+
+    ::::field{default="1" name="replicas" type="number"}
+    Number of replicas to use for streams and key-value stores.
+    ::::
+  :::
+::
+
+## Storage
+
+::field{name="storage"}
+  :::collapsible
+    ::::field{default="filesystem" name="type" type="'filesystem' | 's3'"}
+    Select the storage backend to use for uploads.
+    ::::
+
+    ::::field{name="filesystem"}
+      :::::collapsible
+        ::::::field{default="/data" name="path" type="string"}
+        Local filesystem path used for storage.
+        ::::::
+
+        ::::::field{default="" name="prefix" type="string"}
+        Optional key prefix within the filesystem store.
+        ::::::
+      :::::
+    ::::
+
+    ::::field{name="s3"}
+      :::::collapsible
+        ::::::field{default="" name="endpoint" type="string"}
+        S3-compatible endpoint URL.
+        ::::::
+
+        ::::::field{default="us-east-1" name="region" type="string"}
+        S3 region.
+        ::::::
+
+        ::::::field{default="" name="accessKeyID" type="string"}
+        S3 access key ID.
+        ::::::
+
+        ::::::field{default="" name="secretAccessKey" type="string"}
+        S3 secret access key.
+        ::::::
+
+        ::::::field{default="true" name="useSSL" type="boolean"}
+        Use HTTPS for S3 requests.
+        ::::::
+
+        ::::::field{default="" name="bucketName" type="string"}
+        Target S3 bucket.
+        ::::::
+
+        ::::::field{default="" name="prefix" type="string"}
+        Optional key prefix within the bucket.
+        ::::::
+
+        ::::::field{default="3" name="retries" type="number"}
+        Number of retry attempts for S3 operations.
+        ::::::
+
+        ::::::field{default="false" name="checkOnStartup" type="boolean"}
+        Check the S3 configuration on startup.
+        ::::::
+      :::::
+    ::::
+
+    ::::field{default="true" name="metricsEnabled" type="boolean"}
+    Enable storage metrics.
+    ::::
+
+    ::::field{default="10m" name="metricsInterval" type="string"}
+    Interval for collecting storage metrics.
+    ::::
+  :::
+::
+
+## Image Proxy
+
+::field{name="imageProxy"}
+  :::collapsible
+    ::::field{name="options"}
+      :::::collapsible
+        ::::::field{default="[]" name="allowHosts" type="string[]"}
+        Hosts allowed for proxied image requests.
+        ::::::
+
+        ::::::field{default="[]" name="denyHosts" type="string[]"}
+        Hosts denied for proxied image requests. Deny rules take precedence.
+        ::::::
+
+        ::::::field{default="30m" name="minimumCacheDuration" type="string"}
+        Minimum cache duration for image responses.
+        ::::::
+      :::::
+    ::::
+  :::
+::
+
+## Audit
+
+::field{name="audit"}
+  :::collapsible
+    ::::field{default="90" name="retentionDays" type="number"}
+    Number of days to retain audit entries before cleanup.
+    ::::
+  :::
+::
+
+## OAuth2
+
+::field{name="oauth2"}
+  :::collapsible
+    ::::field{default="[]" name="providers" type="array"}
+    List of OAuth2 providers.
+      :::::collapsible
+        ::::::field{name="name" type="string"}
+        Internal provider name used in config and callback routes.
+        ::::::
+
+        ::::::field{name="label" type="string"}
+        Display label shown on the login button.
+        ::::::
+
+        ::::::field{name="homepage" type="string"}
+        Provider homepage shown in the UI.
+        ::::::
+
+        ::::::field{name="icon" type="string"}
+        Iconify icon name or image URL shown on the login button.
+        ::::::
+
+        ::::::field{name="defaultAvatar" type="string"}
+        Optional fallback avatar URL.
+        ::::::
+
+        ::::::field{name="type" type="string"}
+        Provider type, for example `discord` or `generic`.
+        ::::::
+
+        ::::::field{name="redirectURL" type="string"}
+        Callback URL registered with the OAuth2 provider.
+        ::::::
+
+        ::::::field{name="clientID" type="string"}
+        OAuth2 client ID.
+        ::::::
+
+        ::::::field{name="clientSecret" type="string"}
+        OAuth2 client secret.
+        ::::::
+
+        ::::::field{name="scopes" type="string[]"}
+        Requested OAuth2 or OpenID scopes.
+        ::::::
+
+        ::::::field{name="endpoints"}
+          :::::::collapsible
+            ::::::::field{name="authURL" type="string"}
+            Authorization endpoint.
+            ::::::::
+
+            ::::::::field{name="tokenURL" type="string"}
+            Token exchange endpoint.
+            ::::::::
+
+            ::::::::field{name="userInfoURL" type="string"}
+            User info endpoint.
+            ::::::::
+          :::::::
+        ::::::
+
+        ::::::field{name="mapping"}
+          :::::::collapsible
+            ::::::::field{name="id" type="string"}
+            Claim or field used as the unique user identifier.
+            ::::::::
+
+            ::::::::field{name="username" type="string"}
+            Claim or field used as the username.
+            ::::::::
+
+            ::::::::field{name="avatar" type="string"}
+            Claim or field used as the avatar URL.
+            ::::::::
+          :::::::
+        ::::::
+      :::::
+    ::::
+  :::
+::
+
+## Files and Auth
+
+::field{default=".output/public/data/postals.json" name="postalsFile" type="string"}
+Path to the `postals.json` data file used by FiveNet.
+::
+
+::field{name="auth"}
+  :::collapsible
+    ::::field{default="[]" name="jobAdminGroups" type="string[]"}
+    Groups that receive job admin superuser access.
+    ::::
+
+    ::::field{default="[]" name="jobAdminUsers" type="string[]"}
+    Users that receive job admin superuser access regardless of group membership.
+    ::::
+
+    ::::field{default="[]" name="configAdminGroups" type="string[]"}
+    Groups that receive config admin superuser access.
+    ::::
+
+    ::::field{default="[]" name="configAdminUsers" type="string[]"}
+    Users that receive config admin superuser access regardless of group membership.
+    ::::
+  :::
+::
+
+## Dispatch Center
+
+::field{name="dispatchCenter"}
+  :::collapsible
+    ::::field{default="gksphone" name="type" type="string"}
+    Dispatch system type to convert into FiveNet dispatches.
+    ::::
+
+    ::::field{default="[]" name="convertJobs" type="string[]"}
+    Jobs to convert from dispatches into FiveNet dispatches.
+    ::::
+  :::
+::
+
+## Discord
+
+::field{name="discord"}
+  :::collapsible
+    ::::field{default="true" name="enabled" type="boolean"}
+    Enable the Discord integration.
+    ::::
+
+    ::::field{default="false" name="dryRun" type="boolean"}
+    Run Discord actions without changing roles or sending messages.
+    ::::
+
+    ::::field{name="token" type="string"}
+    Discord bot token.
+    ::::
+
+    ::::field{default="true" name="sync" type="boolean"}
+    Enable Discord synchronization activity.
+    ::::
+
+    ::::field{name="groupSync"}
+      :::::collapsible
+        ::::::field{default="true" name="enabled" type="boolean"}
+        Enable syncing server groups to Discord roles.
+        ::::::
+
+        ::::::field{name="mapping" type="map"}
+        Map group names to Discord role settings.
+        ::::::
+      :::::
+    ::::
+
+    ::::field{name="userInfoSync"}
+      :::::collapsible
+        ::::::field{default="true" name="enabled" type="boolean"}
+        Enable syncing job, grade, and qualification data to Discord roles.
+        ::::::
+
+        ::::::field{default="[%grade%] %grade_label%" name="gradeRoleFormat" type="string"}
+        Format string for grade roles.
+        ::::::
+
+        ::::::field{default="%s Employees" name="employeeRoleFormat" type="string"}
+        Format string for employee roles.
+        ::::::
+
+        ::::::field{default="Citizen" name="unemployedRoleName" type="string"}
+        Role name used for unemployed users.
+        ::::::
+
+        ::::::field{default="Absent" name="jobsAbsceneRoleName" type="string"}
+        Role name used for absent users.
+        ::::::
+      :::::
+    ::::
+
+    ::::field{name="qualifications"}
+      :::::collapsible
+        ::::::field{default="true" name="enabled" type="boolean"}
+        Enable syncing qualifications to Discord roles.
+        ::::::
+      :::::
+    ::::
+
+    ::::field{name="commands"}
+      :::::collapsible
+        ::::::field{default="true" name="enabled" type="boolean"}
+        Enable Discord command registration.
+        ::::::
+
+        ::::::field{default="true" name="absent" type="boolean"}
+        Enable the `absent` command.
+        ::::::
+
+        ::::::field{default="true" name="fivenet" type="boolean"}
+        Enable the `fivenet` command.
+        ::::::
+
+        ::::::field{default="true" name="help" type="boolean"}
+        Enable the `help` command.
+        ::::::
+
+        ::::::field{default="true" name="sync" type="boolean"}
+        Enable the `sync` command.
+        ::::::
+      :::::
+    ::::
+
+    ::::field{default="true" name="calendarReminders" type="boolean"}
+    Send calendar reminders in Discord.
+    ::::
+  :::
+::
+
+## Game and Sync
+
+::field{name="game"}
+  :::collapsible
+    ::::field{default="0" name="startJobGrade" type="number"}
+    First job grade number or ID used by the server.
+    ::::
+
+    ::::field{default="false" name="cleanupRolesForMissingJobs" type="boolean"}
+    Remove Discord roles for jobs that no longer exist.
+    ::::
+  :::
+::
+
+::field{name="sync"}
+  :::collapsible
+    ::::field{default="false" name="enabled" type="boolean"}
+    Enable or disable the sync API endpoint.
+    ::::
+
+    ::::field{default="[]" name="apiTokens" type="string[]"}
+    API tokens accepted for sync requests.
+    ::::
+  :::
+::
+
+## Updates, Icons, and Tracing
+
+::field{name="updateCheck"}
+  :::collapsible
+    ::::field{default="true" name="enabled" type="boolean"}
+    Check for updates on a schedule.
+    ::::
+
+    ::::field{default="6h" name="interval" type="string"}
+    Interval between update checks.
+    ::::
+  :::
+::
+
+::field{name="icons"}
+  :::collapsible
+    ::::field{default="false" name="proxy" type="boolean"}
+    Proxy Iconify requests through the backend instead of using local icon sets.
+    ::::
+
+    ::::field{default="https://api.iconify.design" name="apiUrl" type="string"}
+    Iconify API URL used when proxy mode is enabled.
+    ::::
+
+    ::::field{default="./icons" name="path" type="string"}
+    Local icon set directory used when proxy mode is disabled.
+    ::::
+  :::
+::
+
+::field{name="otlp"}
+  :::collapsible
+    ::::field{default="false" name="enabled" type="boolean"}
+    Enable OTLP tracing export.
+    ::::
+
+    ::::field{default="stdout" name="type" type="'stdout' | 'otlptracegrpc' | 'otlptracehttp'"}
+    Export mode for the OTLP client.
+    ::::
+
+    ::::field{default="http://localhost:4317" name="url" type="string"}
+    OTLP collector endpoint URL.
+    ::::
+
+    ::::field{default="false" name="insecure" type="boolean"}
+    Allow insecure OTLP transport.
+    ::::
+
+    ::::field{default="10s" name="timeout" type="string"}
+    Timeout for OTLP requests.
+    ::::
+
+    ::::field{default="dev" name="environment" type="string"}
+    Environment label attached to traces.
+    ::::
+
+    ::::field{default="0.1" name="ratio" type="float"}
+    Sampling ratio for traces.
+    ::::
+
+    ::::field{name="attributes" type="array"}
+    Additional span or resource attributes.
+    ::::
+
+    ::::field{name="headers" type="map[string]string"}
+    Extra headers sent to the OTLP endpoint.
+    ::::
+
+    ::::field{default="none" name="compression" type="string"}
+    Compression used for OTLP exports.
+    ::::
+
+    ::::field{name="frontend"}
+      :::::collapsible
+        ::::::field{name="url" type="string"}
+        Frontend trace endpoint. Leave empty to disable frontend instrumentation.
+        ::::::
+
+        ::::::field{name="headers" type="map[string]string"}
+        Extra headers sent from the frontend tracing client.
+        ::::::
+      :::::
+    ::::
+  :::
+::
+
+## Notes
+
+- Keep `secret`, `jwt.secret`, session secrets, and sync tokens stable after deployment unless you intentionally want to invalidate existing sessions or access.
+- Use the example file for comments and the complete set of options.

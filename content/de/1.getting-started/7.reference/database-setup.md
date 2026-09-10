@@ -1,0 +1,79 @@
+---
+title: Datenbankeinrichtung
+---
+
+Verstehen Sie die Datenbank-Standards, die FiveNet erwartet, und wie Sie häufige migrationsbezogene Kollationsprobleme vermeiden.
+
+## Zeichensatz und Kollation
+
+Stellen Sie sicher, dass **Zeichensatz** und **Kollation** Ihrer Datenbank, Tabellen und Spalten konsistent sind.
+
+Kollationsfehler gehören zu den häufigsten Gründen, warum Datenbankmigrationen von FiveNet fehlschlagen, insbesondere nach dem Umzug von Datenbanken zwischen Servern oder dem Import älterer Dumps.
+
+::callout
+Empfohlene Kollation: `utf8mb4_unicode_ci`
+Empfohlener Zeichensatz: `utf8mb4`
+::
+
+## Aktuelle Datenbankeinstellungen prüfen
+
+Verwenden Sie die folgenden Abfragen, um den aktuellen Zeichensatz und die aktuelle Kollation zu prüfen:
+
+```sql
+USE `__IHRE_DATENBANK_NAME_HIER__`;
+SHOW CREATE DATABASE `__IHRE_DATENBANK_NAME_HIER__`;
+SHOW TABLE STATUS;
+```
+
+Wenn Sie zusätzlich die Kollation einzelner Spalten prüfen möchten, sehen Sie sich die Tabellendefinition direkt an:
+
+```sql
+SHOW CREATE TABLE `__IHRE_TABELLEN_NAME_HIER__`;
+```
+
+## Kollationskonflikte beheben
+
+Eine nützliche Anleitung zum Konvertieren von Tabellen auf `utf8mb4`/`utf8mb4_unicode_ci` in MySQL 5.5 finden Sie auf [Database Administrators Stack Exchange](https://dba.stackexchange.com/a/104866).
+
+Bevor Sie die erzeugten Umwandlungsabfragen ausführen, deaktivieren Sie die Fremdschlüsselprüfung:
+
+```sql
+SET foreign_key_checks = 0;
+```
+
+Nach Abschluss der Umwandlung aktivieren Sie sie wieder:
+
+```sql
+SET foreign_key_checks = 1;
+```
+
+::warning
+Das Deaktivieren von Fremdschlüsselprüfungen kann zu Problemen mit der Datenintegrität führen, wenn es nicht sorgfältig gehandhabt wird. Gehen Sie vorsichtig vor.
+::
+
+## DSN-Kollation
+
+Die Kollation in Ihrer FiveNet-Datenbank-DSN sollte zu der Kollation passen, die Ihr Datenbankserver und Ihre Tabellen verwenden.
+
+Beispiel:
+
+```text
+DB_USER:DB_PASS@tcp(DB_HOST:DB_PORT)/DB_NAME?collation=utf8mb4_unicode_ci&parseTime=True&loc=Europe%2FBerlin
+```
+
+Wenn Ihre DSN eine andere Kollation als die tatsächliche Datenbank verwendet, können Migrationen oder Abfragen fehlschlagen.
+
+## Erstellen eines Datenbankbenutzers
+
+Unten finden Sie Beispielabfragen, um einen Datenbankbenutzer namens `fivenet` mit vollem Zugriff auf eine bestimmte Datenbank zu erstellen. Ersetzen Sie `password` und `datenbank_name` vor der Verwendung durch Ihre tatsächlichen Werte.
+
+```sql
+CREATE USER 'fivenet'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON `datenbank_name`.* TO 'fivenet'@'%';
+```
+
+Für einen separaten DBSync-Quellbenutzer reicht in der Regel Lesezugriff aus. Siehe [DBSync](../5.configuration/dbsync) für ein Beispiel eines dedizierten Nur-Lese-Benutzers.
+
+## Empfohlene Werkzeuge
+
+[DBeaver](https://dbeaver.io/) ist ein gutes allgemeines Datenbankverwaltungswerkzeug, wenn Sie lieber mit einer grafischen Oberfläche Schemas, Kollationen und Daten prüfen möchten.

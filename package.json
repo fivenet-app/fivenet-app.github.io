@@ -37,7 +37,7 @@
     "@nuxt/image": "2.1.0",
     "@nuxtjs/i18n": "10.6.0",
     "@pinia/nuxt": "1.0.2",
-    "@types/node": "25.9.6",
+    "@types/node": "25.9.7",
     "eslint": "10.10.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
@@ -50,7 +50,7 @@
     "sharp": "0.35.4",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.11",
-    "wrangler": "4.131.2"
+    "wrangler": "4.132.0"
   },
   "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e",
   "pnpm": {

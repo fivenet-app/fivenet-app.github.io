@@ -44,13 +44,13 @@
     "eslint-plugin-vue": "10.11.0",
     "nuxt": "4.5.2",
     "pinia-plugin-persistedstate": "4.7.1",
-    "prettier": "3.9.6",
+    "prettier": "3.9.7",
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-tailwindcss": "0.8.1",
     "sharp": "0.35.4",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.11",
-    "wrangler": "4.132.0"
+    "wrangler": "4.133.0"
   },
   "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e",
   "pnpm": {

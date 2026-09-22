@@ -69,8 +69,11 @@ Eine Vorlage muss zu gültigem HTML rendern, sonst kann die Ausgabe fehlschlagen
 
 ### Häufig genutzte Helfer
 
+::tip
+Die Variable `$citizen` wird automatisch mit dem ersten ausgewählten Bürger befüllt. Eine eigene Zuweisung mit `{{- $citizen := first .Users -}}` ist nicht erforderlich.
+::
+
 ```templ
-{{- $citizen := first .Users -}}
 {{ now | date "02.01.2006 15:04" }}
 ```
 
@@ -80,7 +83,6 @@ Eine Vorlage muss zu gültigem HTML rendern, sonst kann die Ausgabe fehlschlagen
 
 ```templ
 {{- if .Users -}}
-{{- $citizen := first .Users -}}
 <p>
 Bürger: {{ $citizen.Firstname }} {{ $citizen.Lastname }}<br>
 Geburtsdatum: {{ $citizen.Dateofbirth }}
@@ -185,11 +187,7 @@ Informationen zum Autor/einreichenden Benutzer.
 
 ### Ersten Bürger abrufen
 
-Den ersten Benutzer in der Liste abrufen (erstes Element in der Zwischenablage des Benutzers):
-
-```templ
-{{- $citizen := first .Users -}}
-```
+Die Variable `$citizen` enthält automatisch den ersten Benutzer in der Liste (erstes Element in der Zwischenablage des Benutzers).
 
 Beispiel für den Zugriff auf Bürgerinformationen:
 

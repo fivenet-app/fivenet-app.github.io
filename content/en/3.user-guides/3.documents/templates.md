@@ -69,8 +69,11 @@ A template must render to valid HTML, otherwise output may fail or render incorr
 
 ### Common Helpers
 
+::tip
+The `$citizen` variable is automatically populated with the first selected citizen. You do not need to assign `{{- $citizen := first .Users -}}` yourself.
+::
+
 ```templ
-{{- $citizen := first .Users -}}
 {{ now | date "02.01.2006 15:04" }}
 ```
 
@@ -80,7 +83,6 @@ A template must render to valid HTML, otherwise output may fail or render incorr
 
 ```templ
 {{- if .Users -}}
-{{- $citizen := first .Users -}}
 <p>
 Citizen: {{ $citizen.Firstname }} {{ $citizen.Lastname }}<br>
 DOB: {{ $citizen.Dateofbirth }}
@@ -185,11 +187,7 @@ Author/submitting user information.
 
 ### Get First Citizen
 
-Get the first user in the list (first item in the user's clipboard):
-
-```templ
-{{- $citizen := first .Users -}}
-```
+The `$citizen` variable automatically contains the first user in the list (first item in the user's clipboard).
 
 Example to access citizen info:
 

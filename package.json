@@ -20,7 +20,7 @@
     "@libsql/client": "0.18.0",
     "@mermaid-js/layout-elk": "0.2.3",
     "@nuxt/content": "3.16.1",
-    "@nuxt/ui": "4.11.1",
+    "@nuxt/ui": "4.11.2",
     "better-sqlite3": "13.0.3",
     "drizzle-kit": "0.31.11",
     "drizzle-orm": "0.45.3",
@@ -41,16 +41,16 @@
     "eslint": "10.11.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
-    "eslint-plugin-vue": "10.11.0",
+    "eslint-plugin-vue": "10.11.1",
     "nuxt": "4.5.2",
     "pinia-plugin-persistedstate": "4.7.1",
-    "prettier": "3.9.8",
+    "prettier": "3.9.9",
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-tailwindcss": "0.8.1",
     "sharp": "0.35.4",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.11",
-    "wrangler": "4.136.1"
+    "wrangler": "4.139.0"
   },
   "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e",
   "pnpm": {

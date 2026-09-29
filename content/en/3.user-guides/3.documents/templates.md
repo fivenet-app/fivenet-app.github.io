@@ -16,7 +16,7 @@ FiveNet supports:
 
 When a template is used, FiveNet:
 1. Takes your HTML content.
-2. Replaces template expressions like `{{ .ActiveChar.Firstname }}` with real values.
+2. Replaces template expressions like `{{ .ActiveChar.GetFirstname }}` with real values.
 3. Renders the final result as HTML in the document editor.
 
 Clipboard selections provide data for:
@@ -30,7 +30,7 @@ Use this as a safe starting point:
 
 ```templ
 <p>
-Created by: {{ .ActiveChar.Firstname }} {{ .ActiveChar.Lastname }}<br>
+Created by: {{ .ActiveChar.GetFirstname }} {{ .ActiveChar.GetLastname }}<br>
 Date: {{ now | date "02.01.2006" }}
 </p>
 ```
@@ -44,7 +44,7 @@ A template must render to valid HTML, otherwise output may fail or render incorr
 ### Variables
 
 ```templ
-{{ .ActiveChar.Firstname }}
+{{ .ActiveChar.GetFirstname }}
 ```
 
 ### Conditionals
@@ -62,7 +62,7 @@ A template must render to valid HTML, otherwise output may fail or render incorr
 ```templ
 <ul>
 {{- range .Vehicles -}}
-<li>{{ .Plate }} - {{ .Owner.Firstname }} {{ .Owner.Lastname }}</li>
+<li>{{ .GetPlate }} - {{ .Owner.GetFirstname }} {{ .Owner.GetLastname }}</li>
 {{- end -}}
 </ul>
 ```
@@ -84,8 +84,8 @@ The `$citizen` variable is automatically populated with the first selected citiz
 ```templ
 {{- if .Users -}}
 <p>
-Citizen: {{ $citizen.Firstname }} {{ $citizen.Lastname }}<br>
-DOB: {{ $citizen.Dateofbirth }}
+Citizen: {{ $citizen.GetFirstname }} {{ $citizen.GetLastname }}<br>
+DOB: {{ $citizen.GetDateofbirth }}
 </p>
 {{- else -}}
 <p>No citizen selected.</p>
@@ -100,7 +100,7 @@ DOB: {{ $citizen.Dateofbirth }}
 {{ else }}
 <ul>
 {{- range .Vehicles -}}
-<li>{{ .Plate }} - {{ .Owner.Firstname }} {{ .Owner.Lastname }}</li>
+<li>{{ .GetPlate }} - {{ .Owner.GetFirstname }} {{ .Owner.GetLastname }}</li>
 {{- end -}}
 </ul>
 {{ end }}
@@ -110,8 +110,8 @@ DOB: {{ $citizen.Dateofbirth }}
 
 ```templ
 <p>
-Submitted by: {{ .ActiveChar.Firstname }} {{ .ActiveChar.Lastname }}<br>
-Rank: {{ .ActiveChar.JobGradeLabel }}<br>
+Submitted by: {{ .ActiveChar.GetFirstname }} {{ .ActiveChar.GetLastname }}<br>
+Rank: {{ .ActiveChar.GetJobGradeLabel }}<br>
 Date: {{ now | date "02.01.2006 15:04" }}
 </p>
 ```
@@ -125,21 +125,25 @@ Date: {{ now | date "02.01.2006 15:04" }}
 
 ## Available Variables
 
+::callout{color="info" icon="i-mdi-information-outline"}
+The values available in templates are so-called protobuf objects. Access their fields with the generated `Get...` methods. For example, write `{{ .ActiveChar.GetFirstname }}` instead of `{{ .ActiveChar.Firstname }}`. These getters return an empty or zero value when a value is missing. For optional nested objects, `with` can be used when you need to render fallback content.
+::
+
 ### `.Documents`
 
 List of documents in the user's clipboard.
 
-- `.Id`
-- `.CreatedAt`
-- `.Title`
-- `.State`
-- `.CreatorId`
-- `.Creator` - See [User Info Structure](#user-info-structure).
-- `.Closed` - Boolean.
-- `.CategoryId`
-- `.Category`
-  - `.Name`
-  - `.Description`
+- `.GetId`
+- `.GetCreatedAt`
+- `.GetTitle`
+- `.GetState`
+- `.GetCreatorId`
+- `.GetCreator` - See [User Info Structure](#user-info-structure).
+- `.GetMeta.GetClosed` - Boolean.
+- `.GetCategoryId`
+- `.GetCategory`
+  - `.GetName`
+  - `.GetDescription`
 
 ### `.Users`
 
@@ -151,10 +155,10 @@ List of citizens/users in the user's clipboard.
 
 List of vehicles in the user's clipboard.
 
-- `.Plate`
-- `.Model`
-- `.Type`
-- `.Owner` - See [User Info Structure](#user-info-structure).
+- `.GetPlate`
+- `.GetModel`
+- `.GetType`
+- `.GetOwner` - See [User Info Structure](#user-info-structure).
 
 ### `.ActiveChar`
 
@@ -164,16 +168,16 @@ Author/submitting user information.
 
 ### User Info Structure
 
-- `.UserId`
-- `.Identifier`
-- `.Job` - Preferably use `.JobLabel`.
-- `.JobLabel`*
-- `.JobGrade` - Preferably use `.JobGradeLabel`.
-- `.JobGradeLabel`*
-- `.Firstname`
-- `.Lastname`
-- `.Dateofbirth` - In `DD.MM.YYYY` format.
-- `.PhoneNumber` - Optional, might not always be included.
+- `.GetUserId`
+- `.GetIdentifier`
+- `.GetJob` - Preferably use `.GetJobLabel`.
+- `.GetJobLabel`*
+- `.GetJobGrade` - Preferably use `.GetJobGradeLabel`.
+- `.GetJobGradeLabel`*
+- `.GetFirstname`
+- `.GetLastname`
+- `.GetDateofbirth` - In `DD.MM.YYYY` format.
+- `.GetPhoneNumber` - Optional, might not always be included.
 
 (*These fields are only available on the `.ActiveChar` variable.)
 
@@ -182,7 +186,7 @@ Author/submitting user information.
 ### Access Active User Info
 
 ```templ
-{{ .ActiveChar.Firstname }}, {{ .ActiveChar.Lastname }}
+{{ .ActiveChar.GetFirstname }}, {{ .ActiveChar.GetLastname }}
 ```
 
 ### Get First Citizen
@@ -192,7 +196,7 @@ The `$citizen` variable automatically contains the first user in the list (first
 Example to access citizen info:
 
 ```templ
-{{ $citizen.Firstname }}, {{ $citizen.Lastname }} ({{ $citizen.Dateofbirth }})
+{{ $citizen.GetFirstname }}, {{ $citizen.GetLastname }} ({{ $citizen.GetDateofbirth }})
 ```
 
 ### Current Date and Time
@@ -214,7 +218,7 @@ To learn more about different date and time formats, check out [the Golang `time
 ### Showing a Timestamp (e.g., `CreatedAt` field)
 
 ```templ
-{{ .CreatedAt | date "02.01.2006 15:04" }}
+{{ .GetCreatedAt | date "02.01.2006 15:04" }}
 ```
 
 ### Checkboxes
@@ -258,7 +262,7 @@ No Vehicles involved.
 {{ else }}
 <ul>
 {{- range .Vehicles -}}
-<li>{{ .Plate }} - {{ .Owner.Firstname }}, {{ .Owner.Lastname }}</li>
+<li>{{ .GetPlate }} - {{ .Owner.GetFirstname }}, {{ .Owner.GetLastname }}</li>
 {{- end -}}
 </ul>
 {{ end }}

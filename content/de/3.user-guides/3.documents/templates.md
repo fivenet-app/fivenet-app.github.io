@@ -16,7 +16,7 @@ FiveNet unterstützt:
 
 Wenn eine Vorlage verwendet wird, macht FiveNet Folgendes:
 1. Übernimmt Ihren HTML-Inhalt.
-2. Ersetzt Template-Ausdrücke wie `{{ .ActiveChar.Firstname }}` durch echte Werte.
+2. Ersetzt Template-Ausdrücke wie `{{ .ActiveChar.GetFirstname }}` durch echte Werte.
 3. Rendert das Ergebnis als HTML im Dokument-Editor.
 
 Auswahlen in der Zwischenablage liefern Daten für:
@@ -30,7 +30,7 @@ Nutzen Sie dies als sicheren Einstieg:
 
 ```templ
 <p>
-Erstellt von: {{ .ActiveChar.Firstname }} {{ .ActiveChar.Lastname }}<br>
+Erstellt von: {{ .ActiveChar.GetFirstname }} {{ .ActiveChar.GetLastname }}<br>
 Datum: {{ now | date "02.01.2006" }}
 </p>
 ```
@@ -44,7 +44,7 @@ Eine Vorlage muss zu gültigem HTML rendern, sonst kann die Ausgabe fehlschlagen
 ### Variablen
 
 ```templ
-{{ .ActiveChar.Firstname }}
+{{ .ActiveChar.GetFirstname }}
 ```
 
 ### Bedingungen
@@ -62,7 +62,7 @@ Eine Vorlage muss zu gültigem HTML rendern, sonst kann die Ausgabe fehlschlagen
 ```templ
 <ul>
 {{- range .Vehicles -}}
-<li>{{ .Plate }} - {{ .Owner.Firstname }} {{ .Owner.Lastname }}</li>
+<li>{{ .GetPlate }} - {{ .Owner.GetFirstname }} {{ .Owner.GetLastname }}</li>
 {{- end -}}
 </ul>
 ```
@@ -84,8 +84,8 @@ Die Variable `$citizen` wird automatisch mit dem ersten ausgewählten Bürger be
 ```templ
 {{- if .Users -}}
 <p>
-Bürger: {{ $citizen.Firstname }} {{ $citizen.Lastname }}<br>
-Geburtsdatum: {{ $citizen.Dateofbirth }}
+Bürger: {{ $citizen.GetFirstname }} {{ $citizen.GetLastname }}<br>
+Geburtsdatum: {{ $citizen.GetDateofbirth }}
 </p>
 {{- else -}}
 <p>Kein Bürger ausgewählt.</p>
@@ -100,7 +100,7 @@ Geburtsdatum: {{ $citizen.Dateofbirth }}
 {{ else }}
 <ul>
 {{- range .Vehicles -}}
-<li>{{ .Plate }} - {{ .Owner.Firstname }} {{ .Owner.Lastname }}</li>
+<li>{{ .GetPlate }} - {{ .Owner.GetFirstname }} {{ .Owner.GetLastname }}</li>
 {{- end -}}
 </ul>
 {{ end }}
@@ -110,8 +110,8 @@ Geburtsdatum: {{ $citizen.Dateofbirth }}
 
 ```templ
 <p>
-Eingereicht von: {{ .ActiveChar.Firstname }} {{ .ActiveChar.Lastname }}<br>
-Rang: {{ .ActiveChar.JobGradeLabel }}<br>
+Eingereicht von: {{ .ActiveChar.GetFirstname }} {{ .ActiveChar.GetLastname }}<br>
+Rang: {{ .ActiveChar.GetJobGradeLabel }}<br>
 Datum: {{ now | date "02.01.2006 15:04" }}
 </p>
 ```
@@ -125,21 +125,25 @@ Datum: {{ now | date "02.01.2006 15:04" }}
 
 ## Verfügbare Variablen
 
+::callout{color="info" icon="i-mdi-information-outline"}
+Die in Vorlagen verfügbaren Werte sind sogenannte Protobuf-Objekte. Greifen Sie auf deren Felder mit den generierten `Get...`-Methoden zu. Schreiben Sie zum Beispiel `{{ .ActiveChar.GetFirstname }}` statt `{{ .ActiveChar.Firstname }}`. Diese Getter liefern einen leeren beziehungsweise den Nullwert, wenn ein Wert fehlt. Für optionale verschachtelte Objekte können Sie `with` verwenden, wenn ein Fallback ausgegeben werden soll.
+::
+
 ### `.Documents`
 
 Liste der Dokumente in der Zwischenablage des Benutzers.
 
-- `.Id`
-- `.CreatedAt`
-- `.Title`
-- `.State`
-- `.CreatorId`
-- `.Creator` - Siehe [Benutzerinformationsstruktur](#benutzerinformationsstruktur).
-- `.Closed` - Boolescher Wert.
-- `.CategoryId`
-- `.Category`
-  - `.Name`
-  - `.Description`
+- `.GetId`
+- `.GetCreatedAt`
+- `.GetTitle`
+- `.GetState`
+- `.GetCreatorId`
+- `.GetCreator` - Siehe [Benutzerinformationsstruktur](#benutzerinformationsstruktur).
+- `.GetMeta.GetClosed` - Boolescher Wert.
+- `.GetCategoryId`
+- `.GetCategory`
+  - `.GetName`
+  - `.GetDescription`
 
 ### `.Users`
 
@@ -151,10 +155,10 @@ Liste der Bürger/Benutzer in der Zwischenablage des Benutzers.
 
 Liste der Fahrzeuge in der Zwischenablage des Benutzers.
 
-- `.Plate`
-- `.Model`
-- `.Type`
-- `.Owner` - Siehe [Benutzerinformationsstruktur](#benutzerinformationsstruktur).
+- `.GetPlate`
+- `.GetModel`
+- `.GetType`
+- `.GetOwner` - Siehe [Benutzerinformationsstruktur](#benutzerinformationsstruktur).
 
 ### `.ActiveChar`
 
@@ -164,16 +168,16 @@ Informationen zum Autor/einreichenden Benutzer.
 
 ### Benutzerinformationsstruktur
 
-- `.UserId`
-- `.Identifier`
-- `.Job` - Bevorzugt `.JobLabel` verwenden.
-- `.JobLabel`*
-- `.JobGrade` - Bevorzugt `.JobGradeLabel` verwenden.
-- `.JobGradeLabel`*
-- `.Firstname`
-- `.Lastname`
-- `.Dateofbirth` - Im Format `DD.MM.YYYY`.
-- `.PhoneNumber` - Optional, möglicherweise nicht immer enthalten.
+- `.GetUserId`
+- `.GetIdentifier`
+- `.GetJob` - Bevorzugt `.GetJobLabel` verwenden.
+- `.GetJobLabel`*
+- `.GetJobGrade` - Bevorzugt `.GetJobGradeLabel` verwenden.
+- `.GetJobGradeLabel`*
+- `.GetFirstname`
+- `.GetLastname`
+- `.GetDateofbirth` - Im Format `DD.MM.YYYY`.
+- `.GetPhoneNumber` - Optional, möglicherweise nicht immer enthalten.
 
 (*Diese Felder sind nur in der Variablen `.ActiveChar` verfügbar.)
 
@@ -182,7 +186,7 @@ Informationen zum Autor/einreichenden Benutzer.
 ### Aktive Benutzerinformationen ausgeben
 
 ```templ
-{{ .ActiveChar.Firstname }}, {{ .ActiveChar.Lastname }}
+{{ .ActiveChar.GetFirstname }}, {{ .ActiveChar.GetLastname }}
 ```
 
 ### Ersten Bürger abrufen
@@ -192,7 +196,7 @@ Die Variable `$citizen` enthält automatisch den ersten Benutzer in der Liste (e
 Beispiel für den Zugriff auf Bürgerinformationen:
 
 ```templ
-{{ $citizen.Firstname }}, {{ $citizen.Lastname }} ({{ $citizen.Dateofbirth }})
+{{ $citizen.GetFirstname }}, {{ $citizen.GetLastname }} ({{ $citizen.GetDateofbirth }})
 ```
 
 ### Aktuelles Datum und Uhrzeit
@@ -214,7 +218,7 @@ Weitere Informationen zu Datums- und Zeitformaten finden Sie in der [Golang-`tim
 ### Zeitstempel anzeigen (z. B. Feld `CreatedAt`)
 
 ```templ
-{{ .CreatedAt | date "02.01.2006 15:04" }}
+{{ .GetCreatedAt | date "02.01.2006 15:04" }}
 ```
 
 ### Checkboxen
@@ -258,7 +262,7 @@ Keine Fahrzeuge beteiligt.
 {{ else }}
 <ul>
 {{- range .Vehicles -}}
-<li>{{ .Plate }} - {{ .Owner.Firstname }}, {{ .Owner.Lastname }}</li>
+<li>{{ .GetPlate }} - {{ .Owner.GetFirstname }}, {{ .Owner.GetLastname }}</li>
 {{- end -}}
 </ul>
 {{ end }}

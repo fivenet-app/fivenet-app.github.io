@@ -23,8 +23,8 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             # NodeJS stuff
-            nodejs_22
-            pnpm_10
+            nodejs_24
+            pnpm_12
 
             # Utilities
             ripgrep

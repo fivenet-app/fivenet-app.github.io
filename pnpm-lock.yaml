@@ -24,8 +24,8 @@ importers:
         specifier: 0.18.0
         version: 0.18.0
       '@mermaid-js/layout-elk':
-        specifier: 0.2.3
-        version: 0.2.3(mermaid@11.17.2)
+        specifier: 1.0.1
+        version: 1.0.1(mermaid@11.17.2)
       '@nuxt/content':
         specifier: 3.16.2
         version: 3.16.2(@libsql/client@0.18.0)(@nuxt/schema@4.6.1)(@oxc-project/types@0.152.0)(better-sqlite3@13.0.3)(confbox@0.2.4)(dotenv@17.4.2)(esbuild@0.28.2)(giget@3.3.1)(magic-string@1.4.3)(magicast@0.5.4)(mlly@1.8.2)(oxc-parser@0.139.0)(rolldown@1.2.12)(rollup@4.63.1)(vite@8.3.3(@types/node@25.9.9)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.13)(yaml@2.9.0))
@@ -1517,10 +1517,11 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@mermaid-js/layout-elk@0.2.3':
-    resolution: {integrity: sha512-m46RVGfvKK1PSMdAFGDz2nksI4jusEkFxvf0lb48bYWmqLQxZpjtpruiw29MbOy9rlWJtuMf9EzG9fAF8CVZbg==}
+  '@mermaid-js/layout-elk@1.0.1':
+    resolution: {integrity: sha512-6KzQTCAy4lSlETy5fBOYyUD0JQtZk/ihacVHSmAyo00hW7REOhKQGjNIxVwAnI+HtJdfpGnSMxkp9qnJDijppw==}
+    engines: {node: '>=22.12.0'}
     peerDependencies:
-      mermaid: ^11.0.2
+      mermaid: ^12.0.0
 
   '@mermaid-js/parser@1.2.1':
     resolution: {integrity: sha512-n12NohV3mrUyUL2o93IgG/ifeW9FTyeJn3zDxkhwa8MJ9Fxg3HQMlA3RiGmD/3UnJvheztkjjQAjA2T4LmUcpw==}
@@ -9109,10 +9110,14 @@ snapshots:
       - encoding
       - supports-color
 
-  '@mermaid-js/layout-elk@0.2.3(mermaid@11.17.2)':
+  '@mermaid-js/layout-elk@1.0.1(mermaid@11.17.2)':
     dependencies:
       d3: 7.9.0
+      dagre-d3-es: 7.0.14
+      dayjs: 1.11.23
+      dompurify: 3.4.15
       elkjs: 0.9.3
+      katex: 0.16.47
       mermaid: 11.17.2
 
   '@mermaid-js/parser@1.2.1':

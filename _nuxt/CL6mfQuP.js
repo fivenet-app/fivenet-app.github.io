@@ -1,1 +1,0 @@
-import{n as e}from"./D0Y2kFd4.js";import{n as t}from"./BuLwArW_.js";var n=class{static{t(this,`ImperativeState`)}constructor(e){this.init=e,this.records=this.init()}static{e(this,`ImperativeState`)}reset(){this.records=this.init()}};export{n as t};

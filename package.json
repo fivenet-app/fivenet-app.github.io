@@ -13,7 +13,7 @@
     "format": "pnpm prettier --write ./app/"
   },
   "dependencies": {
-    "@fontsource/public-sans": "^5.3.0",
+    "@fontsource/public-sans": "5.3.0",
     "@iconify-json/flagpack": "1.2.8",
     "@iconify-json/mdi": "1.2.3",
     "@iconify-json/simple-icons": "1.2.100",
@@ -52,20 +52,5 @@
     "vue-tsc": "3.3.13",
     "wrangler": "4.151.2"
   },
-  "packageManager": "pnpm@10.34.7+sha512.ba98abc585539933375b5971f4bc6d6c73a1b4b7edc4a879e7d102fe5423d1e02309d67c60a11f04955093a96e521ad9c3b138cdd654ca5be563f378b3ae48bd",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@intlify/vue-i18n-bridge",
-      "@intlify/vue-router-bridge",
-      "@tailwindcss/oxide",
-      "better-sqlite3",
-      "esbuild",
-      "sharp",
-      "unrs-resolver",
-      "workerd"
-    ],
-    "ignoredBuiltDependencies": [
-      "vue-demi"
-    ]
-  }
+  "packageManager": "pnpm@12.14.0"
 }

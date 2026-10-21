@@ -1,0 +1,37 @@
+onlyBuiltDependencies:
+  - "@intlify/vue-i18n-bridge"
+  - "@intlify/vue-router-bridge"
+  - "@tailwindcss/oxide"
+  - "better-sqlite3"
+  - "esbuild"
+  - "sharp"
+  - "unrs-resolver"
+  - "workerd"
+
+ignoredBuiltDependencies:
+  - "vue-demi"
+
+saveExact: true
+
+# Keep pnpm-only settings in pnpm-workspace.yaml so npm does not try to parse
+# them as project configuration.
+shamefullyHoist: true
+strictPeerDependencies: false
+shellEmulator: true
+
+allowBuilds:
+  "@intlify/vue-i18n-bridge": true
+  "@intlify/vue-router-bridge": true
+  "@tailwindcss/oxide": true
+  "better-sqlite3": true
+  "esbuild": true
+  "sharp": true
+  "unrs-resolver": true
+  "workerd": true
+  vue-demi: false
+
+minimumReleaseAge: 960 # 16 hours in minutes
+minimumReleaseAgeExclude:
+  - nuxt
+  - '@nuxt/*'
+  - '@nuxtjs/*'

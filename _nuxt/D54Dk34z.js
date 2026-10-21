@@ -1,1 +1,0 @@
-import{On as e,mt as t,qt as n,v as r}from"./Dn5-ag-b.js";import{t as i}from"./BJE-OcV7.js";import{t as a}from"./BBRk77q1.js";import o from"./B-2pqkjk.js";var s={__name:`ProseNote`,setup(s){let c=i();return(i,s)=>(t(),r(o,{color:`info`,icon:e(c).ui.icons.info},{default:n(()=>[a(i.$slots,`default`,{mdcUnwrap:`p`})]),_:3},8,[`icon`]))}};export{s as default};

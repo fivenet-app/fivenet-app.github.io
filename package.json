@@ -50,7 +50,7 @@
     "sharp": "0.35.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.13",
-    "wrangler": "4.151.2"
+    "wrangler": "4.151.3"
   },
   "packageManager": "pnpm@12.14.0"
 }

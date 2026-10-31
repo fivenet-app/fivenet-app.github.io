@@ -49,8 +49,8 @@
     "prettier-plugin-tailwindcss": "0.8.1",
     "sharp": "0.35.5",
     "vue-i18n-routing": "1.2.0",
-    "vue-tsc": "3.3.13",
-    "wrangler": "4.155.0"
+    "vue-tsc": "3.3.14",
+    "wrangler": "4.156.0"
   },
   "packageManager": "pnpm@12.16.1"
 }

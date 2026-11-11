@@ -41,7 +41,7 @@
     "eslint": "10.14.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",
-    "eslint-plugin-vue": "10.12.0",
+    "eslint-plugin-vue": "10.12.1",
     "nuxt": "4.6.4",
     "pinia-plugin-persistedstate": "4.7.1",
     "prettier": "3.9.10",
@@ -50,7 +50,7 @@
     "sharp": "0.35.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.14",
-    "wrangler": "4.158.0"
+    "wrangler": "4.159.0"
   },
   "packageManager": "pnpm@12.18.0"
 }

@@ -16,7 +16,7 @@
     "@fontsource/public-sans": "5.3.0",
     "@iconify-json/flagpack": "1.2.10",
     "@iconify-json/mdi": "1.2.3",
-    "@iconify-json/simple-icons": "1.2.101",
+    "@iconify-json/simple-icons": "1.2.102",
     "@libsql/client": "0.18.0",
     "@mermaid-js/layout-elk": "1.0.2",
     "@nuxt/content": "3.16.2",
@@ -50,7 +50,7 @@
     "sharp": "0.35.5",
     "vue-i18n-routing": "1.2.0",
     "vue-tsc": "3.3.14",
-    "wrangler": "4.159.0"
+    "wrangler": "4.160.0"
   },
   "packageManager": "pnpm@12.18.0"
 }

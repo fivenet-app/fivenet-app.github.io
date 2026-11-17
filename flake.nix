@@ -23,7 +23,7 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             # NodeJS stuff
-            nodejs_24
+            nodejs_26
             pnpm_12
 
             # Utilities

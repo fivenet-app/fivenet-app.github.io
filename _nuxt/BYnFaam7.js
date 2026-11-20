@@ -1,0 +1,1 @@
+import{n as e}from"./BujKp7DX.js";function t(t){return e(t,{dir:`ltr`})}export{t};

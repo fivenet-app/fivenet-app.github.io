@@ -77,6 +77,36 @@ Die Variable `$citizen` wird automatisch mit dem ersten ausgewählten Bürger be
 {{ now | date "02.01.2006 15:04" }}
 ```
 
+### Dynamische Eigenschaften
+
+`property` sucht eine Eigenschaft anhand ihres Schlüssels in der `.Properties`-Sammlung eines Benutzers. `propertyValue` gibt nur den Wert dieser Eigenschaft zurück. Beide Helfer können sicher verwendet werden, wenn die Eigenschaft nicht verfügbar, nicht gesetzt oder für Ihre Zugriffsstufe nicht enthalten ist.
+
+#### Standard-/Systemeigenschaften
+
+FiveNet stellt diese Systemeigenschaftsschlüssel bereit: `user.dateofbirth`, `user.sex`, `user.height`, `user.phone_number`, `user.visum`, `user.licenses`, `user.wanted`, `user.job`, `user.traffic_infraction_points`, `user.open_fines`, `user.blood_type`, `user.mugshot`, `user.files`, `user.labels` und `user.email`. Wenn eine Eigenschaft für die Instanz aktiviert ist und Ihre Rolle sie anzeigen darf, ist sie in der Vorlage verfügbar.
+
+Verwenden Sie `with`, um einen Wert nur auszugeben, wenn er verfügbar ist:
+
+```templ
+{{ with propertyValue $citizen.Properties "user.blood_type" }}
+<p>Blutgruppe: {{ .GetStringValue }}</p>
+{{ else }}
+<p>Blutgruppe: nicht hinterlegt</p>
+{{ end }}
+```
+
+Verwenden Sie `property`, wenn Sie zusätzlich Metadaten der Eigenschaft benötigen, beispielsweise ihre Definition:
+
+```templ
+{{ with property $citizen.Properties "user.favorite_color" }}
+<p>{{ .GetDefinition.GetLabel }}: {{ .GetValue.GetStringValue }}</p>
+{{ end }}
+```
+
+::tip
+Eigenschaftsschlüssel sind instanzspezifisch. In einer Vorlage sind nur Eigenschaften verfügbar, die Sie anzeigen dürfen.
+::
+
 ## Sofort nutzbare Snippets
 
 ### Erster ausgewählter Bürger

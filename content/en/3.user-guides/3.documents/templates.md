@@ -77,6 +77,36 @@ The `$citizen` variable is automatically populated with the first selected citiz
 {{ now | date "02.01.2006 15:04" }}
 ```
 
+### Dynamic Properties
+
+`property` finds a property by its key in a user's `.Properties` collection. `propertyValue` returns only that property's value. Both helpers are safe when the property is unavailable, not set, or not included for your access level.
+
+#### Default/System Properties
+
+FiveNet provides these system property keys: `user.dateofbirth`, `user.sex`, `user.height`, `user.phone_number`, `user.visum`, `user.licenses`, `user.wanted`, `user.job`, `user.traffic_infraction_points`, `user.open_fines`, `user.blood_type`, `user.mugshot`, `user.files`, `user.labels`, and `user.email`. If a property is enabled for the instance and your role may view it, it is available to the template.
+
+Use `with` to render a value only when it is available:
+
+```templ
+{{ with propertyValue $citizen.Properties "user.blood_type" }}
+<p>Blood type: {{ .GetStringValue }}</p>
+{{ else }}
+<p>Blood type: not recorded</p>
+{{ end }}
+```
+
+Use `property` when you also need the property's metadata, such as its definition:
+
+```templ
+{{ with property $citizen.Properties "user.favorite_color" }}
+<p>{{ .GetDefinition.GetLabel }}: {{ .GetValue.GetStringValue }}</p>
+{{ end }}
+```
+
+::tip
+Property keys are instance-specific. Only properties that you are allowed to view are available to a template.
+::
+
 ## Copy-Ready Snippets
 
 ### First Selected Citizen

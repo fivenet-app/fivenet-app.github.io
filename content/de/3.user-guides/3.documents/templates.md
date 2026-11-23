@@ -83,7 +83,7 @@ Die Variable `$citizen` wird automatisch mit dem ersten ausgewählten Bürger be
 
 #### Standard-/Systemeigenschaften
 
-FiveNet stellt diese Systemeigenschaftsschlüssel bereit: `user.dateofbirth`, `user.sex`, `user.height`, `user.phone_number`, `user.visum`, `user.licenses`, `user.wanted`, `user.job`, `user.traffic_infraction_points`, `user.open_fines`, `user.blood_type`, `user.mugshot`, `user.files`, `user.labels` und `user.email`. Wenn eine Eigenschaft für die Instanz aktiviert ist und Ihre Rolle sie anzeigen darf, ist sie in der Vorlage verfügbar.
+FiveNet stellt diese Systemeigenschaftsschlüssel bereit: `user.dateofbirth`, `user.sex`, `user.height`, `user.phone_number`, `user.visum`, `user.licenses`, `user.wanted`, `user.job`, `user.traffic_infraction_points`, `user.open_fines`, `user.blood_type`, `user.mugshot`, `user.files`, `user.labels` und `user.email`. Eine Eigenschaft ist in einer Dokumentvorlage nur verfügbar, wenn sie für die Instanz aktiviert ist und der Benutzer, der das Dokument erstellt, sie anzeigen darf. Für Eigenschaften ohne Wert kann weiterhin ein Fallback nötig sein.
 
 Verwenden Sie `with`, um einen Wert nur auszugeben, wenn er verfügbar ist:
 

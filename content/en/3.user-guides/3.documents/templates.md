@@ -83,7 +83,7 @@ The `$citizen` variable is automatically populated with the first selected citiz
 
 #### Default/System Properties
 
-FiveNet provides these system property keys: `user.dateofbirth`, `user.sex`, `user.height`, `user.phone_number`, `user.visum`, `user.licenses`, `user.wanted`, `user.job`, `user.traffic_infraction_points`, `user.open_fines`, `user.blood_type`, `user.mugshot`, `user.files`, `user.labels`, and `user.email`. If a property is enabled for the instance and your role may view it, it is available to the template.
+FiveNet provides these system property keys: `user.dateofbirth`, `user.sex`, `user.height`, `user.phone_number`, `user.visum`, `user.licenses`, `user.wanted`, `user.job`, `user.traffic_infraction_points`, `user.open_fines`, `user.blood_type`, `user.mugshot`, `user.files`, `user.labels`, and `user.email`. A property is available to a document template only when it is enabled for the instance and the user creating the document may view it. A property without a value may still require a fallback.
 
 Use `with` to render a value only when it is available:
 

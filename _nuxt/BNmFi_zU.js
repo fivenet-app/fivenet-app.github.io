@@ -1,0 +1,2 @@
+//# allFunctionsCalledOnLoad
+import{r as e}from"./DqeIkoPQ.js";import{F as t,Gr as n,Jn as r,L as i,Wn as a,Wr as o,_n as s,hr as c,vr as l}from"#entry";var u={base:`list-disc ps-6 my-5 marker:text-(--ui-border-accented)`},d=e({default:()=>f}),f={__name:`ProseUl`,props:{class:{type:null,required:!1},ui:{type:Object,required:!1}},setup(e){let d=i(`prose.ul`,e),f=s(),p=a(()=>t({extend:u,...f.ui?.prose?.ul||{}}));return(e,t)=>(c(),r(`ul`,{class:n(p.value({class:[o(d).ui?.base,o(d).class]}))},[l(e.$slots,`default`)],2))}};export{f as n,d as t};

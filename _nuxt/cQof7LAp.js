@@ -1,0 +1,1 @@
+export{M as createArchitectureServices}from"./BgjcWUYr.js";import"./DI_UYJZ4.js";

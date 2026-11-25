@@ -1,0 +1,2 @@
+//# allFunctionsCalledOnLoad
+import{r as e}from"./DqeIkoPQ.js";import{F as t,Gr as n,Jn as r,L as i,Wn as a,Wr as o,_n as s,hr as c,vr as l}from"#entry";var u={base:`my-1.5 ps-1.5 leading-7 [&>ul]:my-0`},d=e({default:()=>f}),f={__name:`ProseLi`,props:{class:{type:null,required:!1},ui:{type:Object,required:!1}},setup(e){let d=i(`prose.li`,e),f=s(),p=a(()=>t({extend:u,...f.ui?.prose?.li||{}}));return(e,t)=>(c(),r(`li`,{class:n(p.value({class:[o(d).ui?.base,o(d).class]}))},[l(e.$slots,`default`)],2))}};export{f as n,d as t};

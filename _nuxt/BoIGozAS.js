@@ -1,0 +1,2 @@
+//# allFunctionsCalledOnLoad
+import"#entry";

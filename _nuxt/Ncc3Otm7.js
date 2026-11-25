@@ -1,0 +1,1 @@
+import{Kn as e,Mr as t,Wr as n,_n as r,hr as i}from"#entry";import{t as a}from"./Ce9Lzbog.js";import o from"./DlSsqMtJ.js";var s={__name:`ProseWarning`,setup(s){let c=r();return(r,s)=>(i(),e(o,{color:`warning`,icon:n(c).ui.icons.warning},{default:t(()=>[a(r.$slots,`default`,{mdcUnwrap:`p`})]),_:3},8,[`icon`]))}};export{s as default};

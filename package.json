@@ -37,7 +37,7 @@
     "@nuxt/image": "2.2.1",
     "@nuxtjs/i18n": "10.6.0",
     "@pinia/nuxt": "1.0.3",
-    "@types/node": "26.6.7",
+    "@types/node": "26.6.10",
     "eslint": "10.15.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",

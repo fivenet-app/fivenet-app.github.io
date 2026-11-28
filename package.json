@@ -39,7 +39,7 @@
     "@pinia/nuxt": "1.0.3",
     "@types/node": "26.6.11",
     "eslint": "10.15.0",
-    "eslint-config-prettier": "10.1.8",
+    "eslint-config-prettier": "10.1.9",
     "eslint-plugin-prettier": "5.5.7",
     "eslint-plugin-vue": "10.12.1",
     "nuxt": "4.7.0",
